@@ -1,0 +1,70 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "description": "Abdul Aliyev - Portfolio",
+  "version": "0.0.1",
+  "author": "Smakosh <ismai23l@hotmail.com>",
+  "dependencies": {
+    "formik": "2.0.10",
+    "gatsby": "2.18.17",
+    "gatsby-image": "2.2.37",
+    "gatsby-plugin-canonical-urls": "2.1.18",
+    "gatsby-plugin-favicon": "3.1.6",
+    "gatsby-plugin-google-analytics": "2.1.31",
+    "gatsby-plugin-manifest": "2.2.34",
+    "gatsby-plugin-nprogress": "2.1.17",
+    "gatsby-plugin-offline": "3.0.30",
+    "gatsby-plugin-react-helmet": "3.1.18",
+    "gatsby-plugin-sharp": "2.3.10",
+    "gatsby-plugin-sitemap": "2.2.24",
+    "gatsby-plugin-styled-components": "3.1.16",
+    "gatsby-source-filesystem": "2.1.43",
+    "gatsby-source-graphql": "2.1.29",
+    "gatsby-transformer-sharp": "2.3.9",
+    "prop-types": "15.7.2",
+    "react": "16.12.0",
+    "react-anchor-link-smooth-scroll": "1.0.12",
+    "react-dom": "16.12.0",
+    "react-google-recaptcha": "2.0.1",
+    "react-helmet": "5.2.1",
+    "styled-components": "4.4.1",
+    "yup": "0.28.0"
+  },
+  "keywords": [
+    "gatsby",
+    "portfolio",
+    "developer"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "play": "NODE_ENV=development NODE_TLS_REJECT_UNAUTHORIZED=0 GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "build": "gatsby build",
+    "start": "gatsby develop -o",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "reset": "rm -rf .cache/ public/",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+  },
+  "devDependencies": {
+    "add": "2.0.6",
+    "babel-eslint": "10.0.3",
+    "babel-plugin-styled-components": "1.10.6",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-prettier": "6.9.0",
+    "eslint-config-wesbos": "0.0.19",
+    "eslint-plugin-html": "6.0.0",
+    "eslint-plugin-import": "2.19.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-react": "7.17.0",
+    "eslint-plugin-react-hooks": "2.3.0",
+    "prettier": "1.19.1",
+    "yarn": "1.21.1",
+    "yarn-upgrade-all": "0.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliyev12/portfolio"
+  }
+}
