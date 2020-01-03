@@ -1,24 +1,57 @@
-import React from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import { Header } from "components/theme";
-import { Container, Button } from "components/common";
-import dev from "assets/illustrations/dev.svg";
-import { Wrapper, IntroWrapper, Details, Thumbnail } from "./styles";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Header } from 'components/theme';
+import { Container, Button } from 'components/common';
+import dev from 'assets/illustrations/dev.svg';
+import { Wrapper, IntroWrapper, Details, Thumbnail } from './styles';
 
-export const Intro = () => (
-  <Wrapper>
-    <Header />
-    <IntroWrapper as={Container}>
-      <Details>
-        <h1>Hi There!</h1>
-        <h4>I’m John and I’m a Backend & Devops engineer!</h4>
-        <Button as={AnchorLink} href="#contact">
-          Hire me
-        </Button>
-      </Details>
-      <Thumbnail>
-        <img src={dev} alt="I’m John and I’m a Backend & Devops engineer!" />
-      </Thumbnail>
-    </IntroWrapper>
-  </Wrapper>
-);
+export const SITE_META = graphql`
+  query SITE_META {
+    siteMeta: allWordpressSiteMetadata {
+      edges {
+        node {
+          name
+          description
+        }
+      }
+    }
+  }
+`;
+
+export const Intro = () => {
+  const data = useStaticQuery(SITE_META);
+  const siteMeta = formatSiteMeta(data.siteMeta);
+
+  return (
+    <Wrapper>
+      <Header />
+      <IntroWrapper as={Container}>
+        <Details>
+          <h1 dangerouslySetInnerHTML={{ __html: siteMeta.name }} />
+          <h4>{siteMeta.description}</h4>
+          <Button as={AnchorLink} href="#contact">
+            Hire me
+          </Button>
+        </Details>
+        <Thumbnail>
+          <img src={dev} alt={siteMeta.description} />
+        </Thumbnail>
+      </IntroWrapper>
+    </Wrapper>
+  );
+};
+
+function formatSiteMeta(data) {
+  const { edges } = data;
+  const meta = {
+    name: '',
+    description: '',
+  };
+  if (edges && edges.length) {
+    const { node } = edges[0];
+    if (node.name) meta.name = node.name;
+    if (node.description) meta.description = node.description;
+  }
+  return meta;
+}
