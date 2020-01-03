@@ -7,3 +7,13 @@ export const nodes = ({ edges }) => {
   }
   return nodes;
 };
+
+export const imgSrc = (media, type) => {
+  const { localFile } = media;
+  let src = {};
+  if (localFile && localFile.childImageSharp) {
+    const sharp = localFile.childImageSharp;
+    if (sharp[type]) src = sharp[type];
+  }
+  return src;
+};
