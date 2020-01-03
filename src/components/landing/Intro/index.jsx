@@ -31,7 +31,7 @@ export const Intro = () => {
           <h1 dangerouslySetInnerHTML={{ __html: siteMeta.name }} />
           <h4>{siteMeta.description}</h4>
           <Button as={AnchorLink} href="#contact">
-            Hire me
+            Contact me
           </Button>
         </Details>
         <Thumbnail>

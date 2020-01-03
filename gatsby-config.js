@@ -1,50 +1,50 @@
-const config = require("./src/data/config");
+const config = require('./src/data/config');
 
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
 });
 
 module.exports = {
   siteMetadata: {
     title: config.defaultTitle,
     description: config.defaultDescription,
-    author: config.author
+    author: config.author,
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-styled-components",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: "gatsby-source-graphql",
+      resolve: 'gatsby-source-graphql',
       options: {
-        typeName: "GitHub",
-        fieldName: "github",
-        url: "https://api.github.com/graphql",
+        typeName: 'GitHub',
+        fieldName: 'github',
+        url: 'https://api.github.com/graphql',
         headers: {
-          Authorization: `bearer ${process.env.GITHUB_TOKEN}`
+          Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
         },
-        fetchOptions: {}
-      }
+        fetchOptions: {},
+      },
     },
     {
-      resolve: "gatsby-plugin-nprogress",
+      resolve: 'gatsby-plugin-nprogress',
       options: {
         color: config.themeColor,
-        showSpinner: false
-      }
+        showSpinner: false,
+      },
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: config.googleAnalyticsID,
-        head: true
-      }
+        head: true,
+      },
     },
     {
-      resolve: "gatsby-plugin-favicon",
+      resolve: 'gatsby-plugin-favicon',
       options: {
-        logo: "./static/favicon/favicon-512.png",
+        logo: './static/favicon/favicon-512.png',
         injectHTML: true,
         icons: {
           android: true,
@@ -55,33 +55,33 @@ module.exports = {
           firefox: true,
           twitter: false,
           yandex: false,
-          windows: false
-        }
-      }
+          windows: false,
+        },
+      },
     },
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.defaultTitle,
-        short_name: "starter",
-        start_url: "/",
+        short_name: 'starter',
+        start_url: '/',
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: "minimal-ui",
-        icon: "./static/favicon/favicon-512.png"
-      }
+        display: 'minimal-ui',
+        icon: './static/favicon/favicon-512.png',
+      },
     },
-    "gatsby-plugin-offline",
+    'gatsby-plugin-offline',
     {
-      resolve: "gatsby-source-wordpress",
+      resolve: 'gatsby-source-wordpress',
       options: {
         /*
          * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
          * Example : 'gatsbyjsexamplewordpress.wordpress.com' or 'www.example-site.com'
          */
-        baseUrl: "http://localhost:8888",
+        baseUrl: 'http://localhost:8888',
         // The protocol. This can be http or https.
-        protocol: "http",
+        protocol: 'http',
         // Indicates whether the site is hosted on wordpress.com.
         // If false, then the assumption is made that the site is self hosted.
         // If true, then the plugin will source its content on wordpress.com using the JSON REST API V2.
@@ -103,8 +103,8 @@ module.exports = {
         auth: {
           // If auth.user and auth.pass are filled, then the source plugin will be allowed
           // to access endpoints that are protected with .htaccess.
-          htaccess_user: "your-htaccess-username",
-          htaccess_pass: "your-htaccess-password",
+          htaccess_user: 'your-htaccess-username',
+          htaccess_pass: 'your-htaccess-password',
           htaccess_sendImmediately: false,
 
           // If hostingWPCOM is true then you will need to communicate with wordpress.com API
@@ -114,8 +114,8 @@ module.exports = {
           // If two-factor authentication is enabled then you need to create an Application-Specific Password,
           // see https://en.support.wordpress.com/security/two-step-authentication/#application-specific-passwords
           wpcom_app_clientSecret: process.env.WORDPRESS_CLIENT_SECRET,
-          wpcom_app_clientId: "54793",
-          wpcom_user: "gatsbyjswpexample@gmail.com",
+          wpcom_app_clientId: '54793',
+          wpcom_user: 'gatsbyjswpexample@gmail.com',
           wpcom_pass: process.env.WORDPRESS_PASSWORD,
 
           // If you use "JWT Authentication for WP REST API" (https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/)
@@ -123,7 +123,7 @@ module.exports = {
           // plugin, you can specify user and password to obtain access token and use authenticated requests against WordPress REST API.
           jwt_user: process.env.JWT_USER,
           jwt_pass: process.env.JWT_PASSWORD,
-          jwt_base_path: "/jwt-auth/v1/token" // Default - can skip if you are using https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
+          jwt_base_path: '/jwt-auth/v1/token', // Default - can skip if you are using https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
         },
         // Set cookies that should be send with requests to WordPress as key value pairs
         cookies: {},
@@ -134,8 +134,8 @@ module.exports = {
         perPage: 100,
         // Search and Replace Urls across WordPress content.
         searchAndReplaceContentUrls: {
-          sourceUrl: "https://source-url.com",
-          replacementUrl: "https://replacement-url.com"
+          sourceUrl: 'https://source-url.com',
+          replacementUrl: 'https://replacement-url.com',
         },
         // Set how many simultaneous requests are sent at once.
         concurrentRequests: 10,
@@ -149,14 +149,15 @@ module.exports = {
         // all routes that begin with `yoast` from fetch.
         // Whitelisted routes using glob patterns
         includedRoutes: [
-          "**/categories",
-          "**/posts",
-          "**/pages",
-          "**/media",
-          "**/tags",
-          "**/taxonomies",
-          "**/users",
-          "**/menus"
+          '**/categories',
+          '**/posts',
+          '**/pages',
+          '**/media',
+          '**/tags',
+          '**/taxonomies',
+          '**/users',
+          '**/menus',
+          '**/portfolio',
         ],
         // Blacklisted routes using glob patterns
         excludedRoutes: [],
@@ -168,8 +169,8 @@ module.exports = {
         // use a custom normalizer which is applied after the built-in ones.
         normalizer: function({ entities }) {
           return entities;
-        }
-      }
-    }
-  ]
+        },
+      },
+    },
+  ],
 };
