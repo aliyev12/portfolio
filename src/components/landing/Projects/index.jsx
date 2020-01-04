@@ -16,6 +16,7 @@ export const PORTFOLIOS = graphql`
       edges {
         node {
           id
+          slug
           title
           excerpt
           content
@@ -39,36 +40,40 @@ export const PORTFOLIOS = graphql`
 export const Projects = () => {
   const data = useStaticQuery(PORTFOLIOS);
   const portfolios = nodes(data.portfolios);
-  console.log('portfolios = ', portfolios);
 
   return (
     <Wrapper as={Container} id="projects">
       <h2>Projects</h2>
       <Grid>
-        {portfolios.map(portfolio => (
-          <Item key={portfolio.id}>
-            <Card>
-              <Img
-                fluid={imgSrc(portfolio.media, 'fluid')}
-                alt={portfolio.media.alt}
-              />
-              <Content>
-                <AniLink fade to="/">
-                  <h4>{portfolio.title}</h4>
+        {portfolios.map(portfolio => {
+          return (
+            <Item key={portfolio.id}>
+              <Card>
+                <AniLink fade to={`/portfolio/${portfolio.slug}`}>
+                  <Content>
+                    <Img
+                      fluid={imgSrc(portfolio.media, 'fluid')}
+                      alt={portfolio.media.alt}
+                    />
+
+                    <h4>{portfolio.title}</h4>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: portfolio.excerpt }}
+                    />
+                  </Content>
                 </AniLink>
-                <div dangerouslySetInnerHTML={{ __html: portfolio.excerpt }} />
-              </Content>
-              <Stats>
-                <div>
-                  <GitHubIcon />
-                </div>
-                <div>
-                  <LinkIcon />
-                </div>
-              </Stats>
-            </Card>
-          </Item>
-        ))}
+                <Stats>
+                  <div>
+                    <GitHubIcon />
+                  </div>
+                  <div>
+                    <LinkIcon />
+                  </div>
+                </Stats>
+              </Card>
+            </Item>
+          );
+        })}
       </Grid>
     </Wrapper>
   );
