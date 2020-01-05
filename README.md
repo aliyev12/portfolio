@@ -116,4 +116,18 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 If you love this Gatsby template and want to support me, you can do so through my Patreon
 
 [![Support me on Patreon](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/smakosh)
+
 # portfolio
+
+GatsbyImageSharpFixed
+GatsbyImageSharpFixed_noBase64
+GatsbyImageSharpFixed_tracedSVG
+GatsbyImageSharpFixed_withWebp
+GatsbyImageSharpFixed_withWebp_noBase64
+GatsbyImageSharpFixed_withWebp_tracedSVG
+GatsbyImageSharpFluid
+GatsbyImageSharpFluid_noBase64
+GatsbyImageSharpFluid_tracedSVG
+GatsbyImageSharpFluid_withWebp
+GatsbyImageSharpFluid_withWebp_noBase64
+GatsbyImageSharpFluid_withWebp_tracedSVG

@@ -30,6 +30,7 @@ export const query = graphql`
           title
           content
           order: menu_order
+          template
         }
       }
     }

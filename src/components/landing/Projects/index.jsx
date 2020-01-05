@@ -8,7 +8,7 @@ import { Container, Card } from 'components/common';
 import starIcon from 'assets/icons/star.svg';
 import forkIcon from 'assets/icons/fork.svg';
 import { Wrapper, Grid, Item, Content, Stats } from './styles';
-import { nodes, imgSrc } from '../../../utils/helpers';
+import { nodes, imgSrc } from 'utils/helpers';
 
 export const PORTFOLIOS = graphql`
   query PORTFOLIOS {

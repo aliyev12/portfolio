@@ -14,6 +14,16 @@ export const query = graphql`
     portfolio: wordpressWpPortfolio(id: { eq: $id }) {
       id
       title
+      content
+      media: featured_media {
+        localFile {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
+      }
     }
   }
 `;
