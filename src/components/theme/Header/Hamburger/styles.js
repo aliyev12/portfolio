@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { styles } from 'utils';
 
-export const Wrapper = styled.div`
+export const HamburgerWrapper = styled.div`
   z-index: 5;
-  top: 1.6rem;
-  right: 1.8rem;
+  top: 2rem;
+  right: 2rem;
   display: none;
   cursor: pointer;
   transition: left 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
@@ -24,30 +25,31 @@ export const Wrapper = styled.div`
 			}
 		
 			@media (max-width: 600px) {
-				right: 66%;
+				right: 65%;
 			}
 	`}
 `;
 
 export const Bar = styled.div`
-	width: 1.6rem;
-	height: .15rem;
-	margin-bottom: .3rem;
-	background-color: #212121;
+	background-color: ${styles.colors.mainBlack};
 	transition: transform 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91),
 	opacity 500ms,
 	box-shadow 250ms,
 	background-color 500ms;
+	width: 3rem;
+    height: 0.5rem;
+    border-radius: 0.2rem;
+    margin-bottom: 0.5rem;
 
-	@media (max-width: 600px){
+	/* @media (max-width: 600px){
 		width: 1.6rem;
-	}
+	} */
 
 	${({ top, sidebar }) =>
     top &&
     sidebar &&
     `
-		transform: translateY(8px) rotate(-135deg);
+		transform: translateY(13px) rotate(-135deg);
 	`}
 
 	${({ mid, sidebar }) =>
@@ -61,6 +63,6 @@ export const Bar = styled.div`
     bottom &&
     sidebar &&
     `
-			transform: translateY(-6px) rotate(-45deg);
+			transform: translateY(-7px) rotate(-45deg);
 	`}
 `;

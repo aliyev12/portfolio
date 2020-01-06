@@ -1,12 +1,12 @@
-import React from 'react'
-import { Wrapper, Bar } from './styles'
+import React from 'react';
+import { HamburgerWrapper, Bar } from './styles';
 
 const Hamburger = ({ sidebar, toggle }) => (
-	<Wrapper sidebar={sidebar} onClick={() => toggle(!sidebar)}>
-		<Bar top sidebar={sidebar} />
-		<Bar mid sidebar={sidebar} />
-		<Bar bottom sidebar={sidebar} />
-	</Wrapper>
-)
+  <HamburgerWrapper sidebar={sidebar} onClick={() => toggle(!sidebar)}>
+    <Bar top sidebar={sidebar} className="bar" />
+    <Bar mid sidebar={sidebar} className="bar" />
+    <Bar bottom sidebar={sidebar} className="bar" />
+  </HamburgerWrapper>
+);
 
-export default Hamburger
+export default Hamburger;

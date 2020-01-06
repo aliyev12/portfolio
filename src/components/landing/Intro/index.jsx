@@ -1,7 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { Header } from 'components/theme';
 import { Container, Button } from 'components/common';
 import dev from 'assets/illustrations/dev.svg';
 import { Wrapper, IntroWrapper, Details, Thumbnail } from './styles';
@@ -24,9 +23,8 @@ export const Intro = () => {
   const siteMeta = formatSiteMeta(data.siteMeta);
 
   return (
-    <Wrapper>
-      <Header />
-      <IntroWrapper as={Container}>
+    <Wrapper style={{ border: '2px solid blue' }}>
+      <IntroWrapper as={Container} style={{ border: '2px solid pink' }}>
         <Details>
           <h1 dangerouslySetInnerHTML={{ __html: siteMeta.name }} />
           <h4>{siteMeta.description}</h4>

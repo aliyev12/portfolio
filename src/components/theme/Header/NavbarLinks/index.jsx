@@ -1,7 +1,10 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { Wrapper } from './styles';
+import { LinksWrapper, MenuItem } from './styles';
+import Toggle from '../Toggle';
+import formatMenu from './formatMenu';
+import Button from '@material-ui/core/Button';
+import styled from 'styled-components';
 
 export const MENU_ITEMS = graphql`
   query {
@@ -22,44 +25,32 @@ export const MENU_ITEMS = graphql`
   }
 `;
 
-const NavbarLinks = ({ desktop }) => {
+const NavbarLinks = ({ desktop, theme, toggleTheme }) => {
   const data = useStaticQuery(MENU_ITEMS);
   const menuItems = formatMenu(data.menuItems);
-  console.log('menuItems = ', menuItems);
+
+  const handleClick = elementId => {
+    const page = document.querySelector(elementId);
+    if (page) page.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
-    <Wrapper desktop={desktop}>
+    <LinksWrapper desktop={desktop}>
       {menuItems.map(menuItem => (
-        <AnchorLink href={menuItem.href} key={menuItem.id}>
-          {menuItem.title}
-        </AnchorLink>
+        <MenuItem key={menuItem.id} className="menu-item">
+          <Button
+            onClick={() => handleClick(menuItem.href)}
+            className="nav-link"
+          >
+            {menuItem.title}
+          </Button>
+        </MenuItem>
       ))}
-    </Wrapper>
+      <MenuItem className="menu-item">
+        <Toggle theme={theme} toggleTheme={toggleTheme} />
+      </MenuItem>
+    </LinksWrapper>
   );
 };
 
 export default NavbarLinks;
-
-function formatMenu(items) {
-  const menuItems = [];
-
-  if (items.edges && items.edges.length) {
-    const { node } = items.edges[0];
-    if (node && node.items && node.items.length) {
-      node.items.forEach(el => {
-        const item = {
-          id: '',
-          title: '',
-          href: '',
-          slug: '',
-        };
-        if (el.id) item.id = el.id;
-        if (el.title) item.title = el.title;
-        if (el.href) item.href = el.href;
-        if (el.slug) item.slug = el.slug;
-        menuItems.push(item);
-      });
-    }
-  }
-  return menuItems;
-}
