@@ -1,62 +1,133 @@
 import styled from 'styled-components';
+import IconButton from '@material-ui/core/IconButton';
+import Drawer from '@material-ui/core/Drawer';
+import Link from 'gatsby-plugin-transition-link/AniLink';
+import { styles } from 'utils';
 
-export const HeaderWrapper = styled.div`
-  background: transparent;
-  width: 100%;
-`;
+export const MenuButton = styled(IconButton)`
+  margin-right: 2rem;
+  svg {
+    color: ${({ theme }) => theme.text};
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    transition: ${styles.transition};
+  }
 
-export const Overlay = styled.div`
-  position: fixed;
-  background: rgba(0, 0, 0, 0.7);
-  width: 100%;
-  height: 100%;
-  display: none;
-  transition: 0.4s;
-
-  ${({ sidebar }) =>
-    sidebar &&
-    `
-			display: block;
-			z-index: 4;	
-	`}
-`;
-
-export const NavbarWrapper = styled.div`
-  padding: 1.5rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  a {
-    color: #212121;
+  &:hover svg {
+    color: ${styles.colors.mainBlue};
   }
 `;
 
-export const SidebarWrapper = styled.div`
-  position: fixed;
-  z-index: 4;
-  overflow: auto;
-  top: 0px;
-  right: -275px;
-  width: 0;
-  opacity: 0;
-  height: 100%;
-  background-color: #fff;
-  transition: all 350ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
+export const LogoWrapper = styled(Link)`
+  flex-grow: 1;
+  svg {
+    display: flex;
+  }
+`;
 
-  ${({ active }) =>
-    active &&
-    `
-			width: 20%;
-			right: 0px;
-			opacity: 1;
+export const HeaderWrapper = styled.nav`
+  flex-grow: 1;
 
-			@media (max-width: 960px) {
-				width: 40%;
-			}
+  header.nav-bar.MuiAppBar-colorPrimary {
+    background-color: ${({ theme }) => theme.body};
 
-			@media (max-width: 600px) {
-				width: 75%;
-			}
-	`}
+    .toolbar {
+      min-height: 90px;
+      .menu-button {
+      }
+    }
+  }
+
+  .drawer {
+    .MuiDrawer-paper.MuiDrawer-paperAnchorRight {
+      background-color: ${({ theme }) => theme.body};
+      color: ${({ theme }) => theme.text};
+    }
+  }
+
+  @media (min-width: ${styles.breakpoints.sm}) {
+    header.nav-bar.MuiAppBar-colorPrimary {
+      .toolbar {
+        min-height: 90px;
+        .menu-button {
+          display: none;
+        }
+      }
+    }
+  }
+`;
+
+export const StyledDrawer = styled(Drawer)`
+  .MuiDrawer-paper.MuiDrawer-paperAnchorRight {
+    background-color: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
+  }
+`;
+
+export const LinksWrapper = styled.div`
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: ${styles.breakpoints.sm}) {
+    display: flex;
+  }
+`;
+
+export const MenuItem = styled.div`
+  margin: 0 1rem;
+  .nav-link {
+    color: ${({ theme }) => theme.text};
+    font-size: 1.5rem;
+    text-transform: capitalize;
+  }
+`;
+
+export const SideListWrapper = styled.aside`
+  position: relative;
+  width: 20rem;
+
+  ul {
+    padding-top: 0;
+
+    .list-item-top {
+      justify-content: space-between;
+    }
+
+    .divider {
+      background-color: ${({ theme }) => theme.text};
+      margin-bottom: 2rem;
+    }
+
+    .list-item-btn {
+      .avatar {
+        background-color: ${styles.colors.mainBlue};
+        transition: ${styles.transition};
+        svg {
+          transition: ${styles.transition};
+        }
+      }
+
+      .title {
+        span {
+          font-size: 1.6rem;
+          color: ${({ theme }) => theme.text};
+        }
+      }
+
+      &:hover .avatar {
+        background-color: ${({ theme }) => theme.text};
+      }
+      &:hover .avatar svg {
+        color: ${({ theme }) => theme.body};
+      }
+    }
+  }
+`;
+
+export const Close = styled(IconButton)`
+  svg {
+    color: ${({ theme }) => theme.text};
+  }
 `;

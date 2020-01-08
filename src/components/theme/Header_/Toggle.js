@@ -15,11 +15,7 @@ const Toggle = ({ theme, toggleTheme }) => {
   const isLight = theme === 'light';
 
   return (
-    <ToggleBtn
-      aria-label="toggle"
-      onClick={toggleTheme}
-      title={`Switch to ${isLight ? 'dark' : 'light'} mode`}
-    >
+    <ToggleBtn aria-label="toggle" onClick={toggleTheme}>
       {isLight ? <Brightness2RoundedIcon id="test" /> : <WbSunnyRoundedIcon />}
     </ToggleBtn>
   );

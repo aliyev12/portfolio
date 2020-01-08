@@ -5,7 +5,6 @@ import { Intro, Skills, Contact, Projects } from 'components/landing';
 
 export default ({ data }) => {
   const pages = formatPages(data.pages);
-  console.log('data from index = ', pages);
 
   return (
     <Layout>

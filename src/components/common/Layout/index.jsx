@@ -4,6 +4,7 @@ import { Footer, Header } from 'components/theme';
 import useDarkMode from './useDarkMode';
 import { styles } from 'utils';
 import { GlobalStyles } from './styles';
+
 import './fonts.css';
 
 const lightTheme = {

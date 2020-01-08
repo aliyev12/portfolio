@@ -6,6 +6,12 @@ export const colors = {
 
 export const transition = `all 300ms ease-in`;
 
+export const setTransition = (
+  target = 'all',
+  time = '300ms',
+  timingFunc = 'ease-in'
+) => `${target} ${time} ${timingFunc}`;
+
 export const fonts = {
   roboto: `'Roboto', Helvetica, sans-serif`,
 };

@@ -23,8 +23,8 @@ export const Intro = () => {
   const siteMeta = formatSiteMeta(data.siteMeta);
 
   return (
-    <Wrapper style={{ border: '2px solid blue' }}>
-      <IntroWrapper as={Container} style={{ border: '2px solid pink' }}>
+    <Wrapper>
+      <IntroWrapper as={Container}>
         <Details>
           <h1 dangerouslySetInnerHTML={{ __html: siteMeta.name }} />
           <h4>{siteMeta.description}</h4>
