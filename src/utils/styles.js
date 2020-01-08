@@ -2,6 +2,8 @@ export const colors = {
   mainWhite: 'white',
   mainBlack: '#333333',
   mainBlue: '#4a86ff',
+  mainBlue__light: '#4a86ff33',
+  mainBlue__dark: '#4a86ffbf',
 };
 
 export const transition = `all 300ms ease-in`;

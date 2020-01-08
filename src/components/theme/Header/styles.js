@@ -15,7 +15,8 @@ export const MenuButton = styled(IconButton)`
   }
 
   &:hover svg {
-    color: ${styles.colors.mainBlue};
+    /* color: ${styles.colors.mainBlue}; */
+    transform: scale(1.3);
   }
 `;
 

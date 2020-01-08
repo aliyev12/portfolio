@@ -28,6 +28,12 @@ export const GlobalStyles = createGlobalStyle`
       background: ${({ theme }) => theme.body};
       color: ${({ theme }) => theme.text};
       ${styles.transition};
+
+      .MuiListItem-button:hover,
+      .MuiIconButton-root:hover,
+      .MuiButton-root:hover {
+        background-color: ${({ theme }) => theme.hover.main};
+      }
     }
   }
 `;
