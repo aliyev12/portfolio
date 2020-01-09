@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Container } from 'components/common';
-import BackgroundImage from './BackgroundImage';
+import IntroBackgroundImg from './IntroBackgroundImg';
 import { IntroWrapper, Main, Details, Thumbnail } from './styles';
 
 export const SITE_META = graphql`
@@ -29,7 +29,7 @@ export const Intro = () => {
           <h2>{siteMeta.description}</h2>
         </Details>
         <Thumbnail>
-          <BackgroundImage />
+          <IntroBackgroundImg />
         </Thumbnail>
       </Main>
     </IntroWrapper>

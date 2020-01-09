@@ -18,7 +18,7 @@ const ImageWrapper = styled.svg`
   }
 `;
 
-const BackgroundImage = () => {
+const IntroBackgroundImg = () => {
   return (
     <ImageWrapper
       id="a594ac37-6d44-4297-8862-1cbd9c01c0b7"
@@ -27,7 +27,7 @@ const BackgroundImage = () => {
       height="855"
       viewBox="0 0 1126.19355 855"
     >
-      <title>code review</title>
+      <title>Coding</title>
       <path
         d="M581.7675,778.43794C339.36866,759.99137,50.29677,572.17166,65.01385,378.78054S359.70017,5.35846,602.099,23.805,984.03089,403.667,969.31381,597.05809,824.16633,796.88451,581.7675,778.43794Z"
         transform="translate(-36.90323 -22.5)"
@@ -246,4 +246,4 @@ const BackgroundImage = () => {
   );
 };
 
-export default BackgroundImage;
+export default IntroBackgroundImg;
