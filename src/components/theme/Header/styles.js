@@ -32,6 +32,8 @@ export const HeaderWrapper = styled.nav`
 
   header.nav-bar.MuiAppBar-colorPrimary {
     background-color: ${({ theme }) => theme.body};
+    box-shadow: ${({ theme }) => theme.boxShadow};
+    transition: ${styles.transition};
 
     .toolbar {
       min-height: 90px;
@@ -44,6 +46,7 @@ export const HeaderWrapper = styled.nav`
     .MuiDrawer-paper.MuiDrawer-paperAnchorRight {
       background-color: ${({ theme }) => theme.body};
       color: ${({ theme }) => theme.text};
+      transition: ${styles.transition};
     }
   }
 
@@ -63,6 +66,7 @@ export const StyledDrawer = styled(Drawer)`
   .MuiDrawer-paper.MuiDrawer-paperAnchorRight {
     background-color: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
+    transition: ${styles.transition};
   }
 `;
 
@@ -82,6 +86,7 @@ export const MenuItem = styled.div`
     color: ${({ theme }) => theme.text};
     font-size: 1.5rem;
     text-transform: capitalize;
+    transition: ${styles.transition};
   }
 `;
 
@@ -99,6 +104,7 @@ export const SideListWrapper = styled.aside`
     .divider {
       background-color: ${({ theme }) => theme.text};
       margin-bottom: 2rem;
+      transition: ${styles.transition};
     }
 
     .list-item-btn {
@@ -114,14 +120,17 @@ export const SideListWrapper = styled.aside`
         span {
           font-size: 1.6rem;
           color: ${({ theme }) => theme.text};
+          transition: ${styles.transition};
         }
       }
 
       &:hover .avatar {
         background-color: ${({ theme }) => theme.text};
+        transition: ${styles.transition};
       }
       &:hover .avatar svg {
         color: ${({ theme }) => theme.body};
+        transition: ${styles.transition};
       }
     }
   }
@@ -130,5 +139,6 @@ export const SideListWrapper = styled.aside`
 export const Close = styled(IconButton)`
   svg {
     color: ${({ theme }) => theme.text};
+    transition: ${styles.transition};
   }
 `;

@@ -4,6 +4,8 @@ export const colors = {
   mainBlue: '#4a86ff',
   mainBlue__light: '#4a86ff33',
   mainBlue__dark: '#4a86ffbf',
+  lightGrey: '#f2f2f2',
+  darkGrey: '#4d4d4d',
 };
 
 export const transition = `all 300ms ease-in`;

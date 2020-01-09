@@ -6,6 +6,7 @@ const LogoWrapper = styled.svg`
   &:hover {
     .background {
       fill: ${({ theme }) => theme.text};
+      transition: ${styles.transition};
     }
   }
 `;
@@ -21,6 +22,7 @@ const Background = styled.path`
 const Letter = styled.path`
   fill: ${({ theme }) => theme.body};
   paint-order: 'stroke fill markers';
+  transition: ${styles.transition};
 `;
 
 export const Logo = ({ width = '180', height = '180' }) => (

@@ -42,6 +42,7 @@ export const MenuItem = styled.div`
     color: ${({ theme }) => theme.text};
     font-size: 1.5rem;
     text-transform: capitalize;
+    transition: ${styles.transition};
   }
 `;
 

@@ -8,6 +8,7 @@ const ToggleBtn = styled(IconButton)`
   svg {
     color: ${({ theme }) => theme.text};
     font-size: 1.5rem;
+    transition: ${styles.transition};
   }
 `;
 

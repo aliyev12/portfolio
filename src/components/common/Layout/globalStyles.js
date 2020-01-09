@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
+    transition: ${styles.transition};
   }
 
   html {
@@ -27,7 +28,23 @@ export const GlobalStyles = createGlobalStyle`
       flex-direction: column;
       background: ${({ theme }) => theme.body};
       color: ${({ theme }) => theme.text};
-      ${styles.transition};
+      transition: ${styles.transition};
+
+      h1 {
+        font-size: 3.2rem;
+      }
+      h2 {
+        font-size: 2.8rem;
+      }
+
+      @media(min-width: ${styles.breakpoints.sm}) {
+        h1 {
+          font-size: 4rem;
+        }
+        h2 {
+          font-size: 3.2rem;
+        }
+      }
 
       .MuiListItem-button:hover,
       .MuiIconButton-root:hover,

@@ -13,6 +13,14 @@ const lightTheme = {
   hover: {
     main: styles.colors.mainBlue__light,
   },
+  colors: {
+    lightGrey: styles.colors.lightGrey,
+  },
+  boxShadow: `
+    0px 2px 4px -1px rgba(51,51,51, 0.2),
+    0px 4px 5px 0px rgba(51,51,51, 0.14), 
+    0px 1px 10px 0px rgba(51,51,51, 0.12);
+`,
 };
 
 const darkTheme = {
@@ -21,6 +29,14 @@ const darkTheme = {
   hover: {
     main: styles.colors.mainBlue__dark,
   },
+  colors: {
+    lightGrey: styles.colors.darkGrey,
+  },
+  boxShadow: `
+    0px 2px 4px -1px rgba(255,255,255, 0.2),
+    0px 4px 5px 0px rgba(255,255,255, 0.14), 
+    0px 1px 10px 0px rgba(255,255,255, 0.12);
+  `,
 };
 
 export const Layout = ({ children }) => {

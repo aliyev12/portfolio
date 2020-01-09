@@ -1,9 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { Container, Button } from 'components/common';
-import dev from 'assets/illustrations/dev.svg';
-import { Wrapper, IntroWrapper, Details, Thumbnail } from './styles';
+import { Container } from 'components/common';
+import BackgroundImage from './BackgroundImage';
+import { IntroWrapper, Main, Details, Thumbnail } from './styles';
 
 export const SITE_META = graphql`
   query SITE_META {
@@ -23,20 +22,17 @@ export const Intro = () => {
   const siteMeta = formatSiteMeta(data.siteMeta);
 
   return (
-    <Wrapper>
-      <IntroWrapper as={Container}>
+    <IntroWrapper>
+      <Main as={Container}>
         <Details>
           <h1 dangerouslySetInnerHTML={{ __html: siteMeta.name }} />
-          <h4>{siteMeta.description}</h4>
-          <Button as={AnchorLink} href="#contact">
-            Contact me
-          </Button>
+          <h2>{siteMeta.description}</h2>
         </Details>
         <Thumbnail>
-          <img src={dev} alt={siteMeta.description} />
+          <BackgroundImage />
         </Thumbnail>
-      </IntroWrapper>
-    </Wrapper>
+      </Main>
+    </IntroWrapper>
   );
 };
 

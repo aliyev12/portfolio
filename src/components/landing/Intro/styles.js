@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import overlayIllustration from 'assets/illustrations/overlay.svg';
+import overlayIllustration from 'assets/illustrations/overlay_3.svg';
+import { styles } from 'utils';
 
-export const Wrapper = styled.div`
+export const IntroWrapper = styled.div`
   padding-bottom: 4rem;
   background-image: url(${overlayIllustration});
   background-size: contain;
@@ -9,7 +10,7 @@ export const Wrapper = styled.div`
   background-repeat: no-repeat;
 `;
 
-export const IntroWrapper = styled.div`
+export const Main = styled.main`
   padding: 4rem 0;
   display: flex;
   align-items: center;
@@ -30,34 +31,22 @@ export const Details = styled.div`
 
   h1 {
     margin-bottom: 2rem;
-    font-size: 36pt;
-    color: #212121;
-
-    @media (max-width: 680px) {
-      font-size: 30pt;
-    }
+    color: ${({ theme }) => theme.text};
   }
 
-  h4 {
+  h2 {
     margin-bottom: 2.5rem;
-    font-size: 32pt;
     font-weight: normal;
-    color: #707070;
-
-    @media (max-width: 680px) {
-      font-size: 26pt;
-    }
+    color: ${({ theme }) => theme.text};
   }
 `;
 
 export const Thumbnail = styled.div`
   flex: 1;
+  width: 100%;
 
-  @media (max-width: 960px) {
+  svg {
     width: 100%;
-  }
-
-  img {
-    width: 100%;
+    height: 30rem;
   }
 `;
