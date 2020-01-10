@@ -21,8 +21,9 @@ export const fonts = {
 };
 
 export const breakpoints = {
+  xs: '400px',
   sm: '600px',
   md: '960px',
   lg: '1280px',
-  xl: '1920px',
+  xl: '1400px',
 };

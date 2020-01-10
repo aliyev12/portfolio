@@ -1,61 +1,50 @@
-import styled from 'styled-components';
+import styled, { ThemeConsumer } from 'styled-components';
+import { styles } from 'utils';
 
-export const Wrapper = styled.div`
-  padding: 2rem 0;
+export const ProjectsWrapper = styled.div`
+  padding: 3rem 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  main {
+    width: 90%;
+    margin: 0 auto;
+    .project-page-title {
+      margin: 4rem 0;
+      color: ${({ theme }) => theme.text};
+      text-align: center;
+
+      @media (min-width: ${styles.breakpoints.xl}) {
+        text-align: left;
+      }
+    }
+  }
 `;
 
 export const Grid = styled.div`
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 8fr;
-  gap: 1.2rem 1.2rem;
+  justify-items: center;
+  align-items: start;
+  gap: 3rem;
 
-  @media (max-width: 960px) {
+  /* @media (min-width: ${styles.breakpoints.xs}) {
+    grid-template-columns: repeat(1, 1fr);
+  } */
+  @media (min-width: 730px) {
+    grid-template-columns: repeat(2,30rem);
+    justify-content: center;
+  }
+  /* @media (min-width: ${styles.breakpoints.md}) {
     grid-template-columns: repeat(2, 1fr);
+  } */
+  @media (min-width: ${styles.breakpoints.lg}) {
+    grid-template-columns: repeat(3, 1fr);
   }
-
-  @media (max-width: 680px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-export const Item = styled.div`
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.11);
-
-  h4 {
-    color: #212121;
-  }
-
-  p {
-    color: #707070;
-  }
-`;
-
-export const Content = styled.div`
-  padding: 1rem 0;
-`;
-
-export const Stats = styled.div`
-  display: flex;
-  align-items: center;
-
-  div {
-    display: flex;
-    &:first-child {
-      margin-right: 0.5rem;
-    }
-
-    img {
-      margin: 0;
-    }
-
-    span {
-      color: #000;
-      margin-left: 0.5rem;
-    }
+  @media (min-width: ${styles.breakpoints.xl}) {
+    grid-template-columns: repeat(4, 1fr);
   }
 `;

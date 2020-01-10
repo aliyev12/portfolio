@@ -51,6 +51,18 @@ export const GlobalStyles = createGlobalStyle`
       .MuiButton-root:hover {
         background-color: ${({ theme }) => theme.hover.main};
       }
+
+      .visually-hidden { 
+          position: absolute !important;
+          height: 1px; 
+          width: 1px;
+          overflow: hidden;
+          clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+          clip: rect(1px, 1px, 1px, 1px);
+          white-space: nowrap; /* added line */
+          background-color: white;
+          color: black;
+      }
     }
   }
 `;

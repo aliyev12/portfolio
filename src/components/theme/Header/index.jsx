@@ -38,6 +38,7 @@ export const Header = ({ theme, toggleTheme }) => {
         <Toolbar className="toolbar">
           <LogoWrapper title="Go to Main Page" fade to="/">
             <Logo width="57" height="57" />
+            <span className="visually-hidden">Home Page</span>
           </LogoWrapper>
           <Links theme={theme} toggleTheme={toggleTheme} />
           <MenuButton
