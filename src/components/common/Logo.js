@@ -5,7 +5,7 @@ import { styles } from 'utils';
 const LogoWrapper = styled.svg`
   &:hover {
     .background {
-      fill: ${({ theme }) => theme.text};
+      fill: ${styles.colors.mainBlue__dark};
       transition: ${styles.transition};
     }
   }
@@ -21,6 +21,7 @@ const Background = styled.path`
 
 const Letter = styled.path`
   fill: ${({ theme }) => theme.body};
+  fill: ${styles.colors.mainWhite};
   paint-order: 'stroke fill markers';
   transition: ${styles.transition};
 `;

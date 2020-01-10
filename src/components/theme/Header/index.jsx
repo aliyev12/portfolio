@@ -41,7 +41,7 @@ export const Header = ({ theme, toggleTheme }) => {
           </LogoWrapper>
           <Links theme={theme} toggleTheme={toggleTheme} />
           <MenuButton
-            edge="starts"
+            // edge="starts"
             aria-label="menu"
             className="menu-button"
             onClick={toggleDrawer(drawerStatuses.open)}

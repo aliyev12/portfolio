@@ -9,6 +9,7 @@ import starIcon from 'assets/icons/star.svg';
 import forkIcon from 'assets/icons/fork.svg';
 import { Wrapper, Grid, Item, Content, Stats } from './styles';
 import { nodes, imgSrc } from 'utils/helpers';
+import ProjectCard from './ProjectCard';
 
 export const PORTFOLIOS = graphql`
   query PORTFOLIOS {
@@ -47,31 +48,32 @@ export const Projects = () => {
       <Grid>
         {portfolios.map(portfolio => {
           return (
-            <Item key={portfolio.id}>
-              <Card>
-                <AniLink fade to={`/portfolio/${portfolio.slug}`}>
-                  <Content>
-                    <Img
-                      fluid={imgSrc(portfolio.media, 'fluid')}
-                      alt={portfolio.media.alt}
-                    />
+            <ProjectCard {...portfolio} />
+            // <Item key={portfolio.id}>
+            //   <Card>
+            //     <AniLink fade to={`/portfolio/${portfolio.slug}`}>
+            //       <Content>
+            //         {/* <Img
+            //           fluid={imgSrc(portfolio.media, 'fluid')}
+            //           alt={portfolio.media.alt}
+            //         /> */}
 
-                    <h4>{portfolio.title}</h4>
-                    <div
-                      dangerouslySetInnerHTML={{ __html: portfolio.excerpt }}
-                    />
-                  </Content>
-                </AniLink>
-                <Stats>
-                  <div>
-                    <GitHubIcon />
-                  </div>
-                  <div>
-                    <LinkIcon />
-                  </div>
-                </Stats>
-              </Card>
-            </Item>
+            //         <h4>{portfolio.title}</h4>
+            //         <div
+            //           dangerouslySetInnerHTML={{ __html: portfolio.excerpt }}
+            //         />
+            //       </Content>
+            //     </AniLink>
+            //     <Stats>
+            //       <div>
+            //         <GitHubIcon />
+            //       </div>
+            //       <div>
+            //         <LinkIcon />
+            //       </div>
+            //     </Stats>
+            //   </Card>
+            // </Item>
           );
         })}
       </Grid>
