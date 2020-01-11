@@ -35,7 +35,8 @@ const StyledCard = styled(Card)`
   }
 
   .card-action {
-    button {
+    button,
+    a {
       color: ${({ theme }) => theme.text};
     }
   }
@@ -45,8 +46,17 @@ const StyledCard = styled(Card)`
   }
 `;
 
-const ProjectCard = ({ media, slug, title }) => {
-  console.log('media = ', media);
+const ProjectCard = ({
+  media,
+  slug,
+  title,
+  shortDescription,
+  projectUrl,
+  isMonoRepo,
+  mainRepo,
+  frontendRepo,
+  backendRepo,
+}) => {
   return (
     <StyledCard className="card">
       <CardActionArea
@@ -69,20 +79,56 @@ const ProjectCard = ({ media, slug, title }) => {
             component="p"
             className="project-desc"
           >
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {shortDescription}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions className="card-action">
-        <Button size="small" color="primary" startIcon={<GitHubIcon />}>
-          Frontend
-        </Button>
-        <Button size="small" color="primary" startIcon={<GitHubIcon />}>
-          Backend
-        </Button>
-        <Button size="small" color="primary" startIcon={<LinkIcon />}>
-          site
+        {isMonoRepo ? (
+          <Button
+            href={mainRepo}
+            rel="noopener noreferrer"
+            target="_blank"
+            size="small"
+            color="primary"
+            startIcon={<GitHubIcon />}
+          >
+            Main Repo
+          </Button>
+        ) : (
+          <>
+            <Button
+              href={frontendRepo}
+              rel="noopener noreferrer"
+              target="_blank"
+              size="small"
+              color="primary"
+              startIcon={<GitHubIcon />}
+            >
+              Frontend
+            </Button>
+            <Button
+              href={backendRepo}
+              rel="noopener noreferrer"
+              target="_blank"
+              size="small"
+              color="primary"
+              startIcon={<GitHubIcon />}
+            >
+              Backend
+            </Button>
+          </>
+        )}
+
+        <Button
+          href={projectUrl}
+          rel="noopener noreferrer"
+          target="_blank"
+          size="small"
+          color="primary"
+          startIcon={<LinkIcon />}
+        >
+          Site
         </Button>
       </CardActions>
     </StyledCard>

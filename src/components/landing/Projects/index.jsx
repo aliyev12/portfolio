@@ -3,9 +3,11 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { ProjectsWrapper, Grid } from './styles';
 import { nodes } from 'utils/helpers';
 import ProjectCard from './ProjectCard';
+import formatProjects from './formatProjects';
 
 export const PORTFOLIOS = graphql`
   query PORTFOLIOS {
+    # Portfolio Nodes
     portfolios: allWordpressWpPortfolio {
       edges {
         node {
@@ -25,6 +27,38 @@ export const PORTFOLIOS = graphql`
               }
             }
           }
+          acf {
+            projectUrl
+            isMonoRepo
+            mainRepo
+            frontendRepo
+            backendRepo
+            shortDescription
+            addingAdditionalImages
+            weight
+            additionalImages {
+              imgName: post_title
+              imgId: wordpress_id
+            }
+          }
+        }
+      }
+    }
+    # Media Nodes
+    media: allWordpressWpMedia {
+      edges {
+        node {
+          wordpress_id
+          title
+          source_url
+          alt_text
+          localFile {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
         }
       }
     }
@@ -33,18 +67,18 @@ export const PORTFOLIOS = graphql`
 
 export const Projects = () => {
   const data = useStaticQuery(PORTFOLIOS);
-  const portfolios = nodes(data.portfolios);
+  // Passing graphql data to formatting function that will shape data for projects
+  const projects = formatProjects(nodes(data.portfolios), nodes(data.media));
+  console.log('projects = ', projects);
 
   return (
     <ProjectsWrapper id="projects">
       <main>
         <h1 className="project-page-title">Projects</h1>
         <Grid>
-          {[...portfolios, ...portfolios, ...portfolios, ...portfolios].map(
-            portfolio => (
-              <ProjectCard key={portfolio.id} {...portfolio} />
-            )
-          )}
+          {projects.map(project => (
+            <ProjectCard key={project.id} {...project} />
+          ))}
         </Grid>
       </main>
     </ProjectsWrapper>
