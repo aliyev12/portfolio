@@ -2,7 +2,8 @@ import styled, { ThemeConsumer } from 'styled-components';
 import { styles } from 'utils';
 
 export const ProjectsWrapper = styled.div`
-  padding: 3rem 0;
+  margin-bottom: 4rem;
+  padding: 0;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -11,7 +12,7 @@ export const ProjectsWrapper = styled.div`
     width: 90%;
     margin: 0 auto;
     .project-page-title {
-      margin: 4rem 0;
+      margin-bottom: 2rem;
       color: ${({ theme }) => theme.text};
       text-align: center;
 
@@ -19,6 +20,11 @@ export const ProjectsWrapper = styled.div`
         text-align: left;
       }
     }
+  }
+
+  @media (min-width: ${styles.breakpoints.md}) {
+    margin-bottom: 6rem;
+    padding: 3rem 0;
   }
 `;
 
@@ -31,16 +37,10 @@ export const Grid = styled.div`
   align-items: start;
   gap: 3rem;
 
-  /* @media (min-width: ${styles.breakpoints.xs}) {
-    grid-template-columns: repeat(1, 1fr);
-  } */
   @media (min-width: 730px) {
-    grid-template-columns: repeat(2,30rem);
+    grid-template-columns: repeat(2, 30rem);
     justify-content: center;
   }
-  /* @media (min-width: ${styles.breakpoints.md}) {
-    grid-template-columns: repeat(2, 1fr);
-  } */
   @media (min-width: ${styles.breakpoints.lg}) {
     grid-template-columns: repeat(3, 1fr);
   }

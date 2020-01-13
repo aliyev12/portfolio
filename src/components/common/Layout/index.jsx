@@ -15,6 +15,11 @@ const lightTheme = {
   },
   colors: {
     lightGrey: styles.colors.lightGrey,
+    successGreen: styles.colors.successGreen__light,
+  },
+  inputBorders: {
+    main: styles.colors.formBorderGrey__light,
+    hover: styles.colors.mainBlack,
   },
   boxShadow: `
     0px 2px 4px -1px rgba(51,51,51, 0.2),
@@ -31,6 +36,11 @@ const darkTheme = {
   },
   colors: {
     lightGrey: styles.colors.darkGrey,
+    successGreen: styles.colors.successGreen__dark,
+  },
+  inputBorders: {
+    main: styles.colors.formBorderGrey__dark,
+    hover: styles.colors.mainWhite,
   },
   boxShadow: `
     0px 2px 4px -1px rgba(255,255,255, 0.2),

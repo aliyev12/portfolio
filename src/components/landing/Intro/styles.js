@@ -3,24 +3,25 @@ import overlayIllustration from 'assets/illustrations/overlay_3.svg';
 import { styles } from 'utils';
 
 export const IntroWrapper = styled.div`
+  margin-bottom: 4rem;
   padding-bottom: 0;
   background-image: url(${overlayIllustration});
   background-size: contain;
   background-position: right top;
   background-repeat: no-repeat;
 
-  @media (min-width: ${styles.breakpoints.sm}) {
-    padding-bottom: 4rem;
+  @media (min-width: ${styles.breakpoints.md}) {
+    margin-bottom: 6rem;
   }
 `;
 
 export const Main = styled.main`
-  padding: 4rem 0 1rem 0;
+  padding: 4rem 0 0 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  @media (min-width: ${styles.breakpoints.sm}) {
+  @media (min-width: ${styles.breakpoints.md}) {
     padding: 4rem 0;
   }
 

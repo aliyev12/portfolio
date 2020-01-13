@@ -3,14 +3,19 @@ import aboutMeIllustration from 'assets/illustrations/about_overlay.svg';
 import { styles } from 'utils';
 
 export const SkillsWrapper = styled.div`
-  background-image: url(${aboutMeIllustration});
-  background-size: contain;
-  background-position: left top;
-  background-repeat: no-repeat;
+  margin-bottom: 4rem;
+  background-image: none;
+
+  @media (min-width: ${styles.breakpoints.md}) {
+    margin-bottom: 6rem;
+    background-image: url(${aboutMeIllustration});
+    background-size: contain;
+    background-position: left top;
+    background-repeat: no-repeat;
+  }
 `;
 
 export const SkillsMain = styled.div`
-  padding: 4rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,10 +37,14 @@ export const Details = styled.div`
   h1 {
     margin-bottom: 2rem;
     color: ${({ theme }) => theme.text};
+    text-align: center;
+
+    @media (min-width: ${styles.breakpoints.md}) {
+      text-align: left;
+    }
   }
 
   p {
-    margin-bottom: 2.5rem;
     font-weight: normal;
     font-size: 1.5rem;
     line-height: 1.5;
@@ -49,13 +58,23 @@ export const Details = styled.div`
 
 export const Thumbnail = styled.div`
   flex: 1;
-
-  @media (max-width: 960px) {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  display: none;
 
   svg {
-    width: 100%;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  @media (min-width: ${styles.breakpoints.md}) {
+    display: block;
+    svg {
+      width: 100%;
+      height: 30rem;
+    }
   }
 `;

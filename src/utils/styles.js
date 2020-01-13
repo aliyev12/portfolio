@@ -6,6 +6,10 @@ export const colors = {
   mainBlue__dark: '#4a86ffbf',
   lightGrey: '#f2f2f2',
   darkGrey: '#4d4d4d',
+  formBorderGrey__light: 'rgba(0, 0, 0, 0.4)',
+  formBorderGrey__dark: 'rgba(255, 255, 255, 0.6)',
+  successGreen__light: 'rgb(237, 247, 237)',
+  successGreen__dark: 'rgb(2, 100, 2)',
 };
 
 export const transition = `all 300ms ease-in`;
