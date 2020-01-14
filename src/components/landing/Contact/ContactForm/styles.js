@@ -29,6 +29,11 @@ export const StyledForm = styled(Form)`
         font-size: 1.5rem;
       }
 
+      &.google-captcha {
+        display: flex;
+        justify-content: center;
+      }
+
     }
 
     .MuiOutlinedInput-notchedOutline {
@@ -51,13 +56,6 @@ export const StyledForm = styled(Form)`
     .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
       border-color: ${styles.colors.mainBlue};
     }
-  }
-
-  .MuiFormHelperText-root {
-    font-size: 1.5rem;
-    margin-bottom: 3rem;
-    line-height: 1.5;
-    color: ${({ theme }) => theme.text};
   }
 
   .submit-btn-container {

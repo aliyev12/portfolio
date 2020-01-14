@@ -14,12 +14,13 @@ import WorkIcon from '@material-ui/icons/Work';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import { LinksWrapper, MenuItem, Close, SideListWrapper } from './styles';
 import Toggle from './Toggle';
+import { Social } from 'components/common';
 import { formatMenu } from './menuHelpers';
 
 export const MENU_ITEMS = graphql`
   query {
     menuItems: allWordpressWpApiMenusMenusItems(
-      filter: { name: { eq: "Top Navbar Menu" } }
+      filter: { slug: { eq: "top-navbar-menu" } }
     ) {
       edges {
         node {
@@ -84,6 +85,7 @@ export const SideList = ({
           >
             <CloseIcon />
           </Close>
+          <Social width="15" height="15" />
           <Toggle theme={theme} toggleTheme={toggleTheme} />
         </ListItem>
         <Divider className="divider" />

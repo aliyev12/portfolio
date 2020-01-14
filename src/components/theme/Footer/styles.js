@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { styles } from 'utils';
 
 export const Wrapper = styled.div`
   padding: 28rem 0 4rem 0;
@@ -8,7 +9,7 @@ export const Wrapper = styled.div`
   background-repeat: no-repeat;
 
   @media (max-width: 1960px) {
-    padding: 14rem 0 4rem;
+    padding: 7rem 0 4rem;
   }
 `;
 
@@ -43,7 +44,19 @@ export const Links = styled.div`
 `;
 
 export const Details = styled.div`
-  @media (max-width: 680px) {
-    margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  svg {
+    margin-right: 1.5rem;
+  }
+
+  .copyright {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: ${styles.breakpoints.sm}) {
+    margin-bottom: 0;
   }
 `;

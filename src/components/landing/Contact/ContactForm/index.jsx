@@ -61,6 +61,7 @@ const ContactForm = props => {
           fullWidth
           variant="outlined"
           className="contact-form-input"
+          maxLength="100"
           component={TextField}
           error={touched.name && errors.name}
         />
@@ -72,6 +73,7 @@ const ContactForm = props => {
           fullWidth
           variant="outlined"
           className="contact-form-input"
+          maxLength="200"
           component={TextField}
           error={touched.email && errors.email}
         />
@@ -84,6 +86,7 @@ const ContactForm = props => {
           fullWidth
           variant="outlined"
           className="contact-form-input"
+          maxLength="2000"
           component={TextField}
           error={touched.message && errors.message}
         />
@@ -94,7 +97,8 @@ const ContactForm = props => {
             component={Recaptcha}
             sitekey={process.env.GATSBY_SITE_KEY}
             name="recaptcha"
-            className="contact-form-input"
+            className="contact-form-input google-captcha"
+            size="compact"
             theme={theme && theme.name ? theme.name : 'dark'}
             onChange={value => setFieldValue('recaptcha', value)}
           />
@@ -129,11 +133,19 @@ export default withFormik({
   }),
   validationSchema: () =>
     Yup.object().shape({
-      name: Yup.string().required('Please, provide your name.'),
+      name: Yup.string()
+        .max(100, 'Sorry, your name can only be up to 100 characters long.')
+        .required('Please, provide your name.'),
       email: Yup.string()
         .email(`Oops, email doesn't seem to be in a right format`)
+        .max(200, 'Sorry, your email can only be up to 200 characters long.')
         .required('Please, specify your email address.'),
-      message: Yup.string().required('Please, provide a message.'),
+      message: Yup.string()
+        .max(
+          2000,
+          'Sorry, your message can only be up to 2000 characters long.'
+        )
+        .required('Please, provide a message.'),
       recaptcha: Yup.string().required(
         'Sorry, something went wrong. Please reload the page and try again.'
       ),
