@@ -8,6 +8,7 @@ import { GlobalStyles } from './globalStyles';
 import './fonts.css';
 
 const lightTheme = {
+  name: 'light',
   body: styles.colors.mainWhite,
   text: styles.colors.mainBlack,
   hover: {
@@ -29,6 +30,7 @@ const lightTheme = {
 };
 
 const darkTheme = {
+  name: 'dark',
   body: styles.colors.mainBlack,
   text: styles.colors.mainWhite,
   hover: {

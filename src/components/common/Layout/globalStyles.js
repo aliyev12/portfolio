@@ -12,6 +12,22 @@ export const GlobalStyles = createGlobalStyle`
     transition: ${styles.transition};
   }
 
+  /* Below autofill styles are for disabling Chrome's autofill background color for inputs */
+  *:-webkit-autofill,
+  *:-webkit-autofill:hover,
+  *:-webkit-autofill:focus,
+  *:-webkit-autofill:active {
+    /* use animation hack, if you have hard styled input */
+    transition: all 5000s ease-in-out 0s;
+    transition-property: background-color, color;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  }
+
   html {
     font-size: 62.5%;
     -webkit-box-sizing: border-box;

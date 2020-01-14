@@ -1,22 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
-
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
-
 import { Logo } from 'components/common';
 import { Links, SideList } from './Links';
-import { styles } from 'utils';
 import { MenuButton, LogoWrapper, HeaderWrapper, StyledDrawer } from './styles';
 
 const drawerStatuses = {
@@ -30,6 +17,7 @@ export const Header = ({ theme, toggleTheme }) => {
   const toggleDrawer = status => e => {
     if (e.type === 'keydown' && (e.key === 'Tab' || e.key === 'Shift')) return;
     setDrawerStatus(status);
+    console.log('in func');
   };
 
   return (
@@ -42,7 +30,6 @@ export const Header = ({ theme, toggleTheme }) => {
           </LogoWrapper>
           <Links theme={theme} toggleTheme={toggleTheme} />
           <MenuButton
-            // edge="starts"
             aria-label="menu"
             className="menu-button"
             onClick={toggleDrawer(drawerStatuses.open)}
@@ -62,6 +49,12 @@ export const Header = ({ theme, toggleTheme }) => {
           closeDrawer={toggleDrawer(drawerStatuses.closed)}
           theme={theme}
           toggleTheme={toggleTheme}
+          handleListClick={async pageName => {
+            await setDrawerStatus(drawerStatuses.closed);
+            const page = document.querySelector(pageName);
+            if (page)
+              page.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }}
         />
       </StyledDrawer>
     </HeaderWrapper>

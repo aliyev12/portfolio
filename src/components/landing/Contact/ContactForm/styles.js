@@ -28,6 +28,7 @@ export const StyledForm = styled(Form)`
         color: ${({ theme }) => theme.text};
         font-size: 1.5rem;
       }
+
     }
 
     .MuiOutlinedInput-notchedOutline {

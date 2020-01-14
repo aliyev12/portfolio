@@ -8,6 +8,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import Alert from '@material-ui/lab/Alert';
 import { TextField } from 'formik-material-ui';
 import Button from '@material-ui/core/Button';
+import styled from 'styled-components';
 
 const ContactForm = props => {
   const {
@@ -20,6 +21,8 @@ const ContactForm = props => {
     submitCount,
   } = props;
   const [displaySuccessMsg, setDisplaySuccessMsg] = React.useState(false);
+  const [theme, setTheme] = React.useState();
+
   React.useEffect(() => {
     if (submitCount > 0) {
       setDisplaySuccessMsg(true);
@@ -28,6 +31,11 @@ const ContactForm = props => {
       }, 20000);
     }
   }, [submitCount]);
+
+  // This component is only for extracting theme object from styled-components and using its props
+  const ThemeExtractor = styled.span`
+    ${({ theme }) => theme && setTheme(theme)}
+  `;
 
   return (
     <StyledForm
@@ -38,7 +46,7 @@ const ContactForm = props => {
       data-netlify-honeypot="bot-field"
     >
       {displaySuccessMsg === true ? (
-        <Alert severity="success">
+        <Alert severity="success" id="success-message">
           Thank you! Your message has been successfully sent, I will get back to
           you ASAP!
         </Alert>
@@ -79,12 +87,15 @@ const ContactForm = props => {
           component={TextField}
           error={touched.message && errors.message}
         />
+        {/* All that ThemeExtractor does is extracting theme object from styled-components global theme */}
+        <ThemeExtractor />
         {values.name && values.email && values.message && (
           <FastField
             component={Recaptcha}
             sitekey={process.env.GATSBY_SITE_KEY}
             name="recaptcha"
             className="contact-form-input"
+            theme={theme && theme.name ? theme.name : 'dark'}
             onChange={value => setFieldValue('recaptcha', value)}
           />
         )}
@@ -152,6 +163,10 @@ export default withFormik({
       });
       await setSubmitting(false);
       await setFieldValue('success', true);
+      const successMessageElement = document.getElementById('success-message');
+      if (successMessageElement) {
+        successMessageElement.scrollIntoView({ behavior: 'smooth' });
+      }
       await resetForm();
       // setTimeout(() => resetForm(), 3000);
     } catch (err) {
