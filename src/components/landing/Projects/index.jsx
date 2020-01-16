@@ -4,6 +4,8 @@ import { ProjectsWrapper, Grid } from './styles';
 import { nodes } from 'utils/helpers';
 import ProjectCard from './ProjectCard';
 import formatProjects from './formatProjects';
+import usePagination from './usePagination';
+import Pagination from './Pagination';
 
 export const PORTFOLIOS = graphql`
   query PORTFOLIOS {
@@ -69,6 +71,12 @@ export const Projects = () => {
   const data = useStaticQuery(PORTFOLIOS);
   // Passing graphql data to formatting function that will shape data for projects
   const projects = formatProjects(nodes(data.portfolios), nodes(data.media));
+  const {
+    paginatedProjects,
+    numPages,
+    currentPage,
+    handlePageClick,
+  } = usePagination([...projects, ...projects, ...projects]);
   console.log('projects = ', projects);
 
   return (
@@ -76,10 +84,15 @@ export const Projects = () => {
       <main>
         <h1 className="project-page-title">Projects</h1>
         <Grid>
-          {projects.map(project => (
+          {paginatedProjects.map(project => (
             <ProjectCard key={project.id} {...project} />
           ))}
         </Grid>
+        <Pagination
+          numPages={numPages}
+          currentPage={currentPage}
+          handlePageClick={handlePageClick}
+        />
       </main>
     </ProjectsWrapper>
   );

@@ -56,6 +56,7 @@ const ContactForm = props => {
         <FastField
           label="Full Name"
           name="name"
+          id="full-name"
           aria-label="name"
           type="text"
           fullWidth
@@ -68,6 +69,7 @@ const ContactForm = props => {
         <FastField
           label="Email"
           name="email"
+          id="email-address"
           aria-label="email"
           type="email"
           fullWidth
@@ -80,6 +82,7 @@ const ContactForm = props => {
         <FastField
           label="Message"
           name="message"
+          id="contact-message"
           aria-label="message"
           rows="4"
           multiline
