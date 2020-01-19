@@ -92,7 +92,6 @@ const Pagination = ({ numPages, currentPage, handlePageClick }) => {
                 disabled={currentPage === i - 1}
                 className={`page-btn ${currentPage === i - 1 ? 'active' : ''}`}
               >
-                {console.log('i = ', i)}
                 {i}
               </Button>
             );

@@ -1,56 +1,82 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import { Header } from 'components/theme';
+import Typography from '@material-ui/core/Typography';
 import { Layout, SEO } from 'components/common';
 import styled from 'styled-components';
 import TechStack from './TechStack';
+import ProjectLinks from './ProjectLinks';
 import { imgSrc } from 'utils/helpers';
+import { formatProject } from '../../components/landing/Projects/formatProjects';
+import { helpers, styles } from 'utils';
 
 const FeaturedImage = styled(Img)`
-  max-width: 30rem;
   margin: 1.6rem 0;
 `;
 
 const PortfolioWrapper = styled.section`
-  .page-title {
-    .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .main-content {
+    margin: 0 5rem;
+    max-width: 100rem;
+
+    .page-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 4rem 0 2rem 0;
+
+      .title {
+        color: ${({ theme }) => theme.text};
+      }
     }
-  }
-  .tech-stack-container {
-  }
-  .links-container {
-  }
-  .description-container {
-  }
-  .images-container {
-  }
-  .get-in-touch {
+    .short-description {
+      font-size: 1.6rem;
+      margin: 3rem 0;
+    }
+    .tech-stack-container {
+    }
+    .description-container {
+    }
+    .images-container {
+    }
+    .get-in-touch {
+    }
   }
 `;
 
-const Portfolio = ({ pageContext, data: { portfolio } }) => {
-  console.log('Portfolio = ', pageContext);
-  console.log('portfolio = ', portfolio);
+const Portfolio = ({ data: { portfolio, media } }) => {
+  const project = formatProject(portfolio, helpers.nodes(media));
+  console.log('project = ', project);
+
   return (
     <Layout>
       <SEO />
-      <Header />
       <PortfolioWrapper>
-        <div className="page-title">
-          <div className="title">{portfolio.title}</div>
+        <div className="main-content">
+          <div className="page-title">
+            <Typography variant="h1" gutterBottom className="title">
+              {portfolio.title}
+            </Typography>
+          </div>
+          <TechStack techStack={project.techStack} />
+          <h3 className="short-description">{project.shortDescription}</h3>
+          <ProjectLinks />
+          <div className="images-container">
+            <FeaturedImage
+              fluid={imgSrc(portfolio.media, 'fluid')}
+              alt={portfolio.media.alt}
+            />
+          </div>
+          <div className="description-container">
+            <div dangerouslySetInnerHTML={{ __html: project.content }} />
+          </div>
+          <div className="get-in-touch"></div>
         </div>
-        <TechStack />
-        <div className="links-container">links-container</div>
-        <div className="description-container">
-          <div dangerouslySetInnerHTML={{ __html: portfolio.content }} />
-        </div>
-        <div className="images-container">
-          <FeaturedImage
-            fluid={imgSrc(portfolio.media, 'fluid')}
-            alt={portfolio.media.alt}
-          />
-        </div>
-        <div className="get-in-touch"></div>
       </PortfolioWrapper>
     </Layout>
   );

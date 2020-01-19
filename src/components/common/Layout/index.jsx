@@ -1,5 +1,5 @@
 import React from 'react';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Footer, Header } from 'components/theme';
 import useDarkMode from './useDarkMode';
 import { styles } from 'utils';
@@ -51,6 +51,10 @@ const darkTheme = {
   `,
 };
 
+const Page = styled.div`
+  height: 100vh;
+`;
+
 export const Layout = ({ children }) => {
   const [theme, toggleTheme] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
@@ -58,9 +62,11 @@ export const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
-      <Header theme={theme} toggleTheme={toggleTheme} />
-      {children}
-      <Footer />
+      <Page>
+        <Header theme={theme} toggleTheme={toggleTheme} />
+        {children}
+        <Footer />
+      </Page>
     </ThemeProvider>
   );
 };

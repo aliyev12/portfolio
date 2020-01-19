@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
-    transition: ${styles.transition};
+    /* transition: ${styles.transition}; */
   }
 
   /* Below autofill styles are for disabling Chrome's autofill background color for inputs */
