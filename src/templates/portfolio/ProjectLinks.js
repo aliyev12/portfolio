@@ -7,15 +7,49 @@ import { styles } from 'utils';
 
 const LinksWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin: 3rem 0;
+  margin: 1rem 0;
   .project-link-btn {
     background-color: ${styles.colors.mainBlue};
     color: ${styles.colors.mainWhite};
     transition: ${styles.transition};
+    margin: 1rem 0;
+
+    .desktop {
+      display: inline;
+    }
+    .mobile {
+      display: none;
+    }
 
     &:hover {
       color: ${styles.colors.mainBlack};
+    }
+  }
+
+  @media (min-width: ${styles.breakpoints.sm}) {
+    flex-direction: row;
+    .project-link-btn {
+      .desktop {
+        display: none;
+      }
+      .mobile {
+        display: inline;
+      }
+    }
+  }
+  @media (min-width: ${styles.breakpoints.md}) {
+    flex-direction: row;
+    margin: 3rem 0;
+
+    .project-link-btn {
+      .desktop {
+        display: inline;
+      }
+      .mobile {
+        display: none;
+      }
     }
   }
 `;
@@ -27,7 +61,7 @@ const ProjectLinks = ({
   frontendRepo,
   backendRepo,
 }) => {
-  const button = (text, href, Icon) => (
+  const button = (desktopText, mobileText, href, Icon) => (
     <Button
       variant="contained"
       size="large"
@@ -37,19 +71,20 @@ const ProjectLinks = ({
       rel="noopener noreferrer"
       target="_blank"
     >
-      {text}
+      <span className="desktop">{desktopText}</span>
+      <span className="mobile">{mobileText}</span>
     </Button>
   );
 
   return (
     <LinksWrapper>
-      {button('Visit the website', projectUrl, OpenInNewIcon)}
+      {button('Visit the website', 'Site', projectUrl, OpenInNewIcon)}
       {isMonoRepo ? (
-        button('Github Repo', mainRepo, GitHubIcon)
+        button('Github Repo', 'Repo', mainRepo, GitHubIcon)
       ) : (
         <>
-          {button('Frontend Github Repo', frontendRepo, GitHubIcon)}
-          {button('Backend Github Repo', backendRepo, GitHubIcon)}
+          {button('Frontend Github Repo', 'Client', frontendRepo, GitHubIcon)}
+          {button('Backend Github Repo', 'Server', backendRepo, GitHubIcon)}
         </>
       )}
     </LinksWrapper>
