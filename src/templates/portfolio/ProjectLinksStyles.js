@@ -25,7 +25,8 @@ export const LinksWrapper = styled.div`
       color: ${styles.colors.mainWhite};
 
       &:hover {
-        color: ${styles.colors.mainBlack};
+        color: ${({ theme }) => theme.text};
+        background-color: ${({ theme }) => theme.body};
       }
     }
 
@@ -56,7 +57,6 @@ export const LinksWrapper = styled.div`
   }
   @media (min-width: ${styles.breakpoints.md}) {
     flex-direction: row;
-    /* margin: 3rem 0; */
 
     .project-link-btn {
       .desktop {

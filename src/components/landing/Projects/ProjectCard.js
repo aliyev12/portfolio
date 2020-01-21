@@ -1,19 +1,16 @@
 import React from 'react';
 import { navigate } from 'gatsby';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkIcon from '@material-ui/icons/Link';
-import IconButton from '@material-ui/core/IconButton';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Img from 'gatsby-image';
-import { nodes, imgSrc } from 'utils/helpers';
-import styled, { ThemeConsumer } from 'styled-components';
+import Img from 'gatsby-image/withIEPolyfill';
+import { imgSrc } from 'utils/helpers';
+import styled from 'styled-components';
 import { styles } from 'utils';
 
 const StyledCard = styled(Card)`
@@ -23,6 +20,15 @@ const StyledCard = styled(Card)`
   box-shadow: ${({ theme }) => theme.boxShadow} !important;
 
   .card-btn {
+    .gatsby-image-wrapper {
+      max-height: 40rem;
+      display: flex;
+      justify-content: center;
+
+      img {
+      }
+    }
+
     .project-name {
       color: ${({ theme }) => theme.text};
       margin: 2rem 0;
@@ -43,6 +49,18 @@ const StyledCard = styled(Card)`
 
   @media (min-width: ${styles.breakpoints.sm}) {
     width: 30rem;
+
+    .card-btn {
+      .gatsby-image-wrapper {
+        max-height: 20rem;
+        display: flex;
+        justify-content: center;
+
+        img {
+          object-position: top !important;
+        }
+      }
+    }
   }
 `;
 
@@ -63,7 +81,11 @@ const ProjectCard = ({
         className="card-btn"
         onClick={() => navigate(`/portfolio/${slug}`)}
       >
-        <Img fluid={imgSrc(media, 'fluid')} alt={media.alt} />
+        <Img
+          fluid={imgSrc(media, 'fluid')}
+          alt={media.alt}
+          objectPosition="top"
+        />
         <CardContent>
           <Typography
             gutterBottom

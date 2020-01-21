@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from 'gatsby';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -21,10 +22,10 @@ export const Header = ({ theme, toggleTheme }) => {
   };
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper id="header">
       <AppBar position="static" className="nav-bar">
         <Toolbar className="toolbar">
-          <LogoWrapper title="Go to Main Page" fade to="/">
+          <LogoWrapper title="Go to Main Page" to="/">
             <Logo width="57" height="57" />
             <span className="visually-hidden">Home Page</span>
           </LogoWrapper>
@@ -51,9 +52,13 @@ export const Header = ({ theme, toggleTheme }) => {
           toggleTheme={toggleTheme}
           handleListClick={async pageName => {
             await setDrawerStatus(drawerStatuses.closed);
-            const page = document.querySelector(pageName);
-            if (page)
-              page.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (window.location.pathname === '/') {
+              const page = document.querySelector(pageName);
+              if (page)
+                page.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+              navigate(`/${pageName}`);
+            }
           }}
         />
       </StyledDrawer>

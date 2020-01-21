@@ -131,3 +131,15 @@ GatsbyImageSharpFluid_tracedSVG
 GatsbyImageSharpFluid_withWebp
 GatsbyImageSharpFluid_withWebp_noBase64
 GatsbyImageSharpFluid_withWebp_tracedSVG
+
+1. Add arrows left and right to go from project to project
+2. Add carousel sort of a thing for multiple images on project page
+3. Add learn more absolute button over project card on main page
+
+~~
+
+- Figure out how to set a height of image container on project pages based on featured image size. One of the options would be to go and make all images of same aspect ratio if nothing else works.
+
+- hide back/next for images carousel if there is only one image.
+
+- On home page, fix key issue for an Image

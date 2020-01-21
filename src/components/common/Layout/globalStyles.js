@@ -44,7 +44,8 @@ export const GlobalStyles = createGlobalStyle`
       flex-direction: column;
       background: ${({ theme }) => theme.body};
       color: ${({ theme }) => theme.text};
-      transition: ${styles.transition};
+      overflow: auto;
+      /* transition: ${styles.transition}; */
 
       h1 {
         font-size: 3.2rem;

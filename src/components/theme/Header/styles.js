@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import IconButton from '@material-ui/core/IconButton';
 import Drawer from '@material-ui/core/Drawer';
-import Link from 'gatsby-plugin-transition-link/AniLink';
+import { Link } from 'gatsby';
+// import Link from 'gatsby-plugin-transition-link/AniLink';
 import { styles } from 'utils';
 
 export const MenuButton = styled(IconButton)`

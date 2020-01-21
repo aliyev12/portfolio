@@ -69,7 +69,6 @@ export const PORTFOLIOS = graphql`
 
 export const Projects = () => {
   const data = useStaticQuery(PORTFOLIOS);
-  console.log('all projects = ', data);
   // Passing graphql data to formatting function that will shape data for projects
   const projects = formatProjects(nodes(data.portfolios), nodes(data.media));
   const {

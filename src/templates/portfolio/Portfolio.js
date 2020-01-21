@@ -1,6 +1,6 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import Img from 'gatsby-image';
+import Img from 'gatsby-image/withIEPolyfill';
 import { Layout, SEO } from 'components/common';
 import TechStack from './TechStack';
 import Chips from './Chips';
@@ -9,6 +9,7 @@ import { imgSrc } from 'utils/helpers';
 import { formatProject } from '../../components/landing/Projects/formatProjects';
 import { helpers } from 'utils';
 import { PortfolioWrapper, ImgPaper } from './PortfolioStyles';
+import Carousel from './Carousel';
 
 const containerWidth = 900;
 
@@ -33,10 +34,15 @@ const Portfolio = ({ data: { portfolio, media } }) => {
           <h3 className="short-description">{project.shortDescription}</h3>
           <ProjectLinks {...project} />
           <ImgPaper elevation={3}>
-            <Img
+            <Carousel
+              featuredMedia={project.media}
+              additionalExist={project.addingAdditionalImages}
+              additionalImages={project.additionalImages}
+            />
+            {/* <Img
               fluid={imgSrc(portfolio.media, 'fluid')}
               alt={portfolio.media.alt}
-            />
+            /> */}
           </ImgPaper>
           <div className="description-container">
             <h3>About {portfolio.title}</h3>

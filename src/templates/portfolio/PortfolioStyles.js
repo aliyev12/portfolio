@@ -9,6 +9,10 @@ export const ImgPaper = styled(Paper)`
   background-color: ${({ theme }) => theme.body} !important;
 
   .gatsby-image-wrapper {
+    /* max-height: 30rem; */
+
+    img {
+    }
   }
 `;
 

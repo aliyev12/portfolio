@@ -27,12 +27,35 @@ export const Content = styled.main`
   align-items: center;
 
   color: ${({ theme }) => theme.text};
-  border: 0.1rem solid ${styles.colors.mainBlue};
   border-radius: 0.5rem;
   padding: 1rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    border-top: 0.1rem solid ${styles.colors.mainBlue};
+    position: absolute;
+    width: 90rem;
+    top: 38px;
+    z-index: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 175px;
+    background-color: ${({ theme }) => theme.body};
+    padding: 1rem;
+    top: 28px;
+    z-index: 2;
+    border-left: 0.1rem solid ${styles.colors.mainBlue};
+    border-right: 0.1rem solid ${styles.colors.mainBlue};
+    transform: skewX(-24deg);
+  }
 
   .title {
     display: none;
+    z-index: 3;
   }
 
   .logos-container {
@@ -42,7 +65,7 @@ export const Content = styled.main`
     background-color: white;
     border-radius: 1rem;
     box-shadow: ${styles.boxShadow.dark};
-    margin: 2rem 0;
+    margin: 1rem 0;
     width: 100%;
     padding: 1rem;
 

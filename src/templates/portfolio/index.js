@@ -3,11 +3,17 @@ import { graphql } from 'gatsby';
 import { PortfolioProvider } from './portfolioContext';
 import Portfolio from './Portfolio';
 
-export default props => (
-  <PortfolioProvider>
-    <Portfolio {...props} />
-  </PortfolioProvider>
-);
+export default props => {
+  React.useEffect(() => {
+    window.location = `#header`;
+  }, []);
+
+  return (
+    <PortfolioProvider>
+      <Portfolio {...props} />
+    </PortfolioProvider>
+  );
+};
 
 export const query = graphql`
   query PORTFOLIO($id: String) {
@@ -21,6 +27,10 @@ export const query = graphql`
       media: featured_media {
         url: source_url
         alt: alt_text
+        details: media_details {
+          width
+          height
+        }
         localFile {
           childImageSharp {
             fluid {
