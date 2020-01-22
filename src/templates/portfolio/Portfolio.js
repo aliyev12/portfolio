@@ -1,11 +1,9 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import Img from 'gatsby-image/withIEPolyfill';
 import { Layout, SEO } from 'components/common';
 import TechStack from './TechStack';
 import Chips from './Chips';
 import ProjectLinks from './ProjectLinks';
-import { imgSrc } from 'utils/helpers';
 import { formatProject } from '../../components/landing/Projects/formatProjects';
 import { helpers } from 'utils';
 import { PortfolioWrapper, ImgPaper } from './PortfolioStyles';
@@ -15,7 +13,7 @@ const containerWidth = 900;
 
 const Portfolio = ({ data: { portfolio, media } }) => {
   const project = formatProject(portfolio, helpers.nodes(media));
-  console.log('project = ', project);
+  // console.log('project = ', project);
 
   return (
     <Layout>

@@ -9,12 +9,15 @@ export const nodes = ({ edges }) => {
 };
 
 export const imgSrc = (media, type) => {
-  const { localFile } = media;
   let src = {};
-  if (localFile && localFile.childImageSharp) {
-    const sharp = localFile.childImageSharp;
-    if (sharp[type]) src = sharp[type];
+  if (media) {
+    const { localFile } = media;
+    if (localFile && localFile.childImageSharp) {
+      const sharp = localFile.childImageSharp;
+      if (sharp[type]) src = sharp[type];
+    }
   }
+
   return src;
 };
 

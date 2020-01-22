@@ -28,6 +28,16 @@ const CarouselWrapper = styled.div`
     overflow: hidden;
     width: 100%;
   }
+
+  .mobile-stepper {
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
+    padding-bottom: 0;
+
+    .switch-slide-btn {
+      color: ${({ theme }) => theme.text};
+    }
+  }
 `;
 
 const Carousel = ({ featuredMedia, additionalExist, additionalImages }) => {
@@ -49,7 +59,6 @@ const Carousel = ({ featuredMedia, additionalExist, additionalImages }) => {
       ? additionalImages.length + 1
       : 1;
 
-  console.log('maxSteps = ', maxSteps);
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   };
@@ -109,36 +118,45 @@ const Carousel = ({ featuredMedia, additionalExist, additionalImages }) => {
       >
         {images && images.length ? images : <div></div>}
       </AutoPlaySwipeableViews>
-      <MobileStepper
-        steps={maxSteps}
-        position="static"
-        variant="text"
-        activeStep={activeStep}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-          >
-            Next
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-            Back
-          </Button>
-        }
-      />
+      {additionalExist && (
+        <MobileStepper
+          className="mobile-stepper"
+          steps={maxSteps}
+          position="static"
+          variant="text"
+          activeStep={activeStep}
+          nextButton={
+            <Button
+              size="small"
+              onClick={handleNext}
+              disabled={activeStep === maxSteps - 1}
+              className="switch-slide-btn"
+            >
+              Next
+              {theme.direction === 'rtl' ? (
+                <KeyboardArrowLeft />
+              ) : (
+                <KeyboardArrowRight />
+              )}
+            </Button>
+          }
+          backButton={
+            <Button
+              size="small"
+              onClick={handleBack}
+              disabled={activeStep === 0}
+              className="switch-slide-btn"
+            >
+              {theme.direction === 'rtl' ? (
+                <KeyboardArrowRight />
+              ) : (
+                <KeyboardArrowLeft />
+              )}
+              Back
+            </Button>
+          }
+        />
+      )}
     </CarouselWrapper>
   );
 };

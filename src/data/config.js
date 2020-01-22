@@ -1,6 +1,5 @@
 module.exports = {
   defaultTitle: 'Abdul Aliyev',
-  logo: 'https://aaliyev.com/wp-content/uploads/2019/03/mylogo-300dpi-180x180.png',
   author: 'Abdul Aliyev',
   url: 'https://aaliyev.com',
   legalName: 'Abdul Aliyev',
@@ -11,21 +10,21 @@ module.exports = {
     linkedin: 'https://www.linkedin.com/in/aliyevabdul',
   },
   googleAnalyticsID: 'UA-88875900-4',
-  themeColor: '#6b63ff',
-  backgroundColor: '#6b63ff',
+  themeColor: '#4a86ff',
+  backgroundColor: '#ffffff',
   social: {
     twitter: '@AbdulAliyev2',
   },
   address: {
-    city: 'City',
-    region: 'Region',
-    country: 'Country',
-    zipCode: 'ZipCode',
+    city: 'Washington',
+    region: 'North East',
+    country: 'USA',
+    zipCode: '20024',
   },
   contact: {
-    email: 'email',
-    phone: 'phone number',
+    email: 'dev7c4@gmail.com',
+    phone: '000-000-0000',
   },
-  foundingDate: '2018',
+  foundingDate: '2020',
   recaptcha_key: '6Lcs6lQUAAAAAEwhNH2IsobIe2csdda4TU3efpMN',
 };
