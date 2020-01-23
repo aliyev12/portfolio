@@ -9,8 +9,6 @@ export const ImgPaper = styled(Paper)`
   background-color: ${({ theme }) => theme.body} !important;
 
   .gatsby-image-wrapper {
-    /* max-height: 30rem; */
-
     img {
     }
   }
@@ -18,13 +16,10 @@ export const ImgPaper = styled(Paper)`
 
 export const PortfolioWrapper = styled.section`
   width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  padding: 0 1.5rem;
 
   .main-content {
-    margin: 0 1.5rem;
+    margin: 0 auto;
     max-width: ${({ containerWidth }) => containerWidth}px;
 
     .page-title {
@@ -74,14 +69,14 @@ export const PortfolioWrapper = styled.section`
   }
 
   @media (min-width: ${styles.breakpoints.sm}) {
+    padding: 0 3rem;
     .main-content {
-      margin: 0 3rem;
     }
   }
 
   @media (min-width: ${styles.breakpoints.md}) {
+    padding: 0 5rem;
     .main-content {
-      margin: 0 5rem;
       .page-title {
         display: flex;
         justify-content: center;

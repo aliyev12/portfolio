@@ -37,10 +37,6 @@ const Portfolio = ({ data: { portfolio, media } }) => {
               additionalExist={project.addingAdditionalImages}
               additionalImages={project.additionalImages}
             />
-            {/* <Img
-              fluid={imgSrc(portfolio.media, 'fluid')}
-              alt={portfolio.media.alt}
-            /> */}
           </ImgPaper>
           <div className="description-container">
             <h3>About {portfolio.title}</h3>
@@ -49,7 +45,6 @@ const Portfolio = ({ data: { portfolio, media } }) => {
           <div className="chips-container">
             <Chips stack={project.techStack} specialClass="mobile-chips" />
           </div>
-
           <div className="get-in-touch"></div>
         </div>
       </PortfolioWrapper>

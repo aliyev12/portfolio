@@ -1,2 +1,2 @@
 # Redirect default Netlify subdomain to primary domain
-https://gatsby-portfolio-dev.netlify.com/* https://portfolio.smakosh.com/:splat 301!
+https://abdul-aliyev-portfolio.netlify.com/* https://aaliyev.com/:splat 301!
