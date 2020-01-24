@@ -14,6 +14,7 @@ import styled from 'styled-components';
 import { styles } from 'utils';
 
 const StyledCard = styled(Card)`
+  position: relative;
   width: 100%;
   background-color: ${({ theme }) => theme.body} !important;
   color: ${({ theme }) => theme.text};
@@ -37,6 +38,38 @@ const StyledCard = styled(Card)`
       color: ${({ theme }) => theme.text};
       font-size: 1.2rem;
       line-height: 2rem;
+    }
+
+    &::before {
+      content: 'LEARN MORE';
+      position: absolute;
+      top: 73px;
+      left: 0;
+      right: 0;
+      white-space: nowrap;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      word-spacing: 3px;
+      line-height: 1;
+      opacity: 0.75;
+      -webkit-font-smoothing: antialiased;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 17px 18px;
+      border-radius: 5px;
+      width: 155px;
+      opacity: 0;
+      transition: ${styles.transition};
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
     }
   }
 
