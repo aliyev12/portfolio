@@ -4,7 +4,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Logo } from 'components/common';
-import { Links, SideList } from './Links';
+import Links from './Links';
+import SideList from './SideList';
 import { MenuButton, LogoWrapper, HeaderWrapper, StyledDrawer } from './styles';
 
 const drawerStatuses = {
