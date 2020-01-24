@@ -185,6 +185,7 @@ export default withFormik({
       await resetForm();
       // setTimeout(() => resetForm(), 3000);
     } catch (err) {
+      console.log('err = ', err);
       setSubmitting(false);
       setFieldValue('success', false);
       alert(

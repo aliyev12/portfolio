@@ -19,7 +19,14 @@ export default () => {
     if (localTheme) {
       setTheme(localTheme);
     } else {
-      window.localStorage.setItem('theme', 'light');
+      if (
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      ) {
+        setTheme('dark');
+      } else {
+        window.localStorage.setItem('theme', 'light');
+      }
     }
   });
 
