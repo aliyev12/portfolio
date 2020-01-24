@@ -45,6 +45,8 @@ export const GlobalStyles = createGlobalStyle`
       background: ${({ theme }) => theme.body};
       color: ${({ theme }) => theme.text};
       overflow: auto;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
       /* transition: ${styles.transition}; */
 
       h1 {

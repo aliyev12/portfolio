@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 import { styles } from 'utils';
 
 export const MenuButton = styled(IconButton)`
-  margin-right: 2rem;
+  margin-right: 0;
   svg {
     color: ${({ theme }) => theme.text};
     font-size: 3rem;

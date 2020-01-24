@@ -27,10 +27,27 @@ export const CarouselWrapper = styled.div`
   .slick-slider {
     .slick-next,
     .slick-prev {
+      display: none;
+    }
+
+    .slick-dots {
+      bottom: -39px;
+    }
+
+    .slick-dots li.slick-active button:before,
+    .slick-dots li button:before {
+      color: ${({ theme }) => theme.text};
+    }
+  }
+
+  @media (min-width: ${styles.breakpoints.sm}) {
+    .slick-next,
+    .slick-prev {
+      display: block;
       color: ${({ theme }) => theme.text};
       width: 5rem;
       height: 5rem;
-      z-index: 1;
+      z-index: 99;
       transition: ${styles.transition};
 
       path:nth-child(2) {
@@ -52,15 +69,6 @@ export const CarouselWrapper = styled.div`
 
     .slick-prev:before,
     .slick-next:before {
-      color: ${({ theme }) => theme.text};
-    }
-
-    .slick-dots {
-      bottom: -39px;
-    }
-
-    .slick-dots li.slick-active button:before,
-    .slick-dots li button:before {
       color: ${({ theme }) => theme.text};
     }
   }
