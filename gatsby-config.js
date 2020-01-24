@@ -72,7 +72,7 @@ module.exports = {
         icon: './static/favicon/favicon.png',
       },
     },
-    'gatsby-plugin-offline',
+    // 'gatsby-plugin-offline',
     {
       resolve: 'gatsby-source-wordpress',
       options: {
