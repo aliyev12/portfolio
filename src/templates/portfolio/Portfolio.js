@@ -13,7 +13,6 @@ const containerWidth = 900;
 
 const Portfolio = ({ data: { portfolio, media } }) => {
   const project = formatProject(portfolio, helpers.nodes(media));
-  // console.log('project = ', project);
 
   return (
     <Layout>

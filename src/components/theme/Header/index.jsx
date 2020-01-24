@@ -18,7 +18,6 @@ export const Header = ({ theme, toggleTheme }) => {
   const toggleDrawer = status => e => {
     if (e.type === 'keydown' && (e.key === 'Tab' || e.key === 'Shift')) return;
     setDrawerStatus(status);
-    console.log('in func');
   };
 
   return (

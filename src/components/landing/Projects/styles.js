@@ -1,4 +1,4 @@
-import styled, { ThemeConsumer } from 'styled-components';
+import styled from 'styled-components';
 import { styles } from 'utils';
 
 export const ProjectsWrapper = styled.div`

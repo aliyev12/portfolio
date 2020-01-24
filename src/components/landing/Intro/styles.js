@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import overlayIllustration from 'assets/illustrations/overlay_3.svg';
+import overlayIllustration from 'assets/illustrations/overlay_intro.svg';
 import { styles } from 'utils';
 
 export const IntroWrapper = styled.div`

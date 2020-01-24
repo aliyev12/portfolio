@@ -1,5 +1,5 @@
 module.exports = {
-  defaultTitle: 'Abdul Aliyev',
+  defaultTitle: 'Abdul Aliyev | Portfolio',
   author: 'Abdul Aliyev',
   url: 'https://aaliyev.com',
   legalName: 'Abdul Aliyev',
@@ -9,7 +9,7 @@ module.exports = {
     github: 'https://github.com/aliyev12',
     linkedin: 'https://www.linkedin.com/in/aliyevabdul',
   },
-  googleAnalyticsID: 'UA-88875900-4',
+  googleAnalyticsID: 'UA-156886553-1',
   themeColor: '#4a86ff',
   backgroundColor: '#ffffff',
   social: {
@@ -26,5 +26,5 @@ module.exports = {
     phone: '000-000-0000',
   },
   foundingDate: '2020',
-  recaptcha_key: '6Lcs6lQUAAAAAEwhNH2IsobIe2csdda4TU3efpMN',
+  recaptcha_key: '6LfMpc4UAAAAADCqvnVCL7Po6U_tqu1_BCipVXRb',
 };

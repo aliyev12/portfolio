@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { Footer, Header } from 'components/theme';
 import useDarkMode from './useDarkMode';
 import { styles } from 'utils';

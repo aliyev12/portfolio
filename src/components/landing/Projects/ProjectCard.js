@@ -12,7 +12,7 @@ import Img from 'gatsby-image/withIEPolyfill';
 import { imgSrc } from 'utils/helpers';
 import styled from 'styled-components';
 import { styles } from 'utils';
-// 880 x 560
+
 const StyledCard = styled(Card)`
   width: 100%;
   background-color: ${({ theme }) => theme.body} !important;
