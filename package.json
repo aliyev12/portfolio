@@ -9,6 +9,7 @@
     "@material-ui/icons": "^4.5.1",
     "@material-ui/lab": "^4.0.0-alpha.39",
     "@material-ui/styles": "^4.9.0",
+    "debounce": "^1.2.0",
     "formik": "2.0.10",
     "formik-material-ui": "^1.0.0",
     "gatsby": "2.18.17",
@@ -46,7 +47,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "play": "NODE_ENV=development NODE_TLS_REJECT_UNAUTHORIZED=0 GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "play": "NODE_ENV=development NODE_TLS_REJECT_UNAUTHORIZED=0 GATSBY_GRAPHQL_IDE=playground gatsby develop -H 0.0.0.0 -p 8000",
     "play-prod": "NODE_ENV=production NODE_TLS_REJECT_UNAUTHORIZED=0 GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "build": "gatsby build",
     "build-prod": "NODE_ENV=production gatsby build",

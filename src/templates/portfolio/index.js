@@ -5,8 +5,15 @@ import Portfolio from './Portfolio';
 
 export default props => {
   React.useEffect(() => {
-    window.location = `#header`;
-  }, []);
+    if (window.location.pathname !== '/') {
+      setTimeout(() => {
+        const header = document.getElementById('header');
+        if (header) {
+          header.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 40);
+    }
+  });
 
   return (
     <PortfolioProvider>

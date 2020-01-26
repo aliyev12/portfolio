@@ -32,6 +32,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
     
     body {
       display: flex;
@@ -45,9 +46,6 @@ export const GlobalStyles = createGlobalStyle`
       background: ${({ theme }) => theme.body};
       color: ${({ theme }) => theme.text};
       overflow: auto;
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
-      /* transition: ${styles.transition}; */
 
       h1 {
         font-size: 3.2rem;

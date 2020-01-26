@@ -24,7 +24,7 @@ export const Intro = () => {
   return (
     <IntroWrapper>
       <Main as={Container}>
-        <Details>
+        <Details id="intro-details">
           <h1 dangerouslySetInnerHTML={{ __html: siteMeta.name }} />
           <h2>{siteMeta.description}</h2>
         </Details>
