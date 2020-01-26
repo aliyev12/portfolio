@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import { LinksWrapper, MenuItem } from './styles';
 import Toggle from './Toggle';
 import { formatMenu } from './menuHelpers';
+import useScroll from './useScroll';
 
 export const MENU_ITEMS_LINKS = graphql`
   query {
@@ -26,23 +27,15 @@ export const MENU_ITEMS_LINKS = graphql`
 
 const Links = ({ theme, toggleTheme }) => {
   const data = useStaticQuery(MENU_ITEMS_LINKS);
+  const { navigateTo } = useScroll();
   const menuItems = formatMenu(data.menuItems);
-
-  const handleClick = elementId => {
-    if (window.location.pathname === '/') {
-      const page = document.querySelector(elementId);
-      if (page) page.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-      navigate(`/${elementId}`);
-    }
-  };
 
   return (
     <LinksWrapper>
       {menuItems.map(menuItem => (
         <MenuItem key={menuItem.id} className="menu-item">
           <Button
-            onClick={() => handleClick(menuItem.href)}
+            onClick={() => navigateTo(menuItem.href)}
             className="nav-link"
           >
             {menuItem.title}

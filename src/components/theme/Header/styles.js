@@ -15,11 +15,6 @@ export const MenuButton = styled(IconButton)`
     height: 3rem;
     transition: ${styles.transition};
   }
-
-  &:hover svg {
-    /* color: ${styles.colors.mainBlue}; */
-    transform: scale(1.3);
-  }
 `;
 
 export const LogoWrapper = styled(Link)`

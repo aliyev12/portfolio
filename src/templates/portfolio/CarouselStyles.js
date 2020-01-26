@@ -15,6 +15,7 @@ export const PrevArrow = ({ className, style, onClick }) => (
 export const CarouselWrapper = styled.div`
   max-width: 900px;
   flex-grow: 1;
+  padding-bottom: ${({ additionalExist }) => (additionalExist ? '0' : '1rem')};
 
   .img {
     max-height: ${({ featuredImgHeight }) => `${featuredImgHeight}px`};
@@ -31,7 +32,7 @@ export const CarouselWrapper = styled.div`
     }
 
     .slick-dots {
-      bottom: -39px;
+      bottom: -34px;
     }
 
     .slick-dots li.slick-active button:before,
@@ -69,6 +70,12 @@ export const CarouselWrapper = styled.div`
 
     .slick-prev:before,
     .slick-next:before {
+      color: ${({ theme }) => theme.text};
+    }
+  }
+
+  .play-pause-btn {
+    svg {
       color: ${({ theme }) => theme.text};
     }
   }

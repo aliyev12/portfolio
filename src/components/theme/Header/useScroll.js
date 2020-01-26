@@ -31,7 +31,7 @@ export default () => {
           page.scrollIntoView({ behavior: 'smooth', block: 'start' });
           setTimeout(() => {
             window.location.hash = pageName;
-          }, 500);
+          }, 700);
         }
       } else {
         navigate(`/${pageName}`);

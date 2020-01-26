@@ -9,15 +9,19 @@ const TechStack = ({ techStack }) => {
       <Content>
         <div className="title">Tech Stack</div>
         <div className="logos-container">
-          {techStack.slice(0, 7).map(logoKey => (
-            <img
-              key={logoKey}
-              src={logos[logoKey].img}
-              alt={logos[logoKey].alt}
-              title={logos[logoKey].alt}
-              width={logos[logoKey].width}
-            />
-          ))}
+          {techStack.slice(0, 7).map(logoKey => {
+            const key = Object.keys(logos).find(el => el === logoKey);
+            if (!key) return null;
+            return (
+              <img
+                key={logoKey}
+                src={logos[key].img}
+                alt={logos[key].alt}
+                title={logos[key].alt}
+                width={logos[key].width}
+              />
+            );
+          })}
         </div>
         <Chips stack={techStack} />
       </Content>
