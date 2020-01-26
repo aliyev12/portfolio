@@ -40,7 +40,7 @@ export const CarouselWrapper = styled.div`
     }
   }
 
-  @media (min-width: ${styles.breakpoints.sm}) {
+  @media (min-width: ${styles.breakpoints.md}) {
     .slick-next,
     .slick-prev {
       display: block;

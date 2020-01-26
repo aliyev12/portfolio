@@ -33,6 +33,7 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
     
     body {
       display: flex;

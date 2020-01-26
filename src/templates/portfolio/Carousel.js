@@ -16,6 +16,7 @@ const sliderSettings = {
   autoplay: true,
   autoplaySpeed: 2000,
   pauseOnHover: true,
+  pauseOnFocus: true,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
 };
