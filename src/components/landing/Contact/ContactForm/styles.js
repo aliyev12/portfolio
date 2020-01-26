@@ -7,6 +7,10 @@ export const StyledForm = styled(Form)`
   padding: 3rem;
   border-radius: 5px;
 
+  #contact-message {
+    line-height: 1.5;
+  }
+
   .MuiAlert-root {
     margin-bottom: 2rem;
     background-color: ${({ theme }) => theme.colors.successGreen};

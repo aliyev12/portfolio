@@ -46,7 +46,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "play": "NODE_ENV=development NODE_TLS_REJECT_UNAUTHORIZED=0 GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "play": "NODE_ENV=development NODE_TLS_REJECT_UNAUTHORIZED=0 GATSBY_GRAPHQL_IDE=playground gatsby develop -H 0.0.0.0 -p 8000",
     "build": "gatsby build",
     "start": "gatsby develop -o",
     "lint": "eslint .",
