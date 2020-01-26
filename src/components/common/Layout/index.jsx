@@ -50,7 +50,7 @@ const darkTheme = {
 const Page = styled.div`
   position: relative;
   overflow: auto;
-  height: 100vh;
+  height: 100%;
 `;
 
 export const StyledFab = styled(Fab)`
