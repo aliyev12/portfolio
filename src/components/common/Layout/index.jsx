@@ -88,6 +88,11 @@ export const Layout = ({ children }) => {
     }
   }, []);
 
+  React.useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [introDetailsEl]);
+
   const handleScroll = debounce(() => {
     if (introDetailsEl) {
       const bounding = introDetailsEl.getBoundingClientRect();
@@ -113,7 +118,7 @@ export const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
-      <Page onScroll={handleScroll}>
+      <Page>
         <Header theme={theme} toggleTheme={toggleTheme} />
         {children}
         <Footer />
