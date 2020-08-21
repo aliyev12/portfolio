@@ -28,17 +28,20 @@ const ChipsWrapper = styled.div`
 
 const Chips = ({ specialClass, stack }) => (
   <ChipsWrapper className={specialClass}>
-    {stack.slice(0, 7).map(logoKey => (
-      <Chip
-        key={`chip-${logoKey}`}
-        avatar={<Avatar>{logos[logoKey].alt[0].toUpperCase()}</Avatar>}
-        variant="outlined"
-        color="primary"
-        label={logos[logoKey].alt}
-        title={logos[logoKey].alt}
-        className="chip"
-      />
-    ))}
+    {stack
+      .slice(0, 7)
+      .filter((logoKey) => logos[logoKey] && logos[logoKey].alt)
+      .map((logoKey) => (
+        <Chip
+          key={`chip-${logoKey}`}
+          avatar={<Avatar>{logos[logoKey].alt[0].toUpperCase()}</Avatar>}
+          variant="outlined"
+          color="primary"
+          label={logos[logoKey].alt}
+          title={logos[logoKey].alt}
+          className="chip"
+        />
+      ))}
   </ChipsWrapper>
 );
 
