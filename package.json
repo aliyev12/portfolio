@@ -72,7 +72,7 @@
     "eslint-plugin-react": "7.17.0",
     "eslint-plugin-react-hooks": "2.3.0",
     "prettier": "1.19.1",
-    "yarn": "1.21.1",
+    "yarn": "1.22.0",
     "yarn-upgrade-all": "0.5.2"
   },
   "repository": {
