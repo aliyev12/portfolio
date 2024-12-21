@@ -1,0 +1,31 @@
+---
+import { GithubIcon, LinkedinIcon } from "astro-feather";
+---
+
+<footer class="my-8">
+  <div class="container mx-auto mt-8 max-w-screen-xl px-6">
+    <div>
+      <p class="text-center italic text-xs">
+        Copyright &copy; {new Date().getFullYear()} Abdul Aliyev
+      </p>
+    </div>
+    <div class="flex justify-center space-x-10 mt-8">
+      <a
+        href="https://github.com/aliyev12"
+        target="_blank"
+        title="Github Profile"
+      >
+        <GithubIcon />
+        <span class="sr-only">Github Profile</span>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/aliyevabdul"
+        target="_blank"
+        title="Linkedin Profile"
+      >
+        <LinkedinIcon />
+        <span class="sr-only">Linkedin Profile</span>
+      </a>
+    </div>
+  </div>
+</footer>

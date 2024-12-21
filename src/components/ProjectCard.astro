@@ -1,0 +1,55 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { ExternalLinkIcon, GithubIcon } from "astro-feather";
+
+const { project } = Astro.props;
+
+interface Props {
+  project: CollectionEntry<"project">;
+}
+---
+
+<div
+  class="w-full md:max-w-md mx-auto overflow-hidden shadow-lg dark:border dark:border-foreground"
+>
+  <div
+    class="border border-foreground mx-6 mt-6 flex items-center justify-center"
+  >
+    <a href={"/projects/" + project.slug}>
+      <img
+        src={"/images/" + project.data.thumbnail.url}
+        alt={project.data.thumbnail.alt}
+        class="w-full h-48 object-cover hover:opacity-75 transition duration-300 ease-in-out p-1"
+      />
+    </a>
+  </div>
+
+  <div class="p-6">
+    <h3 class="mb-6">
+      <a class="link" href={"/projects/" + project.slug}>{project.data.title}</a
+      >
+    </h3>
+    <p class="mb-6 leading-8">{project.data.excerpt}</p>
+    <ul class="flex space-x-6 items-center">
+      <li>
+        <a
+          href={`/projects/${project.slug}`}
+          class="flex items-center button"
+          title="Go to project details page"
+        >
+          Details
+        </a>
+      </li>
+      <li>
+        <a
+          href={project.data.githubRepoLinks[0]}
+          class="flex items-center button"
+          title="Visit project website"
+        >
+          <span class="mr-2">Visit</span>
+          <ExternalLinkIcon size={16} />
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
