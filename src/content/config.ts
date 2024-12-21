@@ -69,8 +69,21 @@ const validationCollection = defineCollection({
   }),
 });
 
+const emailCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    from: z.object({
+      name: z.string(),
+      email: z.string(),
+    }),
+    subject: z.string(),
+    text: z.string(),
+  }),
+});
+
 export const collections = {
   project: projectCollection,
   ui: uiCollection,
   validation: validationCollection,
+  email: emailCollection,
 };
