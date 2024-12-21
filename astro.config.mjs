@@ -17,11 +17,4 @@ export default defineConfig({
   ],
   output: "server",
   adapter: vercel(),
-  vite: {
-    resolve: {
-      alias: {
-        "@": path.resolve("./src"), // Map "@" to the "src" directory
-      },
-    },
-  },
 });

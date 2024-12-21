@@ -1,5 +1,4 @@
-import { SendEmail } from "@/services/sendEmail";
-import nodemailer from "nodemailer";
+import { SendEmail } from "../../services/SendEmail";
 
 export async function GET({ request }: any): Promise<Response> {
   const sendEmail = new SendEmail(["john@email.com"]);
