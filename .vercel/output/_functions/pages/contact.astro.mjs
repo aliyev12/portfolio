@@ -1,12 +1,12 @@
-import { c as createComponent, r as renderTemplate, a as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_sT88spq4.mjs';
+import { c as createComponent, r as renderTemplate, a as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_DZSLA_yu.mjs';
 import 'kleur/colors';
-import { $ as $$Separator, a as $$MainLayout } from '../chunks/MainLayout_CCpSfbxS.mjs';
+import { $ as $$Separator, a as $$MainLayout } from '../chunks/MainLayout_DPpbCi1w.mjs';
 import { jsx, jsxs } from 'react/jsx-runtime';
 import { useStore } from '@nanostores/react';
 import { atom } from 'nanostores';
 import React from 'react';
 import { Info, AlertCircle, CheckCircle } from 'react-feather';
-import { g as getEntry } from '../chunks/_astro_content_DEXzNKYa.mjs';
+import { g as getEntry } from '../chunks/_astro_content_jES5Kt6i.mjs';
 export { renderers } from '../renderers.mjs';
 
 const pageAlert = atom({ show: false, type: "info", message: "" });
@@ -22,7 +22,7 @@ const Alert = () => {
   React.useEffect(() => {
     if ($pageAlert.show) {
       if (alertRef?.current) {
-        alertRef.current.style.maxHeight = "60px";
+        alertRef.current.style.maxHeight = "80px";
       }
       setAlertContent({
         show: $pageAlert.show,
@@ -65,9 +65,9 @@ const Alert = () => {
   }
   function getColorClasses() {
     const alertTypeClasses = {
-      info: "text-blue-800 bg-blue-50 dark:bg-gray-900 dark:text-blue-100",
-      success: "bg-green-50 dark:bg-gray-900 dark:text-green-200",
-      error: "bg-red-50 dark:bg-gray-900 dark:text-red-200"
+      info: "text-blue-800 border-blue-300  bg-blue-50 dark:bg-gray-800 dark:text-blue-400 dark:border-blue-800",
+      success: "text-green-800 border-green-300 bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800",
+      error: "text-red-800 border-red-300 bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
     };
     return alertTypeClasses[$pageAlert.type || "info"];
   }
@@ -83,7 +83,7 @@ const Alert = () => {
       children: /* @__PURE__ */ jsxs(
         "div",
         {
-          className: `w-full flex items-center p-4 text-sm rounded-lg ${getColorClasses()}`,
+          className: `w-full flex items-center p-4 mb-4 text-sm rounded-lg border ${getColorClasses()}`,
           role: "alert",
           children: [
             getIcon(),
@@ -91,7 +91,7 @@ const Alert = () => {
               "$",
               alertContent.type
             ] }),
-            /* @__PURE__ */ jsx("p", { className: "ml-3", children: alertContent.message })
+            /* @__PURE__ */ jsx("p", { className: "ml-3 text-foreground", children: alertContent.message })
           ]
         }
       )

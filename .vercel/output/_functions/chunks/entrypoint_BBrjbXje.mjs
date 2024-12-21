@@ -1,7 +1,7 @@
-import { v as ROUTE_TYPE_HEADER, w as REROUTE_DIRECTIVE_HEADER, A as AstroError, x as i18nNoLocaleFoundInPath, y as ResponseSentError, z as MiddlewareNoDataOrNextCalled, B as MiddlewareNotAResponse, C as RewriteWithBodyUsed, G as originPathnameSymbol, H as GetStaticPathsRequired, J as InvalidGetStaticPathsReturn, K as InvalidGetStaticPathsEntry, O as GetStaticPathsExpectedParams, P as GetStaticPathsInvalidRouteParam, Q as PageNumberParamNotFound, S as decryptString, T as createSlotValueFromString, V as isAstroComponentFactory, r as renderTemplate, a as renderComponent, D as DEFAULT_404_COMPONENT, W as NoMatchingStaticPathFound, X as PrerenderDynamicEndpointPathCollide, Y as ReservedSlotName, Z as renderSlotToString, _ as renderJSX, $ as chunkToString, a0 as isRenderInstruction, a1 as ForbiddenRewrite, a2 as LocalsReassigned, a3 as AstroResponseHeadersReassigned, a4 as PrerenderClientAddressNotAvailable, a5 as clientAddressSymbol, a6 as ClientAddressNotAvailable, a7 as StaticClientAddressNotAvailable, a8 as ASTRO_VERSION, a9 as responseSentSymbol$1, aa as renderPage, ab as REWRITE_DIRECTIVE_HEADER_KEY, ac as REWRITE_DIRECTIVE_HEADER_VALUE, ad as renderEndpoint, ae as LocalsNotAnObject, af as REROUTABLE_STATUS_CODES } from './astro/server_sT88spq4.mjs';
+import { v as ROUTE_TYPE_HEADER, w as REROUTE_DIRECTIVE_HEADER, A as AstroError, x as i18nNoLocaleFoundInPath, y as ResponseSentError, z as MiddlewareNoDataOrNextCalled, B as MiddlewareNotAResponse, C as RewriteWithBodyUsed, G as originPathnameSymbol, H as GetStaticPathsRequired, J as InvalidGetStaticPathsReturn, K as InvalidGetStaticPathsEntry, O as GetStaticPathsExpectedParams, P as GetStaticPathsInvalidRouteParam, Q as PageNumberParamNotFound, S as decryptString, T as createSlotValueFromString, V as isAstroComponentFactory, r as renderTemplate, a as renderComponent, D as DEFAULT_404_COMPONENT, W as NoMatchingStaticPathFound, X as PrerenderDynamicEndpointPathCollide, Y as ReservedSlotName, Z as renderSlotToString, _ as renderJSX, $ as chunkToString, a0 as isRenderInstruction, a1 as ForbiddenRewrite, a2 as LocalsReassigned, a3 as AstroResponseHeadersReassigned, a4 as PrerenderClientAddressNotAvailable, a5 as clientAddressSymbol, a6 as ClientAddressNotAvailable, a7 as StaticClientAddressNotAvailable, a8 as ASTRO_VERSION, a9 as responseSentSymbol$1, aa as renderPage, ab as REWRITE_DIRECTIVE_HEADER_KEY, ac as REWRITE_DIRECTIVE_HEADER_VALUE, ad as renderEndpoint, ae as LocalsNotAnObject, af as REROUTABLE_STATUS_CODES } from './astro/server_DZSLA_yu.mjs';
 import { serialize, parse } from 'cookie';
 import { bold, red, yellow, dim, blue } from 'kleur/colors';
-import { g as getActionQueryString, d as deserializeActionResult, D as DEFAULT_404_ROUTE, a as default404Instance, N as NOOP_MIDDLEWARE_FN, e as ensure404Route } from './astro-designed-error-pages_DpBvSsuR.mjs';
+import { g as getActionQueryString, d as deserializeActionResult, D as DEFAULT_404_ROUTE, a as default404Instance, N as NOOP_MIDDLEWARE_FN, e as ensure404Route } from './astro-designed-error-pages_B7t2Ze49.mjs';
 import 'es-module-lexer';
 import 'clsx';
 import buffer from 'node:buffer';
@@ -2729,37 +2729,41 @@ const ASTRO_PATH_PARAM = 'x_astro_path';
 const ASTRO_LOCALS_HEADER = 'x-astro-locals';
 const ASTRO_MIDDLEWARE_SECRET_HEADER = 'x-astro-middleware-secret';
 
-var define_process_env_default = { TERM_PROGRAM: "vscode", NODE: "/usr/local/bin/node", INIT_CWD: "/Users/abdulaliyev/projects/portfolio", SHELL: "/bin/zsh", TERM: "xterm-256color", TMPDIR: "/var/folders/yn/5jzqtvgs7cqfwg_hlxbj1r0m0000gn/T/", npm_config_global_prefix: "/usr/local", TERM_PROGRAM_VERSION: "1.96.0", ZDOTDIR: "/Users/abdulaliyev", ORIGINAL_XDG_CURRENT_DESKTOP: "undefined", MallocNanoZone: "0", COLOR: "1", TERM_SESSION_ID: "C6B2F381-10C4-4AA6-A242-8209CF388EDB", npm_config_noproxy: "", npm_config_local_prefix: "/Users/abdulaliyev/projects/portfolio", USER: "abdulaliyev", COMMAND_MODE: "unix2003", npm_config_globalconfig: "/usr/local/etc/npmrc", SSH_AUTH_SOCK: "/private/tmp/com.apple.launchd.krr6aLs1Oq/Listeners", __CF_USER_TEXT_ENCODING: "0x1F5:0x0:0x0", npm_execpath: "/usr/local/lib/node_modules/npm/bin/npm-cli.js", PATH: "/Users/abdulaliyev/projects/portfolio/node_modules/.bin:/Users/abdulaliyev/projects/node_modules/.bin:/Users/abdulaliyev/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/Users/abdulaliyev/.bun/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/Users/abdulaliyev/.bun/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/Users/abdulaliyev/web-projects/flutter/flutter/bin:/Users/abdulaliyev/Developer/flutter/bin:/Users/abdulaliyev/.composer/vendor/bin:/Users/abdulaliyev/web-projects/flutter/flutter/bin:/Users/abdulaliyev/Developer/flutter/bin:/Users/abdulaliyev/.composer/vendor/bin", npm_package_json: "/Users/abdulaliyev/projects/portfolio/package.json", _: "/Users/abdulaliyev/projects/portfolio/node_modules/.bin/astro", LaunchInstanceID: "A8B666D8-C2B3-4E68-A9D0-181289A5376E", npm_config_userconfig: "/Users/abdulaliyev/.npmrc", npm_config_init_module: "/Users/abdulaliyev/.npm-init.js", USER_ZDOTDIR: "/Users/abdulaliyev", __CFBundleIdentifier: "com.microsoft.VSCode", npm_command: "run-script", PWD: "/Users/abdulaliyev/projects/portfolio", npm_lifecycle_event: "build", EDITOR: "vi", npm_package_name: "portfolio", LANG: "en_US.UTF-8", npm_config_npm_version: "10.9.0", BUN_INSPECT_CONNECT_TO: "unix:///var/folders/yn/5jzqtvgs7cqfwg_hlxbj1r0m0000gn/T/azo5n4xhx69.sock", XPC_FLAGS: "0x0", npm_config_node_gyp: "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js", npm_package_version: "0.0.1", XPC_SERVICE_NAME: "0", VSCODE_INJECTION: "1", HOME: "/Users/abdulaliyev", SHLVL: "4", npm_config_cache: "/Users/abdulaliyev/.npm", LOGNAME: "abdulaliyev", npm_lifecycle_script: "astro build", BUN_INSTALL: "/Users/abdulaliyev/.bun", npm_config_user_agent: "npm/10.9.0 node/v22.12.0 darwin x64 workspaces/false", SECURITYSESSIONID: "186a4", npm_node_execpath: "/usr/local/bin/node", npm_config_prefix: "/usr/local", COLORTERM: "truecolor", NODE_ENV: "production", RECAPTCHA_SITE_KEY: "6Ldl-6AqAAAAAI3ws-ZH-KeB0uAzmyI_nuDY6xAY", RECAPTCHA_SECRET_KEY: "6Ldl-6AqAAAAAGAkraw7gM0fttWvtlra5YER5whG", REACT_APP_SITE_KEY: "6Ldl-6AqAAAAAI3ws-ZH-KeB0uAzmyI_nuDY6xAY", REACT_APP_SECRET_KEY: "6Ldl-6AqAAAAAGAkraw7gM0fttWvtlra5YER5whG" };
+// Keep at the top
 const createExports = (manifest, { middlewareSecret, skewProtection }) => {
-  const app = new NodeApp(manifest);
-  const handler = async (req, res) => {
-    const url = new URL(`https://example.com${req.url}`);
-    const clientAddress = req.headers["x-forwarded-for"];
-    const localsHeader = req.headers[ASTRO_LOCALS_HEADER];
-    const middlewareSecretHeader = req.headers[ASTRO_MIDDLEWARE_SECRET_HEADER];
-    const realPath = req.headers[ASTRO_PATH_HEADER] ?? url.searchParams.get(ASTRO_PATH_PARAM);
-    if (typeof realPath === "string") {
-      req.url = realPath;
-    }
-    let locals = {};
-    if (localsHeader) {
-      if (middlewareSecretHeader !== middlewareSecret) {
-        res.statusCode = 403;
-        res.end("Forbidden");
-        return;
-      }
-      locals = typeof localsHeader === "string" ? JSON.parse(localsHeader) : JSON.parse(localsHeader[0]);
-    }
-    delete req.headers[ASTRO_MIDDLEWARE_SECRET_HEADER];
-    if (skewProtection && define_process_env_default.VERCEL_SKEW_PROTECTION_ENABLED === "1") {
-      req.headers["x-deployment-id"] = define_process_env_default.VERCEL_DEPLOYMENT_ID;
-    }
-    const webResponse = await app.render(req, { addCookieHeader: true, clientAddress, locals });
-    await NodeApp.writeResponse(webResponse, res);
-  };
-  return { default: handler };
+    const app = new NodeApp(manifest);
+    const handler = async (req, res) => {
+        const url = new URL(`https://example.com${req.url}`);
+        const clientAddress = req.headers['x-forwarded-for'];
+        const localsHeader = req.headers[ASTRO_LOCALS_HEADER];
+        const middlewareSecretHeader = req.headers[ASTRO_MIDDLEWARE_SECRET_HEADER];
+        const realPath = req.headers[ASTRO_PATH_HEADER] ?? url.searchParams.get(ASTRO_PATH_PARAM);
+        if (typeof realPath === 'string') {
+            req.url = realPath;
+        }
+        let locals = {};
+        if (localsHeader) {
+            if (middlewareSecretHeader !== middlewareSecret) {
+                res.statusCode = 403;
+                res.end('Forbidden');
+                return;
+            }
+            locals =
+                typeof localsHeader === 'string' ? JSON.parse(localsHeader) : JSON.parse(localsHeader[0]);
+        }
+        // hide the secret from the rest of user code
+        delete req.headers[ASTRO_MIDDLEWARE_SECRET_HEADER];
+        // https://vercel.com/docs/deployments/skew-protection#supported-frameworks
+        if (skewProtection && process.env.VERCEL_SKEW_PROTECTION_ENABLED === '1') {
+            req.headers['x-deployment-id'] = process.env.VERCEL_DEPLOYMENT_ID;
+        }
+        const webResponse = await app.render(req, { addCookieHeader: true, clientAddress, locals });
+        await NodeApp.writeResponse(webResponse, res);
+    };
+    return { default: handler };
 };
-function start() {
-}
+// HACK: prevent warning
+// @astrojs-ssr-virtual-entry (22:23) "start" is not exported by "dist/serverless/entrypoint.js", imported by "@astrojs-ssr-virtual-entry".
+function start() { }
 
 export { createExports as c, start as s };
