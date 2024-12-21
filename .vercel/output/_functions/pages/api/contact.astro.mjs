@@ -1,4 +1,4 @@
-import { g as getEntry } from '../../chunks/_astro_content_DEXzNKYa.mjs';
+import { g as getEntry } from '../../chunks/_astro_content_jES5Kt6i.mjs';
 import { z } from 'zod';
 export { renderers } from '../../renderers.mjs';
 
@@ -8,7 +8,7 @@ async function POST({ request }) {
     "contact-form"
   );
   const schema = z.object({
-    name: z.string().nonempty(val.name.required).min(4, { message: val.name.minLength }).max(100, { message: val.name.maxLength }),
+    name: z.string().nonempty(val.name.required).min(2, { message: val.name.minLength }).max(100, { message: val.name.maxLength }),
     email: z.string().nonempty(val.email.required).email({ message: val.email.pattern }).max(64, { message: val.email.maxLength }),
     message: z.string().nonempty(val.message.required).min(20, { message: val.message.minLength }).max(500, { message: val.message.maxLength }),
     recaptchaResponse: z.string().nonempty(val.recaptcha.required).max(5e3, { message: val.recaptcha.maxLength })

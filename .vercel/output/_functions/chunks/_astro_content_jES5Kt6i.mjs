@@ -2,7 +2,7 @@ import { Traverse } from 'neotraverse/modern';
 import pLimit from 'p-limit';
 import { r as removeBase, i as isRemotePath, p as prependForwardSlash } from './path_I7weJv-K.mjs';
 import { V as VALID_INPUT_FORMATS } from './consts_CJVA2lEV.mjs';
-import { A as AstroError, U as UnknownContentCollectionError, R as RenderUndefinedEntryError, c as createComponent, r as renderTemplate, u as unescapeHTML, f as renderUniqueStylesheet, g as renderScriptElement, h as createHeadAndContent, a as renderComponent } from './astro/server_sT88spq4.mjs';
+import { A as AstroError, U as UnknownContentCollectionError, R as RenderUndefinedEntryError, c as createComponent, r as renderTemplate, u as unescapeHTML, f as renderUniqueStylesheet, g as renderScriptElement, h as createHeadAndContent, a as renderComponent } from './astro/server_DZSLA_yu.mjs';
 import 'kleur/colors';
 import * as devalue from 'devalue';
 
@@ -97,7 +97,6 @@ function dataStoreSingleton() {
 const globalDataStore = dataStoreSingleton();
 
 const __vite_import_meta_env__ = {"ASSETS_PREFIX": undefined, "BASE_URL": "/", "DEV": false, "MODE": "production", "PROD": true, "SITE": undefined, "SSR": true};
-var define_process_env_default = { TERM_PROGRAM: "vscode", NODE: "/usr/local/bin/node", INIT_CWD: "/Users/abdulaliyev/projects/portfolio", SHELL: "/bin/zsh", TERM: "xterm-256color", TMPDIR: "/var/folders/yn/5jzqtvgs7cqfwg_hlxbj1r0m0000gn/T/", npm_config_global_prefix: "/usr/local", TERM_PROGRAM_VERSION: "1.96.0", ZDOTDIR: "/Users/abdulaliyev", ORIGINAL_XDG_CURRENT_DESKTOP: "undefined", MallocNanoZone: "0", COLOR: "1", TERM_SESSION_ID: "C6B2F381-10C4-4AA6-A242-8209CF388EDB", npm_config_noproxy: "", npm_config_local_prefix: "/Users/abdulaliyev/projects/portfolio", USER: "abdulaliyev", COMMAND_MODE: "unix2003", npm_config_globalconfig: "/usr/local/etc/npmrc", SSH_AUTH_SOCK: "/private/tmp/com.apple.launchd.krr6aLs1Oq/Listeners", __CF_USER_TEXT_ENCODING: "0x1F5:0x0:0x0", npm_execpath: "/usr/local/lib/node_modules/npm/bin/npm-cli.js", PATH: "/Users/abdulaliyev/projects/portfolio/node_modules/.bin:/Users/abdulaliyev/projects/node_modules/.bin:/Users/abdulaliyev/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/Users/abdulaliyev/.bun/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/Users/abdulaliyev/.bun/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/Users/abdulaliyev/web-projects/flutter/flutter/bin:/Users/abdulaliyev/Developer/flutter/bin:/Users/abdulaliyev/.composer/vendor/bin:/Users/abdulaliyev/web-projects/flutter/flutter/bin:/Users/abdulaliyev/Developer/flutter/bin:/Users/abdulaliyev/.composer/vendor/bin", npm_package_json: "/Users/abdulaliyev/projects/portfolio/package.json", _: "/Users/abdulaliyev/projects/portfolio/node_modules/.bin/astro", LaunchInstanceID: "A8B666D8-C2B3-4E68-A9D0-181289A5376E", npm_config_userconfig: "/Users/abdulaliyev/.npmrc", npm_config_init_module: "/Users/abdulaliyev/.npm-init.js", USER_ZDOTDIR: "/Users/abdulaliyev", __CFBundleIdentifier: "com.microsoft.VSCode", npm_command: "run-script", PWD: "/Users/abdulaliyev/projects/portfolio", npm_lifecycle_event: "build", EDITOR: "vi", npm_package_name: "portfolio", LANG: "en_US.UTF-8", npm_config_npm_version: "10.9.0", BUN_INSPECT_CONNECT_TO: "unix:///var/folders/yn/5jzqtvgs7cqfwg_hlxbj1r0m0000gn/T/azo5n4xhx69.sock", XPC_FLAGS: "0x0", npm_config_node_gyp: "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js", npm_package_version: "0.0.1", XPC_SERVICE_NAME: "0", VSCODE_INJECTION: "1", HOME: "/Users/abdulaliyev", SHLVL: "4", npm_config_cache: "/Users/abdulaliyev/.npm", LOGNAME: "abdulaliyev", npm_lifecycle_script: "astro build", BUN_INSTALL: "/Users/abdulaliyev/.bun", npm_config_user_agent: "npm/10.9.0 node/v22.12.0 darwin x64 workspaces/false", SECURITYSESSIONID: "186a4", npm_node_execpath: "/usr/local/bin/node", npm_config_prefix: "/usr/local", COLORTERM: "truecolor", NODE_ENV: "production", RECAPTCHA_SITE_KEY: "6Ldl-6AqAAAAAI3ws-ZH-KeB0uAzmyI_nuDY6xAY", RECAPTCHA_SECRET_KEY: "6Ldl-6AqAAAAAGAkraw7gM0fttWvtlra5YER5whG", REACT_APP_SITE_KEY: "6Ldl-6AqAAAAAI3ws-ZH-KeB0uAzmyI_nuDY6xAY", REACT_APP_SECRET_KEY: "6Ldl-6AqAAAAAGAkraw7gM0fttWvtlra5YER5whG" };
 function createCollectionToGlobResultMap({
   globResult,
   contentDir
@@ -155,7 +154,7 @@ function createGetCollection({
       type === "content" ? contentCollectionToEntryMap[collection] : dataCollectionToEntryMap[collection]
     );
     let entries = [];
-    if (!Object.assign(__vite_import_meta_env__, { _: define_process_env_default._ })?.DEV && cacheEntriesByCollection.has(collection)) {
+    if (!Object.assign(__vite_import_meta_env__, { _: process.env._ })?.DEV && cacheEntriesByCollection.has(collection)) {
       entries = cacheEntriesByCollection.get(collection);
     } else {
       const limit = pLimit(10);
@@ -280,7 +279,7 @@ const CONTENT_LAYER_IMAGE_REGEX = /__ASTRO_IMAGE_="([^"]+)"/g;
 async function updateImageReferencesInBody(html, fileName) {
   const { default: imageAssetMap } = await import('./content-assets_DleWbedO.mjs');
   const imageObjects = /* @__PURE__ */ new Map();
-  const { getImage } = await import('./_astro_assets_C7v2pU9u.mjs').then(n => n._);
+  const { getImage } = await import('./_astro_assets_D1ct15YD.mjs').then(n => n._);
   for (const [_full, imagePath] of html.matchAll(CONTENT_LAYER_IMAGE_REGEX)) {
     try {
       const decodedImagePath = JSON.parse(imagePath.replaceAll("&#x22;", '"'));

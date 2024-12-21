@@ -15,10 +15,5 @@ export default defineConfig({
     }),
   ],
   output: "server",
-  vite: {
-    define: {
-      "process.env": process.env,
-    },
-  },
   adapter: vercel(),
 });
