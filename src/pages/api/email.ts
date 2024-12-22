@@ -1,7 +1,7 @@
 import { SendEmail } from "../../services/SendEmail";
 
 export async function GET({ request }: any): Promise<Response> {
-  const sendEmail = new SendEmail(["john@email.com"]);
+  const sendEmail = new SendEmail(["aaa7c4@gmail.com"]);
 
   const sendResult = await sendEmail.send();
 
