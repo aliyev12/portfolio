@@ -38,7 +38,7 @@ export class SendEmail {
     console.log("data = ", data);
 
     const info = await this.transporter.sendMail({
-      from: '"Abdul Aliyev" <dev7c4@gmail.com>', // sender address
+      from: '"Abdul Aliyev" <me@aaliyev.com', // sender address
       to: this.recipients, // list of receivers
       subject: "Howdy", // Subject line
       text: "Hello world?", // plain text body
