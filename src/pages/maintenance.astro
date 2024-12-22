@@ -1,0 +1,41 @@
+---
+import "@/styles/globals.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../lib/constants";
+import { Image } from "astro:assets";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={SITE_DESCRIPTION} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="/src/scripts/main.ts"></script>
+    <title>{SITE_TITLE}</title>
+  </head>
+  <body class="dark">
+    <main class="container mx-auto max-w-screen-xl mt-5 md:mt-10 px-6">
+      <section class="flex flex-col justify-center items-center leading-10">
+        <h1 class="mb-8">Thank you for visiting!</h1>
+        <p>My website is under construction. 🚧</p>
+        <p>Check back soon!</p>
+        <div class="mt-8">
+          <Image
+            src={`/images/under_construction.png`}
+            class="rounded-lg"
+            alt="Website Construction"
+            width={640}
+            height={457}
+          />
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
