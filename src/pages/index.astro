@@ -25,12 +25,10 @@ const { Content } = await homeUiContent.render();
 <MainLayout>
   <section class="grid grid-cols-1 gap-5 lg:grid-cols-2">
     <div class="w-full flex justify-center items-center md:mb-0">
-      <div
-        class="rounded-full p-1 border border-foreground flex items-center justify-center"
-      >
+      <div class="flex items-center justify-center">
         <Image
           src={myPhoto}
-          class="w-20 min-h-20 md:w-36 md:h-36 rounded-full"
+          class="min-h-20 md:w-36 md:h-36 rounded-full w-24 h-24 shadow-lg"
           alt="Abdul Aliyev Photo"
           width={200}
           height={200}
@@ -38,14 +36,16 @@ const { Content } = await homeUiContent.render();
       </div>
     </div>
     <div>
-      <h1 class="mb-5 text-center">{mainTitle}</h1>
-      <article class="leading-relaxed"><Content /></article>
+      <h1 class="mb-5 md:mb-8 md:leading-relaxed text-center">{mainTitle}</h1>
+      <article class="leading-relaxed md:leading-loose"><Content /></article>
     </div>
   </section>
   <Separator />
   <section class="flex flex-col justify-center items-center w-full">
-    <h1 class="mb-8">My Projects</h1>
-    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 w-full">
+    <h1 class="mb-8 md:mb-12">My Projects</h1>
+    <div
+      class="grid grid-cols-1 gap-8 sm:gap-12 md:gap-16 lg:grid-cols-2 xl:grid-cols-3 place-items-center w-full"
+    >
       {
         allProjects
           // .slice(0, HOMEPAGE_PROJECTS_LIMIT)

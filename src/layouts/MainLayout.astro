@@ -27,11 +27,12 @@ interface Props {
     />
     <script type="module" src="/src/scripts/main.ts"></script>
     <title>{SITE_TITLE} | {title}</title>
-    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
   </head>
-  <body class="dark">
+  <body class="">
     <Navbar />
-    <main class="container mx-auto max-w-screen-xl mt-5 md:mt-10 px-6">
+    <main
+      class="container mx-auto max-w-screen-xl mt-5 md:mt-10 px-6 md:px-12 lg:px-16"
+    >
       <slot />
     </main>
     <Footer />
