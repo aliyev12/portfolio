@@ -2,14 +2,38 @@
 import "@/styles/globals.css";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../lib/constants";
-import { Alert } from "@/components/common/Alert";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
 
-const { title = "Collection of my web apps" } = Astro.props;
+const homeUiContent: CollectionEntry<"ui"> = await getEntry("ui", "home")!;
+const {
+  siteTitle,
+  siteDescription,
+  siteURL,
+  siteImage,
+  siteName,
+  schema: schema_,
+} = homeUiContent.data;
+
+const {
+  title = "Collection of my web apps",
+  showNav = true,
+  showFooter = true,
+} = Astro.props;
 
 interface Props {
   title?: string;
+  showNav?: boolean;
+  showFooter?: boolean;
 }
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: schema_.name,
+  description: schema_.description,
+  url: siteURL,
+};
 ---
 
 <!doctype html>
@@ -17,7 +41,23 @@ interface Props {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={SITE_DESCRIPTION} />
+    <meta name="description" content={siteDescription} />
+    <meta property="og:title" content={siteName} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:url" content={siteURL} />
+    <meta property="og:image" content={siteImage} />
+    <meta property="og:image:alt" content={siteName} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteName} />
+    <meta name="twitter:description" content={siteDescription} />
+    <meta name="twitter:image" content={siteImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,15 +66,15 @@ interface Props {
       rel="stylesheet"
     />
     <script type="module" src="/src/scripts/main.ts"></script>
-    <title>{SITE_TITLE} | {title}</title>
+    <title>{`${siteTitle} | ${title}`}</title>
   </head>
-  <body class="">
-    <Navbar />
+  <body>
+    {showNav && <Navbar />}
     <main
       class="container mx-auto max-w-screen-xl mt-5 md:mt-10 px-6 md:px-12 lg:px-16"
     >
       <slot />
     </main>
-    <Footer />
+    {showFooter && <Footer />}
   </body>
 </html>

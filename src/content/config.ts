@@ -30,6 +30,12 @@ const uiCollection = defineCollection({
   type: "content",
   schema: z.object({
     mainTitle: z.string(),
+    siteTitle: z.string(),
+    siteDescription: z.string(),
+    siteURL: z.string(),
+    siteImage: z.string(),
+    siteName: z.string(),
+    schema: z.object({ name: z.string(), description: z.string() }),
   }),
 });
 
