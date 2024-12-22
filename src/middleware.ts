@@ -3,7 +3,9 @@ import { defineMiddleware } from "astro/middleware";
 const MAINTENANCE_PATH = "/maintenance";
 
 export const onRequest = defineMiddleware((context, next) => {
-  const isMaintenance = import.meta.env.MAINTENANCE_MODE === "true";
+  const isMaintenance =
+    import.meta.env.MAINTENANCE_MODE === "true" ||
+    import.meta.env.MAINTENANCE_MODE === true;
   console.log(
     "@@ in middleware and import.meta.env.MAINTENANCE_MODE = ",
     import.meta.env.MAINTENANCE_MODE
