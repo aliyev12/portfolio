@@ -3,9 +3,13 @@ import { defineMiddleware } from "astro/middleware";
 const MAINTENANCE_PATH = "/maintenance";
 
 export const onRequest = defineMiddleware((context, next) => {
+  console.log("@@ context.url = ", context.url);
+  console.log("@@ context.url.pathname = ", context.url.pathname);
   if (context.url.pathname !== MAINTENANCE_PATH) {
     return Response.redirect(new URL("/maintenance", context.url), 302);
   }
+
+  return next();
 
   //   const isMaintenance =
   //     import.meta.env.MAINTENANCE_MODE === "true" ||
