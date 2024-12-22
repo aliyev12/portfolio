@@ -1,0 +1,29 @@
+---
+import Separator from "@/components/common/Separator.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+import ContactForm from "@/components/ContactForm.tsx";
+import { Alert } from "@/components/common/Alert";
+import { getEntry, type CollectionEntry } from "astro:content";
+import ContactFormLoading from "@/components/ContactFormLoading.astro";
+
+const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY;
+
+const validation: CollectionEntry<"validation"> = await getEntry(
+  "validation",
+  "contact-form"
+)!;
+---
+
+<MainLayout>
+  <Alert client:load />
+  <section class="w-full flex flex-col justify-center items-center">
+    <ContactForm
+      client:only="react"
+      recaptchaSiteKey={RECAPTCHA_SITE_KEY}
+      validation={validation}
+    >
+      <ContactFormLoading slot="fallback" />
+    </ContactForm>
+  </section>
+  <Separator />
+</MainLayout>
