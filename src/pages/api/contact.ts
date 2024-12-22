@@ -1,20 +1,10 @@
+import { getCurrentFormattedDate, sanitizeInput } from "../../lib/utils";
+import { ETemplate } from "../../lib/constants";
+import { SendEmail } from "../../services/SendEmail";
 import { getEntry, type CollectionEntry } from "astro:content";
 import { z } from "zod";
 
 export async function POST({ request }: any): Promise<Response> {
-  // const x = () => {
-  //   return new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       resolve("ok");
-  //     }, 5000);
-  //   });
-  // };
-
-  // await x();
-
-  // const temp = await request.json();
-  // console.log(temp);
-
   const { data: val }: CollectionEntry<"validation"> = await getEntry(
     "validation",
     "contact-form"
@@ -43,15 +33,23 @@ export async function POST({ request }: any): Promise<Response> {
   });
 
   try {
-    // Parse and validate the incoming request data
-    const data = schema.parse(await request.json());
+    const rawData = await request.json();
 
-    console.log("data = ", data);
+    const sanitizedData = {
+      name: sanitizeInput(rawData.name),
+      email: sanitizeInput(rawData.email),
+      message: sanitizeInput(rawData.message),
+      recaptchaResponse: rawData.recaptchaResponse, // Recaptcha doesn't need sanitization
+    };
+
+    // Parse and validate the incoming request data
+    const data = schema.parse(sanitizedData);
 
     const { name, email, message, recaptchaResponse } = data;
 
     // CAPTCHA verification
     const secretKey = import.meta.env.RECAPTCHA_SECRET_KEY;
+
     const verificationResponse = await fetch(
       `https://www.google.com/recaptcha/api/siteverify`,
       {
@@ -76,9 +74,28 @@ export async function POST({ request }: any): Promise<Response> {
       );
     }
 
-    console.log("Name received:", name);
-    console.log("Email received:", email);
-    console.log("Message received:", message);
+    const sendEmail = new SendEmail();
+
+    const sendUserEmailResult = await sendEmail.send({
+      recipients: [email],
+      emailTemplate: ETemplate.contactFollowUp,
+      dynamicVals: [{ placeholder: "name", value: name }],
+    });
+
+    const MY_EMAIL_ADDRESS = import.meta.env.MY_EMAIL_ADDRESS;
+    const formattedDate = getCurrentFormattedDate();
+    const sanitizedName = name.replace(/[\r\n]+/g, " ");
+
+    const contactSubmissionResult = await sendEmail.send({
+      recipients: [MY_EMAIL_ADDRESS],
+      emailTemplate: ETemplate.contactNotification,
+      dynamicVals: [
+        { placeholder: "date", value: formattedDate },
+        { placeholder: "from", value: sanitizedName },
+        { placeholder: "email", value: email },
+        { placeholder: "message", value: message },
+      ],
+    });
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error: any) {
@@ -101,67 +118,3 @@ export async function POST({ request }: any): Promise<Response> {
     );
   }
 }
-
-// import { z } from "zod";
-
-// export async function POST({ request }: any): Promise<Response> {
-//     // Define a Zod schema for validation
-//     const schema = z.object({
-//       name: z
-//         .string()
-//         .min(1, { message: "Name is required" })
-//         .max(100, { message: "Name must be less than 100 characters" }),
-//       email: z
-//         .string()
-//         .email({ message: "Invalid email address" }),
-//       message: z
-//         .string()
-//         .min(20, { message: "Message must be at least 20 characters" })
-//         .max(500, { message: "Message must be less than 500 characters" }),
-//       recaptchaResponse: z.string().nonempty("CAPTCHA response is required"),
-//     });
-
-//   const data = await request.json();
-//   // console.log("data = ", data);
-//   // return new Response(JSON.stringify({ success: true }), { status: 200 });
-
-//   const name = data.name;
-//   const email = data.email;
-//   const message = data.message;
-//   const recaptchaResponse = data.recaptchaResponse;
-
-//   if (!recaptchaResponse) {
-//     return new Response(
-//       JSON.stringify({ success: false, error: "CAPTCHA missing" }),
-//       { status: 400 }
-//     );
-//   }
-
-//   const secretKey = import.meta.env.RECAPTCHA_SECRET_KEY;
-//   const verificationResponse = await fetch(
-//     `https://www.google.com/recaptcha/api/siteverify`,
-//     {
-//       method: "POST",
-//       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-//       body: new URLSearchParams({
-//         secret: secretKey,
-//         response: recaptchaResponse,
-//       }),
-//     }
-//   );
-
-//   const verificationResult = await verificationResponse.json();
-
-//   if (!verificationResult.success) {
-//     return new Response(
-//       JSON.stringify({ success: false, error: "CAPTCHA verification failed" }),
-//       { status: 400 }
-//     );
-//   }
-
-//   console.log("Name received:", name);
-//   console.log("Email received:", email);
-//   console.log("Message received:", message);
-
-//   return new Response(JSON.stringify({ success: true }), { status: 200 });
-// }
