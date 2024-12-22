@@ -1,15 +1,16 @@
 ---
 import { GithubIcon, LinkedinIcon } from "astro-feather";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<footer class="my-8">
+<footer class="mt-8 mb-12">
   <div class="container mx-auto mt-8 max-w-screen-xl px-6">
     <div>
       <p class="text-center italic text-xs">
         Copyright &copy; {new Date().getFullYear()} Abdul Aliyev
       </p>
     </div>
-    <div class="flex justify-center space-x-10 mt-8">
+    <div class="flex justify-center items-center space-x-10 mt-8">
       <a
         href="https://github.com/aliyev12"
         target="_blank"
@@ -26,6 +27,7 @@ import { GithubIcon, LinkedinIcon } from "astro-feather";
         <LinkedinIcon />
         <span class="sr-only">Linkedin Profile</span>
       </a>
+      <ThemeToggle />
     </div>
   </div>
 </footer>
