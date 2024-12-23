@@ -151,7 +151,8 @@
     transition: background-color 5000s ease-in-out 0s;
   }
 
-  .project {
+  #project-description-content-section,
+  #about-me-content-section {
     figure {
       @apply max-w-3xl my-8 md:my-10;
 
@@ -162,6 +163,10 @@
       figcaption {
         @apply mt-2 text-sm text-start;
       }
+    }
+
+    p {
+      @apply mb-4 last:mb-0;
     }
   }
 }

@@ -5,7 +5,10 @@ import Navbar from "../components/Navbar.astro";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 
-const homeUiContent: CollectionEntry<"ui"> = await getEntry("ui", "home")!;
+const homeUiContent: CollectionEntry<"home"> = await getEntry(
+  "home",
+  "ui-content"
+)!;
 const {
   siteTitle,
   siteDescription,

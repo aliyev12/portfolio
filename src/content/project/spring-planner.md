@@ -1,7 +1,7 @@
 ---
 title: "Sprint Planner"
 thumbnail:
-  url: sprint_planner_stats.png
+  url: sprint_planner_thumbnail.png
   alt: Sprint Planner Thumbnail
 mainImage:
   url: sprint_planner_main.png
@@ -21,32 +21,56 @@ additionalImages:
     alt: Sprint Planner Stats
   - url: sprint_planner_voting.png
     alt: Sprint Planner Voting
-tags: ["React", "NodeJS", "NextJS", "PostgreSQL", "Laravel"]
-projectURL: "https://sprintplanner.netlify.app"
-githubRepoLinks:
-  [
-    "https://github.com/aliyev12/sprint-planner",
-    "https://github.com/aliyev12/sprint-planner",
-  ]
+tags: ["React", "Node"]
+projectURL: "https://sprint-planner-dun.vercel.app"
+githubRepoLinks: ["https://github.com/aliyev12/sprint-planner"]
 excerpt: "App for planning sprints following Agile methodology. Lets users vote for tickets, see stats, and more."
-weight: 2
+weight: 1
 slug: sprint-planner
 ---
 
-App for planning sprints following Agile methodology. Allows users to vote for tickets based on different categories; customize categories and voting units; see statistics and more.
+This app is designed for creative teams to vote and assign Agile story points for various efforts. App has various feature, such tha allow customization of efforts to vote for, creating rooms and sharing a URL for other team members to join.
+
+It all start with either creating a new room or by joning an existing room.
+
+<figure>
+<img src="/images/sprint_planner_landing_page.png" alt="Sprint Planner Landing Page">
+<figcaption>Landing page of the Sprint Planner</figcaption>
+</figure>
+
+When user click on Create New Room, they are presented with a screen that asks for user's name and a name of the new room.
+
+<figure>
+<img src="/images/sprint_planner_create_page.png" alt="Sprint Planner Landing Page">
+<figcaption>Create new room page</figcaption>
+</figure>
+
+Alternatively, a user can join an existing room by navigating to room's URL and providing their name.
+
+<figure>
+<img src="/images/sprint_planner_join_page.png" alt="Sprint Planner Join Room">
+<figcaption>Joining an existing room</figcaption>
+</figure>
+
+Main user that creates a room, gets to modify cards.
+
+<figure>
+<img src="/images/sprint_planner_edit_cards_page.png" alt="Sprint Planner Edit Cards">
+<figcaption>Editing default set of cards in order to customize them for the project</figcaption>
+</figure>
+
+Then the voting begins. Users get to click on a card of their choice. Users see other teammates who are online.
+
+<figure>
+<img src="/images/sprint_planner_voting.png" alt="Sprint Planner Voting Session">
+<figcaption>Voting session</figcaption>
+</figure>
+
+Once the voting is complete, users get to see the stats - how many people voted for which card.
 
 <figure>
 <img src="/images/sprint_planner_stats.png" alt="Sprint Planner Stats">
-<figcaption>Voting results chart shoring how many people voted for what</figcaption>
+<figcaption>Stats following the voting session</figcaption>
 </figure>
 
-This full-stack real-time app is built with Typescript, Node Express, Socket.IO as well as ReactJS.
-
-App for planning sprints following Agile methodology. Allows users to vote for tickets based on different categories; customize categories and voting units; see statistics and more.
-
-<figure>
-<img src="/images/sprint_planner_stats.png" alt="Sprint Planner Stats">
-<figcaption>Voting results chart shoring how many people voted for what</figcaption>
-</figure>
-
-This full-stack real-time app is built with Typescript, Node Express, Socket.IO as well as ReactJS.
+In terms of a tech stack, the app is a full-stack web app built with React on the frontend and Node on the backend. It uses Sockets.IO for real-time communication.
