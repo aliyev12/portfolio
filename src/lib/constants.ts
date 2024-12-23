@@ -10,3 +10,25 @@ export interface IDynamicVal {
   placeholder: string;
   value: string;
 }
+
+export const NON_CAPITALIZABLE_WORDS = [
+  "and",
+  "or",
+  "the",
+  "a",
+  "an",
+  "of",
+  "for",
+  "in",
+  "is",
+  "it",
+  "to",
+  "at",
+  "by",
+  "from",
+  "on",
+  "with",
+  "but",
+  "so,",
+  "yet",
+];
