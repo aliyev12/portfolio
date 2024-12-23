@@ -29,8 +29,6 @@ weight: 2
 slug: sprint-planner3
 ---
 
-## Sprint Planner
-
 App for planning sprints following Agile methodology. Allows users to vote for tickets based on different categories; customize categories and voting units; see statistics and more.
 
 This full-stack real-time app is built with Typescript, Node Express, Socket.IO as well as ReactJS.

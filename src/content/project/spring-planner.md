@@ -21,16 +21,32 @@ additionalImages:
     alt: Sprint Planner Stats
   - url: sprint_planner_voting.png
     alt: Sprint Planner Voting
-tags: ["html", "css", "js", "ts", "react", "node", "express"]
+tags: ["React", "NodeJS", "NextJS", "PostgreSQL", "Laravel"]
 projectURL: "https://sprintplanner.netlify.app"
-githubRepoLinks: ["https://github.com/aliyev12/sprint-planner"]
+githubRepoLinks:
+  [
+    "https://github.com/aliyev12/sprint-planner",
+    "https://github.com/aliyev12/sprint-planner",
+  ]
 excerpt: "App for planning sprints following Agile methodology. Lets users vote for tickets, see stats, and more."
 weight: 2
 slug: sprint-planner
 ---
 
-## Sprint Planner
+App for planning sprints following Agile methodology. Allows users to vote for tickets based on different categories; customize categories and voting units; see statistics and more.
+
+<figure>
+<img src="/images/sprint_planner_stats.png" alt="Sprint Planner Stats">
+<figcaption>Voting results chart shoring how many people voted for what</figcaption>
+</figure>
+
+This full-stack real-time app is built with Typescript, Node Express, Socket.IO as well as ReactJS.
 
 App for planning sprints following Agile methodology. Allows users to vote for tickets based on different categories; customize categories and voting units; see statistics and more.
+
+<figure>
+<img src="/images/sprint_planner_stats.png" alt="Sprint Planner Stats">
+<figcaption>Voting results chart shoring how many people voted for what</figcaption>
+</figure>
 
 This full-stack real-time app is built with Typescript, Node Express, Socket.IO as well as ReactJS.

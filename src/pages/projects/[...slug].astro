@@ -1,9 +1,88 @@
 ---
 import BreadCrumbs from "@/components/common/BreadCrumbs.astro";
+import Separator from "@/components/common/Separator.astro";
+import Tags from "@/components/Tags.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
+import { ExternalLinkIcon, GithubIcon } from "astro-feather";
+import { getEntry, type CollectionEntry } from "astro:content";
+
+const { slug } = Astro.params;
+
+if (slug === undefined) {
+  throw new Error("Slug is required");
+}
+
+const entry: CollectionEntry<"project"> = await getEntry("project", slug)!;
+
+if (entry === undefined) {
+  return Astro.redirect("/404");
+}
+
+console.log("entry.data.githubRepoLinks = ", entry.data.githubRepoLinks.length);
+
+const { Content } = await entry.render();
 ---
 
 <MainLayout>
   <BreadCrumbs />
-  <h1>Project</h1>
+  <section class="w-full flex flex-col justify-center items-center">
+    <h1 class="mb-5 md:mb-8 md:leading-relaxed text-center">
+      {entry.data.title}
+    </h1>
+    <figure class="max-w-3xl">
+      <img
+        class="h-auto max-w-full rounded-lg shadow-lg"
+        src={"/images/" + entry.data.mainImage.url}
+        alt={entry.data.mainImage.alt}
+      />
+    </figure>
+
+    <Tags tags={entry.data.tags} />
+
+    <div class="max-w-lg justify-center flex flex-col space-y-7">
+      <div class="flex items-center justify-center">
+        <span class="font-medium mr-2">Visit the project:</span>
+        <a class="link flex" href={entry.data.projectURL}
+          >{entry.data.projectURL.replace("https://", "")}<ExternalLinkIcon
+            customClasses="ml-2"
+          /></a
+        >
+      </div>
+      <div>
+        <span class="font-medium"
+          >Check out project repo{
+            entry.data.githubRepoLinks.length > 1 ? "s" : ""
+          }:</span
+        >{
+          entry.data.githubRepoLinks.length > 1 ? (
+            <div class="ml-3 mt-2 flex flex-col space-y-3">
+              {entry.data.githubRepoLinks.map((repo) => {
+                return (
+                  <a class="link flex items-center" href={repo}>
+                    {repo.replace("https://", "")}
+                    <GithubIcon customClasses="ml-2" />
+                  </a>
+                );
+              })}
+            </div>
+          ) : (
+            <a
+              class="link inline-flex items-center ml-2"
+              href={entry.data.githubRepoLinks[0]}
+            >
+              {entry.data.githubRepoLinks[0].replace("https://", "")}
+              <GithubIcon customClasses="ml-2" />
+            </a>
+          )
+        }
+      </div>
+    </div>
+
+    <article
+      class="leading-relaxed md:leading-loose project max-w-3xl mt-8 md:mt-12"
+    >
+      <Content />
+    </article>
+  </section>
+  <Separator />
 </MainLayout>

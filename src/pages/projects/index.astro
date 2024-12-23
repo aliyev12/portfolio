@@ -1,9 +1,30 @@
 ---
-import BreadCrumbs from "@/components/common/BreadCrumbs.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import Separator from "@/components/common/Separator.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+
+const allProjects: CollectionEntry<"project">[] = (
+  await getCollection("project")
+).sort(
+  (a: CollectionEntry<"project">, b: CollectionEntry<"project">) =>
+    b.data.weight.valueOf() - a.data.weight.valueOf()
+);
 ---
 
 <MainLayout>
-  <BreadCrumbs />
-  <h1>Projects</h1>
+  <section class="flex flex-col justify-center items-center w-full">
+    <h1 class="mb-8 md:mb-12">My Projects</h1>
+    <div
+      class="grid grid-cols-1 gap-8 sm:gap-12 md:gap-16 lg:grid-cols-2 xl:grid-cols-3 place-items-center w-full"
+    >
+      {
+        allProjects
+          // .slice(0, HOMEPAGE_PROJECTS_LIMIT)
+          .map((project) => <ProjectCard project={project} />)
+      }
+    </div>
+  </section>
+  <Separator />
 </MainLayout>
