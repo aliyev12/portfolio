@@ -1,6 +1,7 @@
 import sanitizeHtml from 'sanitize-html';
+import { E as ETemplate } from '../../chunks/constants_CokkER5w.mjs';
 import nodemailer from 'nodemailer';
-import { g as getEntry } from '../../chunks/_astro_content_DKPDJ_-W.mjs';
+import { g as getEntry } from '../../chunks/_astro_content_BtOjpRYy.mjs';
 import { z } from 'zod';
 export { renderers } from '../../renderers.mjs';
 
@@ -38,12 +39,6 @@ function getCurrentFormattedDate() {
   const timezone = "ET";
   return `${formattedDate} ${formattedTime} ${timezone}`;
 }
-
-var ETemplate = /* @__PURE__ */ ((ETemplate2) => {
-  ETemplate2["contactFollowUp"] = "contact-follow-up";
-  ETemplate2["contactNotification"] = "contact-notification";
-  return ETemplate2;
-})(ETemplate || {});
 
 class SendEmail {
   transporter;
