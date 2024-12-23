@@ -301,7 +301,7 @@ const ContactForm: React.FC<{
             </p>
           </div>
           <div
-            className={`mb-6 recaptcha-wrapper ${
+            className={`mb-6 w-[304px] h-[78px] recaptcha-wrapper ${
               isValid ? "" : "recaptcha-disabled"
             }`}
           >
