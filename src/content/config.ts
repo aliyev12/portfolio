@@ -26,7 +26,7 @@ const projectCollection = defineCollection({
   }),
 });
 
-const uiCollection = defineCollection({
+const homeCollection = defineCollection({
   type: "content",
   schema: z.object({
     mainTitle: z.string(),
@@ -37,6 +37,10 @@ const uiCollection = defineCollection({
     siteName: z.string(),
     schema: z.object({ name: z.string(), description: z.string() }),
   }),
+});
+
+const aboutCollection = defineCollection({
+  type: "content",
 });
 
 const validationCollection = defineCollection({
@@ -89,7 +93,8 @@ const emailCollection = defineCollection({
 
 export const collections = {
   project: projectCollection,
-  ui: uiCollection,
   validation: validationCollection,
   email: emailCollection,
+  home: homeCollection,
+  about: aboutCollection,
 };

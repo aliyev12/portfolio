@@ -40,11 +40,11 @@ const { Content } = await entry.render();
     <Tags tags={entry.data.tags} />
 
     <div class="max-w-lg justify-center flex flex-col space-y-7">
-      <div class="flex items-center justify-center">
-        <span class="font-medium mr-2">Visit the project:</span>
-        <a class="link flex" href={entry.data.projectURL}
+      <div class="flex flex-col md:flex-row">
+        <span class="font-medium">Visit the project:</span>
+        <a class="link flex ml-2" href={entry.data.projectURL}
           >{entry.data.projectURL.replace("https://", "")}<ExternalLinkIcon
-            customClasses="ml-2"
+            customClasses="ml-2 hidden sm:block"
           /></a
         >
       </div>
@@ -60,7 +60,7 @@ const { Content } = await entry.render();
                 return (
                   <a class="link flex items-center" href={repo}>
                     {repo.replace("https://", "")}
-                    <GithubIcon customClasses="ml-2" />
+                    <GithubIcon customClasses="ml-2 hidden sm:block" />
                   </a>
                 );
               })}
@@ -71,7 +71,7 @@ const { Content } = await entry.render();
               href={entry.data.githubRepoLinks[0]}
             >
               {entry.data.githubRepoLinks[0].replace("https://", "")}
-              <GithubIcon customClasses="ml-2" />
+              <GithubIcon customClasses="ml-2 hidden sm:block" />
             </a>
           )
         }
@@ -79,7 +79,8 @@ const { Content } = await entry.render();
     </div>
 
     <article
-      class="leading-relaxed md:leading-loose project max-w-3xl mt-8 md:mt-12"
+      id="project-description-content-section"
+      class="leading-relaxed md:leading-loose max-w-3xl mt-8 md:mt-12"
     >
       <Content />
     </article>
