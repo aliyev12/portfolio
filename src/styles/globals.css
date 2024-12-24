@@ -150,6 +150,20 @@
     -webkit-text-fill-color: hsl(0 0% 98%) !important;
     transition: background-color 5000s ease-in-out 0s;
   }
+
+  .project {
+    figure {
+      @apply max-w-3xl my-8 md:my-10;
+
+      img {
+        @apply max-w-full h-auto rounded-lg justify-self-center shadow-lg block;
+      }
+
+      figcaption {
+        @apply mt-2 text-sm text-start;
+      }
+    }
+  }
 }
 @layer base {
   * {
