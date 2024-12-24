@@ -1,0 +1,96 @@
+---
+import { NON_CAPITALIZABLE_WORDS } from "@/lib/constants";
+import { HomeIcon, ChevronRightIcon } from "astro-feather";
+
+const path = Astro.url.pathname;
+
+const splitPath = path.split("/");
+
+if (path.endsWith("/")) splitPath.pop();
+
+let combinedPath = "/";
+
+const breadcrumbs: { title: string; path: string | null }[] = splitPath.map(
+  (pathItem, i, arr) => {
+    if (i === 0) {
+      return { title: "Home", path: combinedPath };
+    }
+
+    const prefix = i === 1 ? "" : "/";
+
+    combinedPath = combinedPath + prefix + pathItem;
+
+    let pathname = pathItem.split("-");
+
+    const pathTitle = pathname
+      .map((x) => {
+        if (NON_CAPITALIZABLE_WORDS.includes(x)) {
+          return x;
+        }
+        return x.charAt(0).toUpperCase() + x.slice(1);
+      })
+      .join(" ");
+
+    if (i === arr.length - 1) {
+      return { title: pathTitle, path: null };
+    }
+
+    return { title: pathTitle, path: combinedPath };
+  }
+);
+---
+
+<nav class="flex mb-8 md:mb-20" aria-label="Breadcrumb">
+  <ol
+    class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"
+  >
+    {
+      breadcrumbs.map((breadcrumb) => {
+        if (breadcrumb.path === "/") {
+          return (
+            <li class="inline-flex items-center">
+              <a
+                href={breadcrumb.path}
+                class="inline-flex items-center text-sm font-medium  hover:underline"
+              >
+                <span class=" me-2.5">
+                  <HomeIcon size={16} />
+                </span>
+                <span>{breadcrumb.title}</span>
+              </a>
+            </li>
+          );
+        } else if (breadcrumb.path === null) {
+          return (
+            <li class="inline-flex items-center" aria-current="page">
+              <div class="flex items-center">
+                <span class="mx-1">
+                  <ChevronRightIcon size={16} />
+                </span>
+                <span class="ms-1 text-sm font-bold md:ms-2">
+                  {breadcrumb.title}
+                </span>
+              </div>
+            </li>
+          );
+        } else {
+          return (
+            <li>
+              <div class="flex items-center">
+                <span class=" mx-1">
+                  <ChevronRightIcon size={16} />
+                </span>
+                <a
+                  href={breadcrumb.path}
+                  class="ms-1 text-sm font-medium hover:underline md:ms-2"
+                >
+                  <span>{breadcrumb.title}</span>
+                </a>
+              </div>
+            </li>
+          );
+        }
+      })
+    }
+  </ol>
+</nav>
