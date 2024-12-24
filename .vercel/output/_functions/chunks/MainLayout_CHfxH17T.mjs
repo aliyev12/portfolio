@@ -1,9 +1,9 @@
-import { b as createAstro, c as createComponent, r as renderTemplate, m as maybeRenderHead, d as addAttribute, a as renderComponent, ai as renderSlot, aj as renderHead } from './astro/server_C9GTjA-t.mjs';
+import { c as createAstro, a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, d as renderComponent, ai as renderSlot, aj as renderHead, u as unescapeHTML } from './astro/server_BejUaFnn.mjs';
 import 'kleur/colors';
 /* empty css                         */
 import 'clsx';
-import { $ as $$Image } from './_astro_assets_zQk-sZkf.mjs';
-import { g as getEntry } from './_astro_content_DKPDJ_-W.mjs';
+import { $ as $$Image } from './_astro_assets_Bvy0HWwf.mjs';
+import { g as getEntry } from './_astro_content_BtOjpRYy.mjs';
 
 const $$Astro$4v = createAstro("https://www.aaliyev.com");
 const $$ActivityIcon = createComponent(($$result, $$props, $$slots) => {
@@ -5497,14 +5497,31 @@ const $$Astro = createAstro("https://www.aaliyev.com");
 const $$MainLayout = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$MainLayout;
-  const homeUiContent = await getEntry("ui", "home");
-  const { siteTitle, siteDescription, siteURL, siteImage, siteName } = homeUiContent.data;
+  const homeUiContent = await getEntry(
+    "home",
+    "ui-content"
+  );
+  const {
+    siteTitle,
+    siteDescription,
+    siteURL,
+    siteImage,
+    siteName,
+    schema: schema_
+  } = homeUiContent.data;
   const {
     title = "Collection of my web apps",
     showNav = true,
     showFooter = true
   } = Astro2.props;
-  return renderTemplate(_a || (_a = __template(['<html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description"', '><!-- Open Graph Tags --><meta property="og:title"', " |", '><meta property="og:description"', '><meta property="og:url"', '><meta property="og:image"', '><meta property="og:image:alt"', '><meta property="og:site_name"', '><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><script type="application/ld+json">\n      {\n        "@context": "https://schema.org",\n        "@type": "WebPage",\n        "name": {siteTitle} | {title},\n        "description": {siteDescription},\n        "url": {siteURL}\n      }\n      <\/script><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500,600,800&display=swap" rel="stylesheet"><script type="module" src="/src/scripts/main.ts"><\/script><title>', " | ", "</title>", "</head> <body> ", ' <main class="container mx-auto max-w-screen-xl mt-5 md:mt-10 px-6 md:px-12 lg:px-16"> ', " </main> ", " </body></html>"])), addAttribute(siteDescription, "content"), addAttribute(siteTitle, "content"), addAttribute(title, "title"), addAttribute(siteDescription, "content"), addAttribute(siteURL, "content"), addAttribute(siteImage, "content"), addAttribute(siteName, "content"), addAttribute(siteName, "content"), siteTitle, title, renderHead(), showNav && renderTemplate`${renderComponent($$result, "Navbar", $$Navbar, {})}`, renderSlot($$result, $$slots["default"]), showFooter && renderTemplate`${renderComponent($$result, "Footer", $$Footer, {})}`);
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: schema_.name,
+    description: schema_.description,
+    url: siteURL
+  };
+  return renderTemplate(_a || (_a = __template(['<html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description"', '><meta property="og:title"', '><meta property="og:description"', '><meta property="og:url"', '><meta property="og:image"', '><meta property="og:image:alt"', '><meta property="og:site_name"', '><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title"', '><meta name="twitter:description"', '><meta name="twitter:image"', '><script type="application/ld+json">', '<\/script><link rel="sitemap" href="/sitemap-index.xml"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..800&display=swap" rel="stylesheet"><script type="module" src="/src/scripts/main.ts"><\/script><title>', "</title>", "</head> <body> ", ' <main class="container mx-auto max-w-screen-xl mt-5 md:mt-10 px-6 md:px-12 lg:px-16"> ', " </main> ", " </body></html>"])), addAttribute(siteDescription, "content"), addAttribute(siteName, "content"), addAttribute(siteDescription, "content"), addAttribute(siteURL, "content"), addAttribute(siteImage, "content"), addAttribute(siteName, "content"), addAttribute(siteName, "content"), addAttribute(siteName, "content"), addAttribute(siteDescription, "content"), addAttribute(siteImage, "content"), unescapeHTML(JSON.stringify(schema)), `${siteTitle} | ${title}`, renderHead(), showNav && renderTemplate`${renderComponent($$result, "Navbar", $$Navbar, {})}`, renderSlot($$result, $$slots["default"]), showFooter && renderTemplate`${renderComponent($$result, "Footer", $$Footer, {})}`);
 }, "/Users/abdulaliyev/projects/portfolio/src/layouts/MainLayout.astro", void 0);
 
-export { $$MainLayout as $, $$ExternalLinkIcon as a, $$ArrowRightIcon as b, $$SendIcon as c };
+export { $$HomeIcon as $, $$ChevronRightIcon as a, $$MainLayout as b, $$ExternalLinkIcon as c, $$ArrowRightIcon as d, $$GithubIcon as e, $$SendIcon as f };

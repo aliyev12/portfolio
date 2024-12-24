@@ -1,10 +1,13 @@
-import { c as createComponent, r as renderTemplate, a as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_C9GTjA-t.mjs';
+import { a as createComponent, r as renderTemplate, d as renderComponent } from '../chunks/astro/server_BejUaFnn.mjs';
 import 'kleur/colors';
-import { $ as $$MainLayout } from '../chunks/MainLayout_CNWx2KeK.mjs';
+import { $ as $$Projects } from '../chunks/Projects_B2DQz_IG.mjs';
+import { $ as $$BreadCrumbs } from '../chunks/BreadCrumbs_CbAiUHrE.mjs';
+import { $ as $$Separator } from '../chunks/Separator_Q5zqhHer.mjs';
+import { b as $$MainLayout } from '../chunks/MainLayout_CHfxH17T.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${renderComponent($$result, "MainLayout", $$MainLayout, {}, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<h1>Projects</h1> ` })}`;
+  return renderTemplate`${renderComponent($$result, "MainLayout", $$MainLayout, {}, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "BreadCrumbs", $$BreadCrumbs, {})} ${renderComponent($$result2, "Projects", $$Projects, {})} ${renderComponent($$result2, "Separator", $$Separator, {})} ` })}`;
 }, "/Users/abdulaliyev/projects/portfolio/src/pages/projects/index.astro", void 0);
 
 const $$file = "/Users/abdulaliyev/projects/portfolio/src/pages/projects/index.astro";
