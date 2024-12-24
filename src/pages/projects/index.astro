@@ -1,6 +1,7 @@
 ---
 import ProjectCard from "@/components/ProjectCard.astro";
 import Separator from "@/components/common/Separator.astro";
+import BreadCrumbs from "@/components/common/BreadCrumbs.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
@@ -14,6 +15,7 @@ const allProjects: CollectionEntry<"project">[] = (
 ---
 
 <MainLayout>
+  <BreadCrumbs />
   <section class="flex flex-col justify-center items-center w-full">
     <h1 class="mb-8 md:mb-12">My Projects</h1>
     <div
