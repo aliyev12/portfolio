@@ -23,6 +23,7 @@ const projectCollection = defineCollection({
     excerpt: z.string(),
     tags: z.array(z.string()),
     weight: z.number(),
+    status: z.enum(["published", "draft"]),
   }),
 });
 
