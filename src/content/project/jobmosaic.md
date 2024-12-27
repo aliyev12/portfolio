@@ -15,6 +15,7 @@ projectURL: "https://jobmosaic.aaliyev.com/"
 githubRepoLinks: ["https://github.com/aliyev12/jobmosaic"]
 excerpt: "Job board app build with Laravel"
 weight: 1
+status: published
 slug: jobmosaic
 ---
 

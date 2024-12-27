@@ -25,7 +25,8 @@ tags: ["React", "Node"]
 projectURL: "https://sprint-planner-dun.vercel.app"
 githubRepoLinks: ["https://github.com/aliyev12/sprint-planner"]
 excerpt: "App for planning sprints following Agile methodology. Lets users vote for tickets, see stats, and more."
-weight: 2
+weight: 4
+status: draft
 slug: sprint-planner
 ---
 

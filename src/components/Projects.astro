@@ -5,10 +5,12 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 const allProjects: CollectionEntry<"project">[] = (
   await getCollection("project")
-).sort(
-  (a: CollectionEntry<"project">, b: CollectionEntry<"project">) =>
-    a.data.weight.valueOf() - b.data.weight.valueOf()
-);
+)
+  .filter((x) => x.data.status === "published")
+  .sort(
+    (a: CollectionEntry<"project">, b: CollectionEntry<"project">) =>
+      a.data.weight.valueOf() - b.data.weight.valueOf()
+  );
 ---
 
 <section class="flex flex-col justify-center items-center w-full">

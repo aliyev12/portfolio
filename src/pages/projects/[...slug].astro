@@ -18,7 +18,9 @@ if (entry === undefined) {
   return Astro.redirect("/404");
 }
 
-console.log("entry.data.githubRepoLinks = ", entry.data.githubRepoLinks.length);
+if (entry.data.status === "draft") {
+  return Astro.redirect("/404");
+}
 
 const { Content } = await entry.render();
 ---
