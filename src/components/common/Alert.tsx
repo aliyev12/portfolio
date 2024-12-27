@@ -16,7 +16,7 @@ export const Alert = () => {
   React.useEffect(() => {
     if ($pageAlert.show) {
       if (alertRef?.current) {
-        alertRef.current.style.maxHeight = "80px";
+        alertRef.current.style.maxHeight = "100px";
       }
       setAlertContent({
         show: $pageAlert.show,
