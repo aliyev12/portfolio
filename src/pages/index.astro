@@ -1,14 +1,10 @@
 ---
-import ProjectCard from "../components/ProjectCard.astro";
-import Projects from "../components/Projects.astro";
-import { HOMEPAGE_PROJECTS_LIMIT } from "../lib/constants";
-import MainLayout from "../layouts/MainLayout.astro";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
-import { getEntry } from "astro:content";
-import { Image } from "astro:assets";
-import myPhoto from "../images/default-avatar.svg";
 import Separator from "@/components/common/Separator.astro";
+import type { CollectionEntry } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
+import Projects from "../components/Projects.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
 
 const homeUiContent: CollectionEntry<"home"> = await getEntry(
   "home",
@@ -30,7 +26,7 @@ const { Content } = await homeUiContent.render();
   <section class="grid grid-cols-1 gap-5 lg:grid-cols-2">
     <div class="w-full flex justify-center items-center md:mb-0">
       <div class="flex items-center justify-center">
-        <img
+        <Image
           src="https://res.cloudinary.com/dceqefagi/image/upload/v1735266034/default-avatar_r1t1ua.svg"
           class="min-h-20 md:w-36 md:h-36 rounded-full w-24 h-24 shadow-lg"
           alt="Abdul Aliyev Photo"
