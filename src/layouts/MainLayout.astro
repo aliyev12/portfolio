@@ -68,7 +68,6 @@ const schema = {
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..800&display=swap"
       rel="stylesheet"
     />
-    <script type="module" src="/src/scripts/main.ts"></script>
     <title>{`${siteTitle} | ${title}`}</title>
   </head>
   <body>
@@ -79,5 +78,9 @@ const schema = {
       <slot />
     </main>
     {showFooter && <Footer />}
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"
+    ></script>
   </body>
 </html>
