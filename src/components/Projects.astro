@@ -7,7 +7,7 @@ const allProjects: CollectionEntry<"project">[] = (
   await getCollection("project")
 ).sort(
   (a: CollectionEntry<"project">, b: CollectionEntry<"project">) =>
-    b.data.weight.valueOf() - a.data.weight.valueOf()
+    a.data.weight.valueOf() - b.data.weight.valueOf()
 );
 ---
 
