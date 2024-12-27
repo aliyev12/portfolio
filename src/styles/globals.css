@@ -98,27 +98,27 @@
   }
 
   .textarea {
-    @apply block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+    @apply text-foreground bg-background block p-2.5 w-full text-sm   rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500;
   }
 
   .textarea[data-status="success"] {
-    @apply block p-2.5 w-full text-sm rounded-lg border bg-green-50  border-green-500 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-green-500;
+    @apply text-foreground bg-background block p-2.5 w-full text-sm rounded-lg border bg-green-50  border-green-500 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-green-500;
   }
 
   .textarea[data-status="error"] {
-    @apply block p-2.5 w-full text-sm bg-red-50 border border-red-500 rounded-lg focus:ring-red-500 dark:bg-gray-700 focus:border-red-500  dark:border-red-500;
+    @apply text-foreground bg-background block p-2.5 w-full text-sm bg-red-50 border border-red-500 rounded-lg focus:ring-red-500 dark:bg-gray-700 focus:border-red-500  dark:border-red-500;
   }
 
   .text-input {
-    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+    @apply text-foreground bg-background border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500;
   }
 
   .text-input[data-status="success"] {
-    @apply text-sm rounded-lg block w-full p-2.5 bg-green-50 border border-green-500 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-green-500;
+    @apply text-foreground bg-background text-sm rounded-lg block w-full p-2.5 bg-green-50 border border-green-500 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-green-500;
   }
 
   .text-input[data-status="error"] {
-    @apply bg-red-50 border border-red-500 text-sm rounded-lg focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 block w-full p-2.5 dark:border-red-500;
+    @apply text-foreground bg-background  bg-red-50 border border-red-500 text-sm rounded-lg focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 block w-full p-2.5 dark:border-red-500;
   }
 
   /* RANDOM GLOBAL OVERWRITES */
