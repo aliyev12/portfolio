@@ -1,13 +1,13 @@
 ---
 title: "VistaShopVerse"
 thumbnail:
-  url: vistashopverse.webp
+  url: vistashopverse.png
   alt: Landing page of VistaShopVerse
 mainImage:
-  url: vistashopverse.webp
+  url: vistashopverse.png
   alt: Landing page of VistaShopVerse
 additionalImages:
-  - url: vistashopverse.webp
+  - url: vistashopverse.png
     alt: Landing page of VistaShopVerse
 
 tags: ["Next", "Node", "Postgres"]
