@@ -58,7 +58,7 @@ const { Content } = await entry.render();
         >{
           entry.data.githubRepoLinks.length > 1 ? (
             <div class="ml-3 mt-2 flex flex-col space-y-3">
-              {entry.data.githubRepoLinks.map((repo) => {
+              {entry.data.githubRepoLinks.map((repo: string) => {
                 return (
                   <a class="link flex items-center" href={repo}>
                     {repo.replace("https://", "")}
@@ -87,5 +87,4 @@ const { Content } = await entry.render();
       <Content />
     </article>
   </section>
-  <Separator />
 </MainLayout>
