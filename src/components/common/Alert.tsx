@@ -72,7 +72,7 @@ export const Alert = () => {
 
     return alertTypeClasses[$pageAlert.type || "info"];
   }
-
+  console.log("alertContent = ", alertContent);
   return (
     <div className="space-y-5">
       <section
@@ -81,7 +81,9 @@ export const Alert = () => {
           maxHeight: 0,
           transition: "max-height 300ms ease-in-out",
         }}
-        className={`px-6 overflow-hidden w-full md:max-w-screen-md container mx-auto max-w-screen-xl flex justify-center items-center my-8`}
+        className={`px-6 ${
+          alertContent.show ? "flex" : "hidden"
+        } overflow-hidden w-full md:max-w-screen-md container mx-auto max-w-screen-xl flex justify-center items-center my-8`}
       >
         <div
           className={`w-full flex items-center p-4 mb-4 text-sm rounded-lg border ${getColorClasses()}`}

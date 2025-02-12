@@ -10,42 +10,44 @@ interface Props {
 ---
 
 <div
-  class="lg:w-[360px] bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700"
+  class="lg:w-[360px] border dark:border-gray-100 rounded-lg shadow-lg h-full flex flex-col mx-auto w-full"
 >
-  <a href={"/projects/" + project.slug}>
+  <a href={"/projects/" + project.slug} class="h-[230px] flex">
     <img
       src={"/images/" + project.data.thumbnail.url}
       alt={project.data.thumbnail.alt}
-      class="rounded-t-lg object-cover object-center"
+      class="rounded-t-lg object-cover w-full h-full"
     />
   </a>
 
-  <div class="p-5">
-    <a href={"/projects/" + project.slug}>
-      <h5
-        class="mb-2 text-2xl font-bold tracking-tight text-foreground dark:text-foreground"
+  <div class="p-5 flex flex-col flex-grow">
+    <div class="flex-grow">
+      <a href={"/projects/" + project.slug}>
+        <h5 class="mb-2 text-2xl font-bold tracking-tight">
+          {project.data.title}
+        </h5>
+      </a>
+      <p class="mb-4 font-normal">
+        {project.data.excerpt}
+      </p>
+    </div>
+    <div class="flex mt-2">
+      <a
+        href={project.data.projectURL}
+        title="Visit project website"
+        class="button inline-flex mr-5"
       >
-        {project.data.title}
-      </h5>
-    </a>
-    <p class="mb-4 font-normal text-foreground dark:text-foreground">
-      {project.data.excerpt}
-    </p>
-    <a
-      href={project.data.projectURL}
-      title="Visit project website"
-      class="button inline-flex mr-5"
-    >
-      <span class="mr-2">Visit</span>
-      <ExternalLinkIcon size={16} />
-    </a>
-    <a
-      href={`/projects/${project.slug}`}
-      title="Go to project details page"
-      class="button inline-flex"
-    >
-      <span class="mr-2">Read more</span>
-      <ArrowRightIcon size={16} />
-    </a>
+        <span class="mr-2">Visit</span>
+        <ExternalLinkIcon size={16} />
+      </a>
+      <a
+        href={`/projects/${project.slug}`}
+        title="Go to project details page"
+        class="button inline-flex"
+      >
+        <span class="mr-2">Read more</span>
+        <ArrowRightIcon size={16} />
+      </a>
+    </div>
   </div>
 </div>

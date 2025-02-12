@@ -6,17 +6,18 @@ import ProjectCard from "../components/ProjectCard.astro";
 const allProjects: CollectionEntry<"project">[] = (
   await getCollection("project")
 )
-  .filter((x) => x.data.status === "published")
+  .filter((x: CollectionEntry<"project">) => x.data.status === "published")
   .sort(
     (a: CollectionEntry<"project">, b: CollectionEntry<"project">) =>
       a.data.weight.valueOf() - b.data.weight.valueOf()
   );
+//     class={`grid grid-cols-1 ${allProjects.length === 2 && "lg:grid-cols-2"} ${allProjects.length >= 3 && "xl:grid-cols-3"} gap-8 sm:gap-12 md:gap-16 w-full`}
 ---
 
 <section class="flex flex-col justify-center items-center w-full">
   <h1 class="mb-8 md:mb-12">My Projects</h1>
   <div
-    class={`grid grid-cols-1 ${allProjects.length === 2 && "lg:grid-cols-2"} ${allProjects.length >= 3 && "xl:grid-cols-3"} gap-8 sm:gap-12 md:gap-16 place-items-center w-full`}
+    class={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-12 md:gap-16 w-full`}
   >
     {
       allProjects

@@ -2,19 +2,28 @@
 import { Image } from "astro:assets";
 import logo from "../images/logo.svg";
 import { MenuIcon } from "astro-feather";
+import Separator from "./common/Separator.astro";
+import { isPageActive } from "@/lib/utils";
+
+const currentPath = Astro.url.pathname;
 ---
 
 <nav class="">
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6 md:px-12 lg:px-16"
   >
-    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <a
+      href="/"
+      class="flex items-center space-x-3 rtl:space-x-reverse"
+      style="width: 55px; height: 55px;"
+    >
       <Image
         src={logo}
         class="h-14 shadow-lg"
         alt="Abdul Aliyev Portfolio Homepage"
         width={55}
         height={55}
+        style="width: 55px; height: 55px;"
       />
     </a>
     <button
@@ -33,18 +42,38 @@ import { MenuIcon } from "astro-feather";
         class="font-medium flex flex-col p-4 md:p-0 mt-4 space-y-6 md:space-y-0 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 text-center"
       >
         <li>
-          <a href="/" class="link" aria-current="page">Home</a>
+          <a
+            href="/"
+            class={`link ${isPageActive(currentPath, "/") && "font-bold"}`}
+            aria-current="page">Home</a
+          >
         </li>
         <li>
-          <a href="/about" class="link">About</a>
+          <a
+            href="/about"
+            class={`link ${isPageActive(currentPath, "/about") && "font-bold"}`}
+            >About</a
+          >
         </li>
         <li>
-          <a href="/projects" class="link">Projects</a>
+          <a
+            href="/projects"
+            class={`link ${isPageActive(currentPath, "/projects") && "font-bold"}`}
+            >Projects</a
+          >
         </li>
         <li>
-          <a href="/contact" class="link">Contact</a>
+          <a
+            href="/contact"
+            class={`link ${isPageActive(currentPath, "/contact") && "font-bold"}`}
+            >Contact</a
+          >
         </li>
       </ul>
+      <Separator
+        customClasses="md:hidden mt-6"
+        includeVerticalSpacing={false}
+      />
     </div>
   </div>
 </nav>

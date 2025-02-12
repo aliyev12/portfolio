@@ -207,7 +207,7 @@ const ContactForm: React.FC<{
               data-status={val("name").status}
               type="text"
               id="name"
-              className="text-input"
+              className="text-field"
               required
               {...register("name", {
                 required: validation.data.name.required,
@@ -241,7 +241,7 @@ const ContactForm: React.FC<{
               data-status={val("email").status}
               type="email"
               id="email"
-              className="text-input"
+              className="text-field"
               required
               {...register("email", {
                 required: validation.data.email.required,
@@ -314,7 +314,11 @@ const ContactForm: React.FC<{
             ></div>
           </div>
 
-          <button className="button" type="submit" disabled={isSubmitDisabled}>
+          <button
+            className="button flex"
+            type="submit"
+            disabled={isSubmitDisabled}
+          >
             <span className="mr-3">Send{isLoading && "ing"}</span>
             {isLoading ? <Spinner /> : <Send size={16} />}
           </button>
