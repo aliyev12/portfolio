@@ -1,5 +1,5 @@
 ---
-import { GithubIcon, LinkedinIcon } from "astro-feather";
+import { GithubIcon, LinkedinIcon, MailIcon } from "astro-feather";
 import ThemeToggle from "./ThemeToggle.astro";
 import Separator from "./common/Separator.astro";
 ---
@@ -28,6 +28,10 @@ import Separator from "./common/Separator.astro";
       >
         <LinkedinIcon />
         <span class="sr-only">Linkedin Profile</span>
+      </a>
+      <a href="/contact" title="Get in touch">
+        <MailIcon />
+        <span class="sr-only">Submit a contact me form</span>
       </a>
       <ThemeToggle />
     </div>
