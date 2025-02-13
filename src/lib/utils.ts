@@ -64,3 +64,15 @@ export function getCurrentFormattedDate() {
 
   return `${formattedDate} ${formattedTime} ${timezone}`;
 }
+
+// export function isPageActive(path: string) {
+//   const pathname = window.location.pathname;
+//   return path === pathname.replace(/^\/|\/$/g, "");
+// }
+
+export function isPageActive(currentPath: string, targetPath: string) {
+  // Remove leading and trailing slashes for comparison
+  const cleanCurrentPath = currentPath.replace(/^\/|\/$/g, "");
+  const cleanTargetPath = targetPath.replace(/^\/|\/$/g, "");
+  return cleanCurrentPath === cleanTargetPath;
+}
