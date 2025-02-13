@@ -1,14 +1,14 @@
 ---
 title: "VistaShopVerse"
 thumbnail:
-  url: vistashopverse.png
-  alt: Landing page of VistaShopVerse
+  url: https://res.cloudinary.com/dceqefagi/image/upload/v1739404822/portfolio/vista_shop_verse_800x450_grkkwi.jpg
+  alt: VistaShopVerse
 mainImage:
-  url: vistashopverse.png
-  alt: Landing page of VistaShopVerse
+  url: https://res.cloudinary.com/dceqefagi/image/upload/v1739404476/portfolio/vista_shop_verse_1600x900_zi8hpm.jpg
+  alt: VistaShopVerse
 additionalImages:
-  - url: vistashopverse.png
-    alt: Landing page of VistaShopVerse
+  - url: https://res.cloudinary.com/dceqefagi/image/upload/v1739404476/portfolio/vista_shop_verse_1600x900_zi8hpm.jpg
+    alt: VistaShopVerse
 
 tags: ["Next", "Node", "Postgres"]
 projectURL: "https://vistashopverse.aaliyev.com/"

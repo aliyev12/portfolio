@@ -1,14 +1,14 @@
 ---
-title: "JobMosaic"
+title: "Job Mosaic"
 thumbnail:
-  url: jobmosaic_landing.png
-  alt: Landing page of JobMosaic
+  url: https://res.cloudinary.com/dceqefagi/image/upload/v1739404999/portfolio/job_mosaic_800x450_yagrh3.jpg
+  alt: JobMosaic Custom Image
 mainImage:
-  url: jobmosaic_landing.png
-  alt: Landing page of JobMosaic
+  url: https://res.cloudinary.com/dceqefagi/image/upload/v1739399991/portfolio/job_mosaic_1600x900_un7abv.jpg
+  alt: JobMosaic Custom Image
 additionalImages:
-  - url: jobmosaic_landing.png
-    alt: Landing page of JobMosaic
+  - url: https://res.cloudinary.com/dceqefagi/image/upload/v1739399991/portfolio/job_mosaic_1600x900_un7abv.jpg
+    alt: JobMosaic Custom Image
 
 tags: ["Laravel"]
 projectURL: "https://jobmosaic.aaliyev.com/"

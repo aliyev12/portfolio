@@ -1,14 +1,14 @@
 ---
 title: "propertyteksphere"
 thumbnail:
-  url: propertyteksphere_landing.jpg
-  alt: Landing page of propertyteksphere
+  url: https://res.cloudinary.com/dceqefagi/image/upload/v1739407568/portfolio/property_tek_sphere_800x450_jwscfq.jpg
+  alt: propertyTEKsphere
 mainImage:
-  url: propertyteksphere_landing.jpg
-  alt: Landing page of propertyteksphere
+  url: https://res.cloudinary.com/dceqefagi/image/upload/v1739407569/portfolio/property_tek_sphere_1600x900_utw0lz.jpg
+  alt: propertyTEKsphere
 additionalImages:
-  - url: propertyteksphere_landing.jpg
-    alt: Landing page of propertyteksphere
+  - url: https://res.cloudinary.com/dceqefagi/image/upload/v1739407569/portfolio/property_tek_sphere_1600x900_utw0lz.jpg
+    alt: propertyTEKsphere
 
 tags: ["Next", "Node", "Mongo"]
 projectURL: "https://propertyteksphere.aaliyev.com/"
