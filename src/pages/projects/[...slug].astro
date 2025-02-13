@@ -23,6 +23,12 @@ if (entry.data.status === "draft") {
 }
 
 const { Content } = await entry.render();
+
+let imageSrc = `/images/${entry.data.mainImage.url}`;
+// If image url starts with https, then just assign imageSrc to the url
+if (entry.data.mainImage.url.startsWith("https")) {
+  imageSrc = entry.data.mainImage.url;
+}
 ---
 
 <MainLayout>
@@ -34,7 +40,7 @@ const { Content } = await entry.render();
     <figure class="max-w-3xl">
       <img
         class="h-auto max-w-full rounded-lg shadow-lg"
-        src={"/images/" + entry.data.mainImage.url}
+        src={imageSrc}
         alt={entry.data.mainImage.alt}
       />
     </figure>

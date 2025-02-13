@@ -7,14 +7,20 @@ const { project } = Astro.props;
 interface Props {
   project: CollectionEntry<"project">;
 }
+
+let imageSrc = `/images/${project.data.thumbnail.url}`;
+// If image url starts with https, then just assign imageSrc to the url
+if (project.data.thumbnail.url.startsWith("https")) {
+  imageSrc = project.data.thumbnail.url;
+}
 ---
 
 <div
-  class="lg:w-[360px] border dark:border-gray-100 rounded-lg shadow-lg h-full flex flex-col mx-auto w-full"
+  class="w-[320px] sm:w-[355px] border dark:border-gray-100 rounded-lg shadow-lg h-full flex flex-col mx-auto"
 >
-  <a href={"/projects/" + project.slug} class="h-[230px] flex">
+  <a href={"/projects/" + project.slug} class="h-[180px] sm:h-[200px] flex">
     <img
-      src={"/images/" + project.data.thumbnail.url}
+      src={imageSrc}
       alt={project.data.thumbnail.alt}
       class="rounded-t-lg object-cover w-full h-full"
     />
