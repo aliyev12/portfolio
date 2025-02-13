@@ -8,6 +8,7 @@ import { getEntry } from "astro:content";
 import Separator from "@/components/common/Separator.astro";
 import BreadCrumbs from "@/components/common/BreadCrumbs.astro";
 import { Image } from "astro:assets";
+import MailIcon from "astro-feather/components/MailIcon";
 
 const aboutUiContent: CollectionEntry<"about"> = await getEntry(
   "about",
@@ -37,6 +38,8 @@ const { Content } = await aboutUiContent.render();
     >
       <Content />
     </article>
+    <a href="/contact" class="button button-lg mt-5"
+      ><MailIcon size={16} /> Get in touch</a
+    >
   </section>
-  <Separator />
 </MainLayout>

@@ -1,10 +1,12 @@
 ---
 import { GithubIcon, LinkedinIcon } from "astro-feather";
 import ThemeToggle from "./ThemeToggle.astro";
+import Separator from "./common/Separator.astro";
 ---
 
-<footer class="mt-8 mb-12">
-  <div class="container mx-auto mt-8 max-w-screen-xl px-6">
+<footer class="mt-16 mb-12">
+  <Separator />
+  <div class="container mx-auto mt-8 max-w-screen-xl side-spacing">
     <div>
       <p class="text-center italic text-xs">
         Copyright &copy; {new Date().getFullYear()} Abdul Aliyev
