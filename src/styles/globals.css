@@ -230,4 +230,26 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  article.project-description {
+    h1 {
+      @apply mb-5;
+    }
+
+    h2 {
+      @apply mb-4;
+    }
+
+    h3 {
+      @apply mb-3;
+    }
+
+    p {
+      @apply mb-7;
+    }
+
+    ul {
+      @apply mb-7 pl-7 list-disc;
+    }
+  }
 }

@@ -1,9 +1,9 @@
 ---
 import BreadCrumbs from "@/components/common/BreadCrumbs.astro";
-import Separator from "@/components/common/Separator.astro";
+import LastUpdatedAlert from "@/components/common/LastUpdatedAlert.astro";
 import Tags from "@/components/Tags.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
-import { ExternalLinkIcon, GithubIcon } from "astro-feather";
+import { ExternalLinkIcon, GithubIcon, InfoIcon } from "astro-feather";
 import { getEntry, type CollectionEntry } from "astro:content";
 
 const { slug } = Astro.params;
@@ -88,8 +88,9 @@ if (entry.data.mainImage.url.startsWith("https")) {
 
     <article
       id="project-description-content-section"
-      class="leading-relaxed md:leading-loose max-w-3xl mt-8 md:mt-12"
+      class="leading-relaxed md:leading-loose max-w-3xl mt-8 md:mt-12 project-description"
     >
+      <LastUpdatedAlert />
       <Content />
     </article>
   </section>
