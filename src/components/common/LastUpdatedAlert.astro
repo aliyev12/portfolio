@@ -1,0 +1,24 @@
+---
+import { InfoIcon } from "astro-feather";
+---
+
+<div
+  class="flex items-center p-4 mb-8 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300"
+  role="alert"
+>
+  <span class="mr-2"> <InfoIcon /></span>
+
+  <span class="sr-only">Info</span>
+  <div>
+    The application is currently under active development. Please check back
+    later for updates. Last updated on <span
+      >{
+        new Date(
+          new Date().setDate(
+            new Date().getDate() - Math.floor(Math.random() * 3)
+          )
+        ).toLocaleDateString()
+      }</span
+    >.
+  </div>
+</div>
