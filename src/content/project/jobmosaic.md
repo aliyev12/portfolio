@@ -14,7 +14,7 @@ tags: ["Laravel", "Postgres", "Tailwind", "Docker", "Github Actions"]
 projectURL: "https://jobmosaic.aaliyev.com"
 githubRepoLinks: ["https://github.com/aliyev12/jobmosaic"]
 excerpt: "A full-stack job board platform built with Laravel and PostgreSQL that connects employers and job seekers through an intuitive interface."
-weight: 1
+weight: 3
 status: published
 slug: jobmosaic
 ---

@@ -14,7 +14,7 @@ tags: ["Next", "Node", "Postgres"]
 projectURL: "https://vistashopverse.aaliyev.com/"
 githubRepoLinks: ["https://github.com/aliyev12/vistashopverse"]
 excerpt: "Ecommerce app built with Next, Node, and Postgres."
-weight: 2
+weight: 1
 status: published
 slug: vistashopverse
 ---
