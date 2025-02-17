@@ -65,3 +65,18 @@ The application showcases modern DevOps practices through:
 - Automated CI/CD pipeline triggered by main branch updates
 - Self-managed cloud infrastructure demonstrating server administration skills
 - Production-grade deployment on Hetzner cloud platform
+
+## Future Roadmap
+
+Job Mosaic is continuously evolving with planned features including:
+
+- AI-powered job matching and recommendations
+- Resume parsing and analysis tools
+- Integrated video interviewing platform
+- Advanced analytics dashboard for hiring trends
+- Salary insights and market comparisons
+- Mobile application for on-the-go job searching
+- Integration with professional networking platforms
+- Automated skill assessment tools
+- Advanced candidate screening workflows
+- Enhanced geographic job market analysis
