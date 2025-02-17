@@ -1,5 +1,5 @@
 ---
-title: "propertyteksphere"
+title: "propertyTEKsphere"
 thumbnail:
   url: https://res.cloudinary.com/dceqefagi/image/upload/v1739407568/portfolio/property_tek_sphere_800x450_jwscfq.jpg
   alt: propertyTEKsphere
@@ -11,7 +11,7 @@ additionalImages:
     alt: propertyTEKsphere
 
 tags: ["Next", "Node", "Mongo"]
-projectURL: "https://propertyteksphere.aaliyev.com/"
+projectURL: "https://propertyteksphere.aaliyev.com"
 githubRepoLinks: ["https://github.com/aliyev12/propertyteksphere"]
 excerpt: "A cutting-edge real estate platform built with Next.js and MongoDB, featuring interactive property mapping, real-time messaging, and comprehensive property management tools."
 weight: 2
