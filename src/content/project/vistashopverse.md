@@ -11,7 +11,7 @@ additionalImages:
     alt: VistaShopVerse
 
 tags: ["Next", "React", "Node", "Postgres", "Tailwind"]
-projectURL: "https://vistashopverse.aaliyev.com/"
+projectURL: "https://vistashopverse.aaliyev.com"
 githubRepoLinks: ["https://github.com/aliyev12/vistashopverse"]
 excerpt: "A modern e-commerce platform built with Next.js 15 and React 19, featuring dual payment processing, advanced search capabilities, and a comprehensive admin dashboard."
 weight: 1
