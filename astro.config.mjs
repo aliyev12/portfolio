@@ -4,12 +4,18 @@ import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel";
 import sitemap from "@astrojs/sitemap";
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
     react({
       experimentalReactChildren: true,
+    }),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
     }),
     tailwind({
       applyBaseStyles: false,
