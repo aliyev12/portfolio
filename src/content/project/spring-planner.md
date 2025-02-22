@@ -1,77 +1,131 @@
 ---
 title: "Sprint Planner"
 thumbnail:
-  url: sprint_planner_thumbnail.png
+  url: https://res.cloudinary.com/dceqefagi/image/upload/v1740235058/portfolio/sprint-planner_800x450_wqhv7x.jpg
   alt: Sprint Planner Thumbnail
 mainImage:
-  url: sprint_planner_main.png
+  url: https://res.cloudinary.com/dceqefagi/image/upload/v1740235058/portfolio/sprint-planner_1600x900_pvzmhu.jpg
   alt: Sprint Planner
 additionalImages:
-  - url: sprint_planner_create_page.png
-    alt: Sprint Planner Create Page
-  - url: sprint_planner_edit_cards_page.png
-    alt: Sprint Planner Edit Cards Page
-  - url: sprint_planner_edit_categories_page.png
-    alt: Sprint Planner Edit Categories Page
-  - url: sprint_planner_join_page.png
-    alt: Sprint Planner Join Page
-  - url: sprint_planner_landing_page.png
+  - url: https://res.cloudinary.com/dceqefagi/image/upload/v1740235058/sprint-planner/sprint-planner_1600x900_pvzmhu.jpg
     alt: Sprint Planner Landing Page
-  - url: sprint_planner_stats.png
-    alt: Sprint Planner Stats
-  - url: sprint_planner_voting.png
-    alt: Sprint Planner Voting
-tags: ["React", "Node"]
-projectURL: "https://sprint-planner-dun.vercel.app"
+tags:
+  [
+    "React",
+    "TypeScript",
+    "Node",
+    "Express",
+    "Socket.io",
+    "Vite",
+    "Materialize CSS",
+  ]
+projectURL: "https://sprint-planner.aaliyev.com"
 githubRepoLinks: ["https://github.com/aliyev12/sprint-planner"]
-excerpt: "App for planning sprints following Agile methodology. Lets users vote for tickets, see stats, and more."
-weight: 4
-status: draft
+excerpt: "A real-time collaborative planning poker application for agile teams, featuring customizable categories, interactive voting, and instant results visualization."
+weight: 5
+status: published
 slug: sprint-planner
 ---
 
-This app is designed for creative teams to vote and assign Agile story points for various efforts. App has various feature, such tha allow customization of efforts to vote for, creating rooms and sharing a URL for other team members to join.
+# Sprint Planner - Real-time Agile Estimation Tool
 
-It all start with either creating a new room or by joning an existing room.
+Sprint Planner is a sophisticated real-time collaborative estimation tool built for agile teams to efficiently conduct planning poker sessions. The application enables distributed teams to seamlessly estimate story points, effort, and other metrics in a synchronized, interactive environment.
 
-<figure>
-<img src="/images/sprint_planner_landing_page.png" alt="Sprint Planner Landing Page">
-<figcaption>Landing page of the Sprint Planner</figcaption>
-</figure>
+## Technical Architecture
 
-When user click on Create New Room, they are presented with a screen that asks for user's name and a name of the new room.
+- **Frontend**: React 19 with TypeScript and Vite
+- **State Management**: XState for sophisticated state machines
+- **UI Framework**: Materialize CSS for responsive design
+- **Backend**: Node.js with Express and TypeScript
+- **Real-time Communication**: Socket.io for WebSockets
+- **Routing**: React Router v7
+- **Theme Support**: Customizable light/dark mode
+- **Notifications**: React Toastify for user alerts
 
-<figure>
-<img src="/images/sprint_planner_create_page.png" alt="Sprint Planner Landing Page">
-<figcaption>Create new room page</figcaption>
-</figure>
+## Key Features
 
-Alternatively, a user can join an existing room by navigating to room's URL and providing their name.
+### Real-time Collaboration
 
-<figure>
-<img src="/images/sprint_planner_join_page.png" alt="Sprint Planner Join Room">
-<figcaption>Joining an existing room</figcaption>
-</figure>
+- Instant synchronization of voting sessions across all connected users
+- Live user presence indicators showing who's in the room
+- Real-time updates when team members join or leave
 
-Main user that creates a room, gets to modify cards.
+### Customizable Estimation Framework
 
-<figure>
-<img src="/images/sprint_planner_edit_cards_page.png" alt="Sprint Planner Edit Cards">
-<figcaption>Editing default set of cards in order to customize them for the project</figcaption>
-</figure>
+- Create and manage custom estimation categories (story points, LOE, testing hours)
+- Design custom voting cards with team-specific values
+- Flexible voting scales to match team preferences
 
-Then the voting begins. Users get to click on a card of their choice. Users see other teammates who are online.
+### Interactive Voting Experience
 
-<figure>
-<img src="/images/sprint_planner_voting.png" alt="Sprint Planner Voting Session">
-<figcaption>Voting session</figcaption>
-</figure>
+- Clear voting session management for admins
+- Anonymous voting until all votes are revealed
+- Visual indicators of who has and hasn't voted
 
-Once the voting is complete, users get to see the stats - how many people voted for which card.
+### Results Visualization
 
-<figure>
-<img src="/images/sprint_planner_stats.png" alt="Sprint Planner Stats">
-<figcaption>Stats following the voting session</figcaption>
-</figure>
+- Automatic statistical analysis of voting results
+- Interactive pie charts showing distribution of votes
+- Clear indication of winning estimates
+- Option to save and track estimation history
 
-In terms of a tech stack, the app is a full-stack web app built with React on the frontend and Node on the backend. It uses Sockets.IO for real-time communication.
+### Admin Controls
+
+- Room creation with shareable links
+- Session management (start/stop/reset voting)
+- Category and card editing permissions
+- Exclusive control over results revelation
+
+### User-Friendly Interface
+
+- Intuitive card selection for voting
+- Real-time feedback on session status
+- Responsive design for desktop and mobile use
+- Dark/light theme options for accessibility
+
+## User Experience
+
+### For Session Admins
+
+Admins (the first person to create a room) can:
+
+- Initiate a new planning room with a custom name
+- Share a generated room ID or URL with team members
+- Create custom categories and estimation values
+- Control the voting flow (start/end sessions)
+- Reveal results when voting is complete
+- Manage the room settings and user access
+
+### For Team Members
+
+Participants can:
+
+- Join sessions via room ID or direct link
+- Vote using the provided estimation cards
+- See who else has voted (without seeing values until revealed)
+- View results visualizations after voting ends
+- Participate in successive estimation rounds
+
+## Technical Implementation
+
+- **WebSocket Architecture**: Bidirectional real-time communication between server and clients
+- **State Machine**: XState implementation for predictable UI states and transitions
+- **Room Management**: Sophisticated room creation, joining, and synchronization logic
+- **Responsive UI**: Carefully crafted interface that works across devices
+- **Theme System**: Context-based theme switching with persistent preferences
+- **Event Handling**: Robust socket event system for reliable message delivery
+
+## Future Roadmap
+
+Sprint Planner is evolving with planned enhancements including:
+
+- Persistent data storage with database integration
+- User authentication and profiles
+- Sprint history and reporting features
+- In-app messaging and discussion functionality
+- Custom team templates and presets
+- Integration with popular project management tools
+- Advanced analytics on team estimation patterns
+- Enhanced accessibility features
+- Customizable room permissions and roles
+- Mobile-native applications
