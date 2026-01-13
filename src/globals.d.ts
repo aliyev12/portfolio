@@ -14,6 +14,7 @@ declare global {
     location: any;
     grecaptcha: any;
     scrollTo: (options?: ScrollToOptions) => void;
+    CHATBOT_API_URL: string;
   }
 }
 
