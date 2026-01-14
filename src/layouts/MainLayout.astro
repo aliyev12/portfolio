@@ -6,6 +6,9 @@ import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
 
+const DISPLAY_CHATBOT = import.meta.env.DISPLAY_CHATBOT || false;
+const CHATBOT_API_URL = import.meta.env.CHATBOT_API_URL;
+
 const homeUiContent: CollectionEntry<"home"> = await getEntry(
   "home",
   "ui-content"
@@ -86,9 +89,9 @@ const schema = {
       is:inline
       src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"
     ></script>
-    <script>
-  window.CHATBOT_API_URL = 'https://chatbot.aaliyev.com';
-</script>
-    <!-- <script src="https://chatbot.aaliyev.com/widget.js" defer></script> -->
+    <script is:inline define:vars={{ CHATBOT_API_URL }}>
+      window.CHATBOT_API_URL = CHATBOT_API_URL;
+    </script>
+    {DISPLAY_CHATBOT && (<script is:inline src={`${CHATBOT_API_URL}/widget.js`} defer></script>)}
   </body>
 </html>
