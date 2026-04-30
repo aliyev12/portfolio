@@ -26,7 +26,7 @@ const currentPath = Astro.url.pathname;
         style="width: 55px; height: 55px;"
       />
     </a>
-    <button
+    <!-- <button
       data-collapse-toggle="navbar-default"
       type="button"
       class="inline-flex items-center p-2 -mr-2 w-10 h-10 justify-center text-sm md:hidden"
@@ -36,8 +36,8 @@ const currentPath = Astro.url.pathname;
       <span class="sr-only">Open main menu</span>
       <i data-feather="menu"></i>
       <MenuIcon />
-    </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+    </button> -->
+    <!-- <div class="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul
         class="font-medium flex flex-col p-4 md:p-0 mt-4 space-y-6 md:space-y-0 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 text-center"
       >
@@ -48,20 +48,20 @@ const currentPath = Astro.url.pathname;
             aria-current="page">Home</a
           >
         </li>
-        <!-- <li>
+        <li>
           <a
             href="/about"
             class={`link ${isPageActive(currentPath, "/about") && "font-bold"}`}
             >About</a
           >
-        </li> -->
-        <!-- <li>
+        </li>
+        <li>
           <a
             href="/projects"
             class={`link ${isPageActive(currentPath, "/projects") && "font-bold"}`}
             >Projects</a
           >
-        </li> -->
+        </li>
         <li>
           <a
             href="/contact"
@@ -74,6 +74,6 @@ const currentPath = Astro.url.pathname;
         customClasses="md:hidden mt-6"
         includeVerticalSpacing={false}
       />
-    </div>
+    </div> -->
   </div>
 </nav>
